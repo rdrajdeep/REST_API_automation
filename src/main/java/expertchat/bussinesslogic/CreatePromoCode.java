@@ -3,6 +3,7 @@ package expertchat.bussinesslogic;
 import expertchat.apioperation.AbstractApiFactory;
 import expertchat.apioperation.ExpertChatEndPoints;
 import expertchat.apioperation.apiresponse.ApiResponse;
+import expertchat.apioperation.session.SessionManagement;
 
 import javax.xml.ws.Response;
 
@@ -11,22 +12,16 @@ public class CreatePromoCode extends AbstractApiFactory implements ExpertChatEnd
     private ExpertChatApi expertChatApi= new ExpertChatApi();
     private ExpertProfile expertProfile = new ExpertProfile();
     ApiResponse response;
+    SessionManagement session;
 
-    public void createPromoCode(String json, String type, String pCode){
+    public void createPromoCode(String json){
 
-    }
-
-    public void superLogin(String json, String userType){
-
-        if (json.contains("{") && userType.equals("superUser")) {
-
-            expertChatApi.doLogIn(json, "superUser");
-
-            expertProfile.setExpertProfileID(json);
-
-            System.out.println("Respons code of super admin "+response.statusCode());
-            //this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert--" + user, isNegative);
-
+        response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE));
+        if(response.statusCode()==204|| response.statusCode()==200){
+            System.out.println("Promocode created");
         }
+
+
     }
+
 }

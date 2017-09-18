@@ -105,4 +105,8 @@ public interface ExpertChatEndPoints {
 
     String AVILABLE_SLOTS="expert/available-slots/";
 
+    /*Promo code End point*/
+
+    String PROMO_CODE= "promo-codes/";
+
 }

@@ -59,7 +59,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
 
     public void doLogIn ( String json, boolean isExpert ) {
 
-        System.out.println ( "LOGIN" );
+        System.out.println ( "SUPER USER" );
 
         if ( isExpert ) {
 
