@@ -1,0 +1,497 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_phone_number_verified": false,
+        "display_name": null,
+        "id": 51,
+        "country_code": 1,
+        "phone_number": "",
+        "is_superuser": false,
+        "profile_photo": null,
+        "email": "kishor+expert26@atlogys.com",
+        "name": "",
+        "is_profile_complete": false,
+        "token": "eyJ0aW1lc3RhbXAiOjE0OTIwNjU4MzEuNzE4MzUxLCJ1c2VyX2lkIjo1MSwiaXBfYWRkcmVzcyI6IjYxLjI0Ni40Ny45MyJ9:1cyYTv:9KxpRLG03I1-7VsOmLqEMm879yI",
+        "toc_and_privacy_policy_accepted": false
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 21,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 21,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 21,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 21,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "metadata": {
+        "expert_id": "51"
+    },
+    "results": [
+        {
+            "10": {
+                "2017-04-25": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-04-18": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-04-17": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-04-24": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-04-25": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-18": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-17": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-24": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-04-25": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-18": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-17": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-04-24": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-04-25": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-04-18": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-04-17": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-04-24": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ]
+            }
+        }
+    ]
+}

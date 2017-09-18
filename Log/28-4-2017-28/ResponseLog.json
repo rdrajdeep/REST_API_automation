@@ -1,0 +1,547 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+34expert@atlogys.com",
+        "verification_code": "9fe1f3b1-0367-4b8e-a8ee-675c622f892f"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+34expert@atlogys.com",
+        "verification_code": "9fe1f3b1-0367-4b8e-a8ee-675c622f892f"
+    },
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+34expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjozNSwidGltZXN0YW1wIjoxNDkzMzg1MDM4LjAwODYzOCwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d45fS:o7eSlBIaZazFPU0VZomWzFl21hc",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 35,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "message": "You have successfully changed your password.",
+        "code": 2021
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "message": "Your password has been successfully reset.",
+        "code": 2032
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+34user@atlogys.com",
+        "verification_code": "033d9b08-0fbe-4997-ad33-ce638e51f51b"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+34expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjozNSwidGltZXN0YW1wIjoxNDkzMzg1MDQ0LjA2MDQyMSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d45fY:4TrXF6Por4jJUxrQD7PBZKdbcxA",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 35,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "results": {
+        "id": 35,
+        "name": "",
+        "email": "kishor+34expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": null,
+        "expert_uid": null,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+    "results": {
+        "id": 35,
+        "name": "Sarma Kishor",
+        "email": "kishor+34expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": "iron-man",
+        "expert_uid": "SK3XS",
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+    "results": {
+        "image_url": "http://api.ci.experchat.com/media/5b2c942b2931e689984615abdd010cd66e5e2cd8.png"
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 24,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 35,
+            "display_name": "iron-man",
+            "profile_photo": "http://api.ci.experchat.com/media/5b2c942b2931e689984615abdd010cd66e5e2cd8.png",
+            "expert_uid": "SK3XS",
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 24,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 35,
+            "display_name": "iron-man",
+            "profile_photo": "http://api.ci.experchat.com/media/5b2c942b2931e689984615abdd010cd66e5e2cd8.png",
+            "expert_uid": "SK3XS",
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 10,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 10,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 10,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 10,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "results": [
+        {
+            "10": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-08": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "expert_id": "35"
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 18
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 19
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "metadata": {
+        "count": 2,
+        "next": null,
+        "previous": null
+    },
+    "results": [
+        {
+            "id": 18,
+            "created_timestamp": "2017-04-28T13:10:57.081858Z",
+            "modified_timestamp": "2017-04-28T13:10:57.081905Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "https://staff.tumblr.com/rss/",
+            "display_name": "Tumblr Staff",
+            "is_deleted": false,
+            "account": 18
+        },
+        {
+            "id": 19,
+            "created_timestamp": "2017-04-28T13:10:57.995203Z",
+            "modified_timestamp": "2017-04-28T13:10:57.995244Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+            "display_name": "NDTV News  - World-news",
+            "is_deleted": false,
+            "account": 19
+        }
+    ]
+}

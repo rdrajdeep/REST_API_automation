@@ -1,0 +1,6 @@
+#org.jbehave.core.embedder.StoryManager
+#Wed May 17 11:27:51 IST 2017
+Story/5_calling.story=5000
+threads=1
+total=5000
+threadAverage=5000

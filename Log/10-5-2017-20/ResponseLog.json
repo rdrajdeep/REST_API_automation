@@ -1,0 +1,62 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "code": 1001,
+                "message": "This email address is already tied to an existing account."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 6,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "user_ch_4",
+                "device_ch_6"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T11:27:23.897797Z",
+        "modified_timestamp": "2017-05-10T11:27:23.897847Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 7,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "expert_ch_3",
+                "device_ch_7"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T11:27:25.688789Z",
+        "modified_timestamp": "2017-05-10T11:27:25.688830Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

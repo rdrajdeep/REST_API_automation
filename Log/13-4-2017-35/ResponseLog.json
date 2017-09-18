@@ -1,0 +1,282 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_phone_number_verified": false,
+        "display_name": null,
+        "id": 51,
+        "country_code": 1,
+        "phone_number": "",
+        "is_superuser": false,
+        "profile_photo": null,
+        "email": "kishor+expert26@atlogys.com",
+        "name": "",
+        "is_profile_complete": false,
+        "token": "eyJ0aW1lc3RhbXAiOjE0OTIwNjY1MzguODQ2ODgsInVzZXJfaWQiOjUxLCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIn0:1cyYfK:aGfFjDSGHEeLhjOM1SUd_ZroSuQ",
+        "toc_and_privacy_policy_accepted": false
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 22,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 22,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 22,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 22,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "message": "This email address is already tied to an existing account.",
+                "code": 1001
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+expert63@atlogys.com",
+        "verification_code": "56cf627f-83ae-499f-8daf-3c03e67b14cd"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 73,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgzNTI0LjU1MjcwOSwidXNlcl9pZCI6NzN9:1cyd5I:yE-cyBATrEEXUDhuPIVwcHYs5zk",
+        "email": "kishor+expert63@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 73,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgzNTI3LjgyNTE5OSwidXNlcl9pZCI6NzN9:1cyd5L:Nqs0pr-x0ZylS-LdHzdXyO5EwOc",
+        "email": "kishor+expert63@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 3,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "KIshor Sarma",
+        "display_name": "batman",
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgzNTI5LjQzMjQ1NywidXNlcl9pZCI6M30:1cyd5N:AoCQhzwoG9ZOb6WHamGk56v4Q_A",
+        "email": "kishor+user@atlogys.com",
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/c445345cbd683fff9307f9dbd4f8709ad97657fd.png",
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 73,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgzNTMwLjg2MzkyLCJ1c2VyX2lkIjo3M30:1cyd5O:qO0DXE9TeygEMd0UkZO4o83Y00I",
+        "email": "kishor+expert63@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}

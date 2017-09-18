@@ -1,0 +1,20 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_phone_number_verified": false,
+        "id": 51,
+        "email": "kishor+expert26@atlogys.com",
+        "name": "",
+        "is_profile_complete": false,
+        "country_code": 1,
+        "display_name": null,
+        "token": "eyJpcF9hZGRyZXNzIjoiMTIyLjE3Ny4xMTMuMjUzIiwidGltZXN0YW1wIjoxNDkyMDI2OTM5LjI0Njc5NiwidXNlcl9pZCI6NTF9:1cyOMd:KAwGilN_tiDxNTCZ8M88HkPBznQ",
+        "phone_number": "",
+        "is_superuser": false
+    }
+}

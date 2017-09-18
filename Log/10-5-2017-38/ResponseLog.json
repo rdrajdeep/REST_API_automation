@@ -1,0 +1,122 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+44expert@atlogys.com",
+        "verification_code": "bd15d517-b08a-49e9-af68-e0904fef7538"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+44expert@atlogys.com",
+        "verification_code": "bd15d517-b08a-49e9-af68-e0904fef7538"
+    },
+    "metadata": {
+        "code": 2042,
+        "message": "We have resent your email verification instructions."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 12,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoxMiwidGltZXN0YW1wIjoxNDk0NDA5NTQ1LjY1MDk0NSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d8OBl:hOdSLe6mb4UqzTWCDb1oFHLtx8I",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+44expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "code": 2021,
+        "message": "You have successfully changed your password."
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "code": 2032,
+        "message": "Your password has been successfully reset."
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+44user@atlogys.com",
+        "verification_code": "c1dacace-1d88-408e-becf-fb51c225780a"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 12,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoxMiwidGltZXN0YW1wIjoxNDk0NDA5NTUwLjc3NjA1MywiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d8OBq:9pky7YLL1B4W8JXzeo2PiPeWbYE",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+44expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 13,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoxMywidGltZXN0YW1wIjoxNDk0NDA5NTUxLjY2NjU1MSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d8OBr:8CgEYds8hrKZrkY7VlQt2zot8IU",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+44user@atlogys.com",
+        "country_code": 1,
+        "display_name": "",
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}

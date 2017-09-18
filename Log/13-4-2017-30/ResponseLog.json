@@ -1,0 +1,280 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "message": "This email address is already tied to an existing account.",
+                "code": 1001
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Create a super admin content
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Upload Media
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Mobile no verify
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Payment Account
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Payment Account
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    },
+    "results": {
+        "email": "kishor+expert53@atlogys.com",
+        "verification_code": "c4e2c118-febf-47b1-8309-0f6b5a468566"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 66,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgwMjEzLjY4ODM0OCwidXNlcl9pZCI6NjZ9:1cycDt:_StfKYp0Ht5gxkTUiI4UzYNT9wM",
+        "email": "rakesh+expert53@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 66,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgwMjE3Ljc5NTY5LCJ1c2VyX2lkIjo2Nn0:1cycDx:PMmXVd-KacmjPABKtNUBwpqUf8c",
+        "email": "rakesh+expert53@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 3,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "KIshor Sarma",
+        "display_name": "batman",
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgwMjE5LjY4MDM0OCwidXNlcl9pZCI6M30:1cycDz:SWnQnSsIjppRko9JJFXm0DggRl8",
+        "email": "kishor+user@atlogys.com",
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/c445345cbd683fff9307f9dbd4f8709ad97657fd.png",
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 66,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgwMjIxLjYyMjQ2NSwidXNlcl9pZCI6NjZ9:1cycE1:oF2yO_at8WFgNDIqErDqfNs72Dk",
+        "email": "rakesh+expert53@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}

@@ -1,0 +1,404 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+36expert@atlogys.com",
+        "verification_code": "a50066f7-b4fe-45fc-8c72-8ab18a84eef0"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+36expert@atlogys.com",
+        "verification_code": "a50066f7-b4fe-45fc-8c72-8ab18a84eef0"
+    },
+    "metadata": {
+        "code": 2042,
+        "message": "We have resent your email verification instructions."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "display_name": null,
+        "email": "kishor+36expert@atlogys.com",
+        "id": 1,
+        "country_code": 1,
+        "is_profile_complete": false,
+        "token": "eyJ0aW1lc3RhbXAiOjE0OTM2MTkxMDIuMzgwMjY5LCJ1c2VyX2lkIjoxLCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d54Yg:IH1SoQrHZP_EQSUYOuilYGuXIHc",
+        "is_superuser": false,
+        "is_phone_number_verified": false,
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "phone_number": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "code": 2021,
+        "message": "You have successfully changed your password."
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "code": 2032,
+        "message": "Your password has been successfully reset."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "code": 1012,
+                "message": "Incorrect email or password provided.  Please check your information and try again."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+36user@atlogys.com",
+        "verification_code": "06748bab-7865-478f-9095-918e7445307c"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "display_name": null,
+        "email": "kishor+36expert@atlogys.com",
+        "id": 1,
+        "country_code": 1,
+        "is_profile_complete": false,
+        "token": "eyJ0aW1lc3RhbXAiOjE0OTM2MTkxMDkuMTE1MDg3LCJ1c2VyX2lkIjoxLCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d54Yn:a1kJW3rC169YadsaJwRi5ey3Lew",
+        "is_superuser": false,
+        "is_phone_number_verified": false,
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "phone_number": ""
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "results": {
+        "id": 1,
+        "name": "",
+        "email": "kishor+36expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": null,
+        "expert_uid": null,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+    "results": {
+        "id": 1,
+        "name": "Sarma Kishor",
+        "email": "kishor+36expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": "iron-man",
+        "expert_uid": "SK9PB",
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+    "results": {
+        "image_url": "http://api.ci.experchat.com/media/7894e67b56dadea564d0bf542c1f8466707c3054.png"
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "code": 1093,
+                "message": "Maximum allowed profiles has already been created."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "code": 1093,
+                "message": "Maximum allowed profiles has already been created."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 1,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 1,
+            "display_name": "iron-man",
+            "profile_photo": "http://api.ci.experchat.com/media/7894e67b56dadea564d0bf542c1f8466707c3054.png",
+            "expert_uid": "SK9PB",
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 1,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 1,
+            "display_name": "iron-man",
+            "profile_photo": "http://api.ci.experchat.com/media/7894e67b56dadea564d0bf542c1f8466707c3054.png",
+            "expert_uid": "SK9PB",
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 1,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 1,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 1,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 1,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "results": [
+        
+    ],
+    "metadata": {
+        "expert_id": "1"
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "id": 1,
+        "message": "Successfull"
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "id": 2,
+        "message": "Successfull"
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "metadata": {
+        "count": 2,
+        "next": null,
+        "previous": null
+    },
+    "results": [
+        {
+            "id": 1,
+            "created_timestamp": "2017-05-01T06:12:16.981165Z",
+            "modified_timestamp": "2017-05-01T06:12:16.981207Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "https://staff.tumblr.com/rss/",
+            "display_name": "Tumblr Staff",
+            "is_deleted": false,
+            "account": 1
+        },
+        {
+            "id": 2,
+            "created_timestamp": "2017-05-01T06:12:17.961559Z",
+            "modified_timestamp": "2017-05-01T06:12:17.961598Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+            "display_name": "NDTV News  - World-news",
+            "is_deleted": false,
+            "account": 2
+        }
+    ]
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "display_name": "",
+        "email": "kishor+36user@atlogys.com",
+        "id": 2,
+        "country_code": 1,
+        "is_profile_complete": false,
+        "token": "eyJ0aW1lc3RhbXAiOjE0OTM2MTkxNTMuNzc2MzY3LCJ1c2VyX2lkIjoyLCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d54ZV:F_aBoKBloLkiV3cjko6hIoJp9XM",
+        "is_superuser": false,
+        "is_phone_number_verified": false,
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "phone_number": ""
+    }
+}

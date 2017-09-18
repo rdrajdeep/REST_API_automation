@@ -1,0 +1,82 @@
+API RESPONSES+
+========
+Registration
+========
+{
+"results": {
+"email": "kishor+expert108@atlogys.com",
+"verification_code": "92c4f107-8694-48fa-b305-66eeba95ec30"
+},
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+}
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+"results": {
+"verification_code": "92c4f107-8694-48fa-b305-66eeba95ec30",
+"email": "kishor+expert108@atlogys.com"
+},
+"metadata": {
+"code": 2042,
+"message": "We have resent your email verification instructions."
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MjA5LCJ0aW1lc3RhbXAiOjE0OTA4ODAwMjIuNDIyNzd9:1ctZzy:2GSkQgMiNWTkA0kJj2CcaUOVYrw",
+"is_profile_complete": false,
+"toc_and_privacy_policy_accepted": false,
+"is_phone_number_verified": false,
+"profile_photo": null,
+"phone_number": "",
+"email": "kishor+expert108@atlogys.com",
+"country_code": 1,
+"display_name": null,
+"id": 209,
+"name": ""
+}
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+"metadata": {
+"code": 2021,
+"message": "You have successfully changed your password."
+}
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+"metadata": {
+"code": 2032,
+"message": "Your password has been successfully reset."
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1012,
+"message": "Incorrect email or password provided.  Please check your information and try again."
+}
+]
+}
+}

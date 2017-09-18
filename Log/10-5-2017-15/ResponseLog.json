@@ -1,0 +1,9 @@
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}

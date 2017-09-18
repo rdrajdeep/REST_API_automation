@@ -1,0 +1,163 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    },
+    "results": {
+        "email": "kishor+61expert@atlogys.com",
+        "verification_code": "131b977f-0856-4118-a8b4-c6f9c950d20b"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ERROR: The requested URL could not be retrieved</title>
+    <style type="text/css">&amp;amp;amp;lt;!--   /*
+ Stylesheet for Squid Error pages
+ Adapted from design by Free CSS Templates
+ http://www.freecsstemplates.org
+ Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/* Page basics */
+* {
+	font-family: verdana, sans-serif;
+}
+
+html body {
+	margin: 0;
+	padding: 0;
+	background: #efefef;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+
+/* Page displayed title area */
+#titles {
+	margin-left: 15px;
+	padding: 10px;
+	padding-left: 100px;
+	background: url('http://www.squid-cache.org/Artwork/SN.png') no-repeat left;
+}
+
+/* initial title */
+#titles h1 {
+	color: #000000;
+}
+#titles h2 {
+	color: #000000;
+}
+
+/* special event: FTP success page titles */
+#titles ftpsuccess {
+	background-color:#00ff00;
+	width:100%;
+}
+
+/* Page displayed body content area */
+#content {
+	padding: 10px;
+	background: #ffffff;
+}
+
+/* General text */
+p {
+}
+
+/* error brief description */
+#error p {
+}
+
+/* some data which may have caused the problem */
+#data {
+}
+
+/* the error message received from the system or other software */
+#sysmsg {
+}
+
+pre {
+    font-family:sans-serif;
+}
+
+/* special event: FTP / Gopher directory listing */
+#dirmsg {
+    font-family: courier;
+    color: black;
+    font-size: 10pt;
+}
+#dirlisting {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#dirlisting tr.entry td.icon,td.filename,td.size,td.date {
+    border-bottom: groove;
+}
+#dirlisting td.size {
+    width: 50px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* horizontal lines */
+hr {
+	margin: 0;
+}
+
+/* page displayed footer area */
+#footer {
+	font-size: 9px;
+	padding-left: 10px;
+}
+  body :lang(fa) { direction: rtl; font-size: 100%; font-family: Tahoma, Roya, sans-serif; float: right; } :lang(he) { direction: rtl; }  --&amp;amp;amp;gt;</style>
+  </head>
+  <body id="ERR_CONNECT_FAIL">
+    <div id="titles">
+      <h1>ERROR</h1>
+      <h2>The requested URL could not be retrieved</h2>
+    </div>
+    <hr/>
+    <div id="content">
+      <p>
+
+
+
+The following error was encountered while trying to retrieve the URL:                                 <a shape="rect" href="http://api.ci.experchat.com/v1/expert/resend/">http://api.ci.experchat.com/v1/expert/resend/</a>
+      </p>
+      <blockquote id="error">
+        <p>
+          <b>Connection to 34.205.181.162 failed.</b>
+        </p>
+      </blockquote>
+      <p id="sysmsg">
+
+
+
+The system returned:                                 <i>(110) Connection timed out</i>
+      </p>
+      <p>The remote host or network may be down. Please try the request again.</p>
+      <p>
+
+
+
+Your cache administrator is                                 <a shape="rect" href="mailto:webmaster?subject=CacheErrorInfo%20-%20ERR_CONNECT_FAIL&amp;body=CacheHost%3A%20localhost%0D%0AErrPage%3A%20ERR_CONNECT_FAIL%0D%0AErr%3A%20(110)%20Connection%20timed%20out%0D%0ATimeStamp%3A%20Wed,%2024%20May%202017%2005%3A39%3A02%20GMT%0D%0A%0D%0AClientIP%3A%20192.168.254.122%0D%0AServerIP%3A%20api.ci.experchat.com%0D%0A%0D%0AHTTP%20Request%3A%0D%0APOST%20%2Fv1%2Fexpert%2Fresend%2F%20HTTP%2F1.1%0AAccept%3A%20*%2F*%0D%0AContent-Type%3A%20application%2Fjson%3B%20charset%3DUTF-8%0D%0AContent-Length%3A%2040%0D%0AHost%3A%20api.ci.experchat.com%0D%0AConnection%3A%20Keep-Alive%0D%0AUser-Agent%3A%20Apache-HttpClient%2F4.5.2%20(Java%2F1.8.0_73)%0D%0AAccept-Encoding%3A%20gzip,deflate%0D%0A%0D%0A%0D%0A">webmaster</a>
+
+
+
+.                        </p>
+      <br clear="none"/>
+    </div>
+    <hr/>
+    <div id="footer">
+      <p>Generated Wed, 24 May 2017 05:39:02 GMT by localhost (squid/3.2.3)</p>
+    </div>
+  </body>
+</html>

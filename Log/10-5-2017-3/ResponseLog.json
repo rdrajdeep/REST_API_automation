@@ -1,0 +1,360 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+38expert@atlogys.com",
+        "verification_code": "fdf9a052-9ff4-468b-bc72-15d535c9c968"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+38expert@atlogys.com",
+        "verification_code": "fdf9a052-9ff4-468b-bc72-15d535c9c968"
+    },
+    "metadata": {
+        "code": 2042,
+        "message": "We have resent your email verification instructions."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 3,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjozLCJ0aW1lc3RhbXAiOjE0OTQ0MDcxNzMuMTYzNjYzLCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d8NZV:uELtOnd9H3zhFusMZFXxo9RTxPw",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+38expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "code": 2021,
+        "message": "You have successfully changed your password."
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "code": 2032,
+        "message": "Your password has been successfully reset."
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+<html>
+  <body>
+    <h1>Not Found</h1>
+    <p>The requested URL /v1/expert/available-slots/null/ was not found on this server.</p>
+  </body>
+</html>
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+40expert@atlogys.com",
+        "verification_code": "be37030e-153b-47fd-8f44-66ca8a59e28f"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+40expert@atlogys.com",
+        "verification_code": "be37030e-153b-47fd-8f44-66ca8a59e28f"
+    },
+    "metadata": {
+        "code": 2042,
+        "message": "We have resent your email verification instructions."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 5,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjo1LCJ0aW1lc3RhbXAiOjE0OTQ0MDgxMzAuNTQwNjc2LCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d8Now:Roc3XnM9ZPFE0OygOZ0xTdbeE2E",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+40expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "code": 2021,
+        "message": "You have successfully changed your password."
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "code": 2032,
+        "message": "Your password has been successfully reset."
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+<html>
+  <body>
+    <h1>Not Found</h1>
+    <p>The requested URL /v1/expert/available-slots/null/ was not found on this server.</p>
+  </body>
+</html>
+API RESPONSES+
+========
+Upload Media
+========
+<html>
+  <body>
+    <h1>Not Found</h1>
+    <p>The requested URL /v1/expert/available-slots/null/ was not found on this server.</p>
+  </body>
+</html>
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "code": 1001,
+                "message": "This email address is already tied to an existing account."
+            }
+        ]
+    }
+}

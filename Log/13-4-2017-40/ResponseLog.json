@@ -1,0 +1,54 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+expert60@atlogys.com",
+        "verification_code": "cb2e6c9a-701a-440e-b19b-edc5ebfc18c4"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 70,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgyOTg3LjQ1MDg3NywidXNlcl9pZCI6NzB9:1cycwd:PavfuzNp4gRnK8VfZHiGSywFTek",
+        "email": "kishor+expert60@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 70,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDgyOTkxLjExMzU3NSwidXNlcl9pZCI6NzB9:1cycwh:3MbBRUclh1TxP1DMhdCEeSzALx0",
+        "email": "kishor+expert60@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}

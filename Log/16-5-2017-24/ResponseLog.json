@@ -1,0 +1,48 @@
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 1,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_3",
+                "device_ch_1"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:19:30.459489Z",
+        "modified_timestamp": "2017-05-16T12:19:30.459548Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 2,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_2"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:19:32.714032Z",
+        "modified_timestamp": "2017-05-16T12:19:32.714067Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

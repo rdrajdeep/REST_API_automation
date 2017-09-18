@@ -1,0 +1,57 @@
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "JSON parse error - Expecting property name enclosed in double quotes: line 2 column 39 (char 41)"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 15,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_3",
+                "device_ch_15"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:41:26.132767Z",
+        "modified_timestamp": "2017-05-16T12:41:26.132803Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 16,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_16"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:41:27.582015Z",
+        "modified_timestamp": "2017-05-16T12:41:27.582050Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

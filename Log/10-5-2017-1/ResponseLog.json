@@ -1,0 +1,676 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    },
+    "results": {
+        "email": "kishor+53expert@atlogys.com",
+        "verification_code": "d2e235c9-e868-40de-a2ae-a96a2b002f47"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    },
+    "results": {
+        "verification_code": "d2e235c9-e868-40de-a2ae-a96a2b002f47",
+        "email": "kishor+53expert@atlogys.com"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_phone_number_verified": false,
+        "email": "kishor+53expert@atlogys.com",
+        "is_profile_complete": false,
+        "country_code": 1,
+        "phone_number": "",
+        "id": 5,
+        "display_name": null,
+        "token": "eyJ1c2VyX2lkIjo1LCJ0aW1lc3RhbXAiOjE0OTQ0MTQwMTAuOTAwNjk0LCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d8PLm:ekED9aB_PFdz9iWgArvWeibY8ps",
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "message": "You have successfully changed your password.",
+        "code": 2021
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "message": "Your password has been successfully reset.",
+        "code": 2032
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    },
+    "results": {
+        "email": "kishor+53user@atlogys.com",
+        "verification_code": "464fa168-966d-4ade-a03a-1705d7f79447"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_phone_number_verified": false,
+        "email": "kishor+53expert@atlogys.com",
+        "is_profile_complete": false,
+        "country_code": 1,
+        "phone_number": "",
+        "id": 5,
+        "display_name": null,
+        "token": "eyJ1c2VyX2lkIjo1LCJ0aW1lc3RhbXAiOjE0OTQ0MTQwMTYuMjU4Njk3LCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d8PLs:lNg85NdLVqNvoAEm1u_lc5eqYxk",
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_phone_number_verified": false,
+        "email": "kishor+53user@atlogys.com",
+        "is_profile_complete": false,
+        "country_code": 1,
+        "phone_number": "",
+        "id": 6,
+        "display_name": "",
+        "token": "eyJ1c2VyX2lkIjo2LCJ0aW1lc3RhbXAiOjE0OTQ0MTQwMTcuMTQ5ODQsImlwX2FkZHJlc3MiOiIxMjIuMTYwLjI1My4yMSJ9:1d8PLt:IDC5gC5zhVO8yIPslBEyffSiT8Y",
+        "name": "",
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 3,
+        "tags": [
+            3,
+            2,
+            4,
+            1
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 5,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)",
+        "is_featured": false
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 3,
+        "tags": [
+            3,
+            2,
+            4,
+            1
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 5,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)",
+        "is_featured": false
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 3,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 3,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 3,
+        "title": "a test",
+        "start_time": "08:00:00",
+        "end_time": "10:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 3,
+        "title": "a test",
+        "start_time": "08:00:00",
+        "end_time": "10:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "metadata": {
+        "expert_id": "5"
+    },
+    "results": [
+        {
+            "10": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-16": [
+                    {
+                        "start_time": "03:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "03:00"
+                    }
+                ]
+            }
+        }
+    ]
+}
+API RESPONSES+
+========
+Upload Media
+========
+{
+    "metadata": {
+        "expert_id": "5"
+    },
+    "results": [
+        {
+            "10": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-16": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-16": [
+                    {
+                        "start_time": "03:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "03:00"
+                    }
+                ]
+            }
+        }
+    ]
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 3,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_6",
+                "device_ch_3"
+            ]
+        },
+        "created_timestamp": "2017-05-10T11:01:10.126417Z",
+        "modified_timestamp": "2017-05-10T11:01:10.126471Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 4,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_5",
+                "device_ch_4"
+            ]
+        },
+        "created_timestamp": "2017-05-10T11:01:10.946022Z",
+        "modified_timestamp": "2017-05-10T11:01:10.946079Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

@@ -1,0 +1,886 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+33expert@atlogys.com",
+        "verification_code": "6cb8535f-e861-41d2-8db1-0381f2983d5d"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+33expert@atlogys.com",
+        "verification_code": "6cb8535f-e861-41d2-8db1-0381f2983d5d"
+    },
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+33expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjozMywidGltZXN0YW1wIjoxNDkzMzc3MTMyLjY3MTg4NiwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43bw:2D-fUeaZTWgRk4I4DLNnde4A8fg",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 33,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "message": "You have successfully changed your password.",
+        "code": 2021
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "message": "Your password has been successfully reset.",
+        "code": 2032
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+33user@atlogys.com",
+        "verification_code": "c72a4e50-eb48-4a59-a911-85bbd59db69f"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+33expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjozMywidGltZXN0YW1wIjoxNDkzMzc3MTM4LjcxMDg4NiwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43c2:YGbxAKrA2zJjKfOAOGm2AQ0yiqE",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 33,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "results": {
+        "id": 33,
+        "name": "",
+        "email": "kishor+33expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": null,
+        "expert_uid": null,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+    "errors": {
+        "display_name": [
+            {
+                "message": "Display name already taken.",
+                "code": 1096
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Me-Photo
+========
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ERROR: The requested URL could not be retrieved</title>
+    <style type="text/css">&amp;amp;lt;!--   /*
+ Stylesheet for Squid Error pages
+ Adapted from design by Free CSS Templates
+ http://www.freecsstemplates.org
+ Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/* Page basics */
+* {
+	font-family: verdana, sans-serif;
+}
+
+html body {
+	margin: 0;
+	padding: 0;
+	background: #efefef;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+
+/* Page displayed title area */
+#titles {
+	margin-left: 15px;
+	padding: 10px;
+	padding-left: 100px;
+	background: url('http://www.squid-cache.org/Artwork/SN.png') no-repeat left;
+}
+
+/* initial title */
+#titles h1 {
+	color: #000000;
+}
+#titles h2 {
+	color: #000000;
+}
+
+/* special event: FTP success page titles */
+#titles ftpsuccess {
+	background-color:#00ff00;
+	width:100%;
+}
+
+/* Page displayed body content area */
+#content {
+	padding: 10px;
+	background: #ffffff;
+}
+
+/* General text */
+p {
+}
+
+/* error brief description */
+#error p {
+}
+
+/* some data which may have caused the problem */
+#data {
+}
+
+/* the error message received from the system or other software */
+#sysmsg {
+}
+
+pre {
+    font-family:sans-serif;
+}
+
+/* special event: FTP / Gopher directory listing */
+#dirmsg {
+    font-family: courier;
+    color: black;
+    font-size: 10pt;
+}
+#dirlisting {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#dirlisting tr.entry td.icon,td.filename,td.size,td.date {
+    border-bottom: groove;
+}
+#dirlisting td.size {
+    width: 50px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* horizontal lines */
+hr {
+	margin: 0;
+}
+
+/* page displayed footer area */
+#footer {
+	font-size: 9px;
+	padding-left: 10px;
+}
+  body :lang(fa) { direction: rtl; font-size: 100%; font-family: Tahoma, Roya, sans-serif; float: right; } :lang(he) { direction: rtl; }  --&amp;amp;gt;</style>
+  </head>
+  <body id="ERR_ZERO_SIZE_OBJECT">
+    <div id="titles">
+      <h1>ERROR</h1>
+      <h2>The requested URL could not be retrieved</h2>
+    </div>
+    <hr/>
+    <div id="content">
+      <p>
+
+
+The following error was encountered while trying to retrieve the URL:                         <a shape="rect" href="http://api.ci.experchat.com/v1/expert/me-photo/">http://api.ci.experchat.com/v1/expert/me-photo/</a>
+      </p>
+      <blockquote id="error">
+        <p>
+          <b>Zero Sized Reply</b>
+        </p>
+      </blockquote>
+      <p>Squid did not receive any data for this request.</p>
+      <p>
+
+
+Your cache administrator is                         <a shape="rect" href="mailto:webmaster?subject=CacheErrorInfo%20-%20ERR_ZERO_SIZE_OBJECT&amp;body=CacheHost%3A%20localhost%0D%0AErrPage%3A%20ERR_ZERO_SIZE_OBJECT%0D%0AErr%3A%20%5Bnone%5D%0D%0ATimeStamp%3A%20Fri,%2028%20Apr%202017%2011%3A03%3A06%20GMT%0D%0A%0D%0AClientIP%3A%20192.168.254.122%0D%0AServerIP%3A%20api.ci.experchat.com%0D%0A%0D%0AHTTP%20Request%3A%0D%0APOST%20%2Fv1%2Fexpert%2Fme-photo%2F%20HTTP%2F1.1%0AAuthorization%3A%20token%20eyJ1c2VyX2lkIjozMywidGltZXN0YW1wIjoxNDkzMzc3MTM4LjcxMDg4NiwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0%3A1d43c2%3AYGbxAKrA2zJjKfOAOGm2AQ0yiqE%0D%0AAccept%3A%20*%2F*%0D%0AContent-Type%3A%20application%2Fjson%3B%20charset%3DUTF-8%0D%0AContent-Length%3A%2040870%0D%0AHost%3A%20api.ci.experchat.com%0D%0AConnection%3A%20Keep-Alive%0D%0AUser-Agent%3A%20Apache-HttpClient%2F4.5.2%20(Java%2F1.8.0_73)%0D%0AAccept-Encoding%3A%20gzip,deflate%0D%0A%0D%0A%0D%0A">webmaster</a>
+
+
+.                  </p>
+      <br clear="none"/>
+    </div>
+    <hr/>
+    <div id="footer">
+      <p>Generated Fri, 28 Apr 2017 11:03:06 GMT by localhost (squid/3.2.3)</p>
+    </div>
+  </body>
+</html>
+API RESPONSES+
+========
+Me-Photo
+========
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ERROR: The requested URL could not be retrieved</title>
+    <style type="text/css">&amp;amp;amp;amp;amp;lt;!--   /*
+ Stylesheet for Squid Error pages
+ Adapted from design by Free CSS Templates
+ http://www.freecsstemplates.org
+ Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+/* Page basics */
+* {
+	font-family: verdana, sans-serif;
+}
+
+html body {
+	margin: 0;
+	padding: 0;
+	background: #efefef;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+
+/* Page displayed title area */
+#titles {
+	margin-left: 15px;
+	padding: 10px;
+	padding-left: 100px;
+	background: url('http://www.squid-cache.org/Artwork/SN.png') no-repeat left;
+}
+
+/* initial title */
+#titles h1 {
+	color: #000000;
+}
+#titles h2 {
+	color: #000000;
+}
+
+/* special event: FTP success page titles */
+#titles ftpsuccess {
+	background-color:#00ff00;
+	width:100%;
+}
+
+/* Page displayed body content area */
+#content {
+	padding: 10px;
+	background: #ffffff;
+}
+
+/* General text */
+p {
+}
+
+/* error brief description */
+#error p {
+}
+
+/* some data which may have caused the problem */
+#data {
+}
+
+/* the error message received from the system or other software */
+#sysmsg {
+}
+
+pre {
+    font-family:sans-serif;
+}
+
+/* special event: FTP / Gopher directory listing */
+#dirmsg {
+    font-family: courier;
+    color: black;
+    font-size: 10pt;
+}
+#dirlisting {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#dirlisting tr.entry td.icon,td.filename,td.size,td.date {
+    border-bottom: groove;
+}
+#dirlisting td.size {
+    width: 50px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* horizontal lines */
+hr {
+	margin: 0;
+}
+
+/* page displayed footer area */
+#footer {
+	font-size: 9px;
+	padding-left: 10px;
+}
+  body :lang(fa) { direction: rtl; font-size: 100%; font-family: Tahoma, Roya, sans-serif; float: right; } :lang(he) { direction: rtl; }  --&amp;amp;amp;amp;amp;gt;</style>
+  </head>
+  <body id="ERR_ZERO_SIZE_OBJECT">
+    <div id="titles">
+      <h1>ERROR</h1>
+      <h2>The requested URL could not be retrieved</h2>
+    </div>
+    <hr/>
+    <div id="content">
+      <p>
+
+
+
+
+
+The following error was encountered while trying to retrieve the URL:                                                 <a shape="rect" href="http://api.ci.experchat.com/v1/expert/me-photo/">http://api.ci.experchat.com/v1/expert/me-photo/</a>
+      </p>
+      <blockquote id="error">
+        <p>
+          <b>Zero Sized Reply</b>
+        </p>
+      </blockquote>
+      <p>Squid did not receive any data for this request.</p>
+      <p>
+
+
+
+
+
+Your cache administrator is                                                 <a shape="rect" href="mailto:webmaster?subject=CacheErrorInfo%20-%20ERR_ZERO_SIZE_OBJECT&amp;body=CacheHost%3A%20localhost%0D%0AErrPage%3A%20ERR_ZERO_SIZE_OBJECT%0D%0AErr%3A%20%5Bnone%5D%0D%0ATimeStamp%3A%20Fri,%2028%20Apr%202017%2011%3A03%3A06%20GMT%0D%0A%0D%0AClientIP%3A%20192.168.254.122%0D%0AServerIP%3A%20api.ci.experchat.com%0D%0A%0D%0AHTTP%20Request%3A%0D%0APOST%20%2Fv1%2Fexpert%2Fme-photo%2F%20HTTP%2F1.1%0AAuthorization%3A%20token%20eyJ1c2VyX2lkIjozMywidGltZXN0YW1wIjoxNDkzMzc3MTM4LjcxMDg4NiwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0%3A1d43c2%3AYGbxAKrA2zJjKfOAOGm2AQ0yiqE%0D%0AAccept%3A%20*%2F*%0D%0AContent-Type%3A%20application%2Fjson%3B%20charset%3DUTF-8%0D%0AContent-Length%3A%2040870%0D%0AHost%3A%20api.ci.experchat.com%0D%0AConnection%3A%20Keep-Alive%0D%0AUser-Agent%3A%20Apache-HttpClient%2F4.5.2%20(Java%2F1.8.0_73)%0D%0AAccept-Encoding%3A%20gzip,deflate%0D%0A%0D%0A%0D%0A">webmaster</a>
+
+
+
+
+
+.                                    </p>
+      <br clear="none"/>
+    </div>
+    <hr/>
+    <div id="footer">
+      <p>Generated Fri, 28 Apr 2017 11:03:06 GMT by localhost (squid/3.2.3)</p>
+    </div>
+  </body>
+</html>
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 23,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 33,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 23,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 33,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 9,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 9,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 9,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 9,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "results": [
+        {
+            "10": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-08": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "expert_id": "33"
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 16
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 17
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "metadata": {
+        "count": 2,
+        "next": null,
+        "previous": null
+    },
+    "results": [
+        {
+            "id": 16,
+            "created_timestamp": "2017-04-28T11:00:09.549702Z",
+            "modified_timestamp": "2017-04-28T11:00:09.549739Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "https://staff.tumblr.com/rss/",
+            "display_name": "Tumblr Staff",
+            "is_deleted": false,
+            "account": 16
+        },
+        {
+            "id": 17,
+            "created_timestamp": "2017-04-28T11:00:10.404592Z",
+            "modified_timestamp": "2017-04-28T11:00:10.404638Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+            "display_name": "NDTV News  - World-news",
+            "is_deleted": false,
+            "account": 17
+        }
+    ]
+}
+API RESPONSES+
+========
+My Info Load
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Get Social Link
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>

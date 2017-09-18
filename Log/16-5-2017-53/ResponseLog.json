@@ -1,0 +1,19 @@
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+<html>
+  <body>
+    <h1>Not Found</h1>
+    <p>The requested URL /v1/expert/available-slots/null/ was not found on this server.</p>
+  </body>
+</html>

@@ -1,0 +1,923 @@
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+expert214@atlogys.com",
+"verification_code": "b3287640-2716-4e9a-9e13-aeaa3debb62d"
+}
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+"metadata": {
+"code": 2042,
+"message": "We have resent your email verification instructions."
+},
+"results": {
+"email": "kishor+expert214@atlogys.com",
+"verification_code": "b3287640-2716-4e9a-9e13-aeaa3debb62d"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"country_code": 1,
+"phone_number": "",
+"id": 310,
+"is_profile_complete": false,
+"profile_photo": null,
+"is_phone_number_verified": false,
+"name": "",
+"is_superuser": false,
+"display_name": null,
+"token": "eyJ0aW1lc3RhbXAiOjE0OTE5MDA2NTMuNDM0MzA4LCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzEwfQ:1cxrVl:ot9Ec2XBlXuCzLkoPCNqaDqaI-Y",
+"email": "kishor+expert214@atlogys.com",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+"metadata": {
+"code": 2021,
+"message": "You have successfully changed your password."
+}
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+"metadata": {
+"code": 2032,
+"message": "Your password has been successfully reset."
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1012,
+"message": "Incorrect email or password provided.  Please check your information and try again."
+}
+]
+}
+}
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+user214@atlogys.com",
+"verification_code": "3c37a9b4-7e40-4e17-b4a7-8ab61ecf01a3"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"country_code": 1,
+"phone_number": "",
+"id": 311,
+"is_profile_complete": false,
+"profile_photo": null,
+"is_phone_number_verified": false,
+"name": "",
+"is_superuser": false,
+"display_name": "",
+"token": "eyJ0aW1lc3RhbXAiOjE0OTE5MDA2NTkuNjU1MzU2LCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzExfQ:1cxrVr:GTz3yaDlnUuFYG77hupSHbsbpbk",
+"email": "kishor+user214@atlogys.com",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+"results": {
+"id": 1145,
+"device_type": "ios",
+"publisher": {
+"channels": [
+"user_ch_311",
+"device_ch_1145"
+],
+"subscribe_key": "sub-c-ada7962c-ef5b-11e6-9032-0619f8945a4f"
+},
+"created_timestamp": "2017-04-11T08:51:00.473312Z",
+"modified_timestamp": "2017-04-11T08:51:00.473346Z",
+"device_name": "USer device",
+"device_sub_type": "sas",
+"device_id": "sas",
+"device_token": "sas",
+"device_os": "sas"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"country_code": 1,
+"phone_number": "",
+"id": 310,
+"is_profile_complete": false,
+"profile_photo": null,
+"is_phone_number_verified": false,
+"name": "",
+"is_superuser": false,
+"display_name": null,
+"token": "eyJ0aW1lc3RhbXAiOjE0OTE5MDA2NjEuMzc4MjY4LCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzEwfQ:1cxrVt:Ua-dV0hiDHmBiVIJbfgMKbYdNAw",
+"email": "kishor+expert214@atlogys.com",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+"results": {
+"id": 1146,
+"device_type": "ios",
+"publisher": {
+"channels": [
+"expert_ch_310",
+"device_ch_1146"
+],
+"subscribe_key": "sub-c-ada7962c-ef5b-11e6-9032-0619f8945a4f"
+},
+"created_timestamp": "2017-04-11T08:51:02.873301Z",
+"modified_timestamp": "2017-04-11T08:51:02.873341Z",
+"device_name": "Expert device",
+"device_sub_type": "sas",
+"device_id": "sas",
+"device_token": "sas",
+"device_os": "sas"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"country_code": 1,
+"phone_number": "",
+"id": 311,
+"is_profile_complete": false,
+"profile_photo": null,
+"is_phone_number_verified": false,
+"name": "",
+"is_superuser": false,
+"display_name": "",
+"token": "eyJ0aW1lc3RhbXAiOjE0OTE5MDA2NjMuODE4OTE5LCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzExfQ:1cxrVv:2XOqcmaAfCMmJRYnCjGog9y8mPc",
+"email": "kishor+user214@atlogys.com",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Call initiated by user
+========
+{
+"results": {
+"id": 2828,
+"expert_profile": 223,
+"expert": 169,
+"user_device": 1145,
+"scheduled_duration": 10
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"country_code": 1,
+"phone_number": "",
+"id": 310,
+"is_profile_complete": false,
+"profile_photo": null,
+"is_phone_number_verified": false,
+"name": "",
+"is_superuser": false,
+"display_name": null,
+"token": "eyJ0aW1lc3RhbXAiOjE0OTE5MDA2NjUuNDgzNzkzLCJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzEwfQ:1cxrVx:wucMUMp46-7vmyzG9p6D0IjHOFc",
+"email": "kishor+expert214@atlogys.com",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Accept Call
+========
+{
+"results": {
+"data": {
+"status": 2,
+"seesion_id": "1_MX40NTczMjQ1Mn5-MTQ5MTkwMDY2NjY3Nn5DU2NNU1ljNlI5TFNpQlhUL3dwa0hxc0F-fg",
+"call_timeout": 60,
+"session_token": "T1==cGFydG5lcl9pZD00NTczMjQ1MiZzaWc9NDdhNGE3ZjBiYWUyMjZjZWE5MTE4MzU2OTcwNDQ4ZjBiYTU0MjJkNDpzZXNzaW9uX2lkPTFfTVg0ME5UY3pNalExTW41LU1UUTVNVGt3TURZMk5qWTNObjVEVTJOTlUxbGpObEk1VEZOcFFsaFVMM2R3YTBoeGMwRi1mZyZjb25uZWN0aW9uX2RhdGE9Tm9uZSZleHBpcmVfdGltZT0xNDkxOTE4NjY2JnJvbGU9cHVibGlzaGVyJmNyZWF0ZV90aW1lPTE0OTE5MDA2NjYmbm9uY2U9NDgzODY5",
+"expert_device": 1146,
+"apiKey": "45732452",
+"timestamp": "1491900666"
+},
+"status": 2
+}
+}
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+expert230@atlogys.com",
+"verification_code": "b68fb59c-bd9d-4cd0-8a72-a070be80305e"
+}
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+"metadata": {
+"code": 2042,
+"message": "We have resent your email verification instructions."
+},
+"results": {
+"email": "kishor+expert230@atlogys.com",
+"verification_code": "b68fb59c-bd9d-4cd0-8a72-a070be80305e"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQwLCJ0aW1lc3RhbXAiOjE0OTE5MTA1NTguODE4ODk3fQ:1cxu5W:Ou2YKr1ZUpehkQSgfn7EqLAygTo",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "",
+"id": 340,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+expert230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+"metadata": {
+"code": 2021,
+"message": "You have successfully changed your password."
+}
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+"metadata": {
+"code": 2032,
+"message": "Your password has been successfully reset."
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1012,
+"message": "Incorrect email or password provided.  Please check your information and try again."
+}
+]
+}
+}
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+user230@atlogys.com",
+"verification_code": "1f5f4cce-dbd8-4081-9e29-ac28e2e55719"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQwLCJ0aW1lc3RhbXAiOjE0OTE5MTA1NjUuNjEwMDg5fQ:1cxu5d:pW2O7wtW208U9iy0iHSfid2KoOY",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "",
+"id": 340,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+expert230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+"results": {
+"name": "",
+"email": "kishor+expert230@atlogys.com",
+"country_code": 1,
+"phone_number": "",
+"is_phone_number_verified": false,
+"profile_photo": null,
+"display_name": "",
+"expert_uid": null,
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+"results": {
+"name": "Tester",
+"email": "kishor+expert230@atlogys.com",
+"country_code": 1,
+"phone_number": "",
+"is_phone_number_verified": false,
+"profile_photo": null,
+"display_name": "Tester",
+"expert_uid": "TeO2X",
+"toc_and_privacy_policy_accepted": false
+}
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+"results": {
+"image_url": "https://experchatqa.s3.amazonaws.com/d4904fea39fa3942d3e9c0b3eb23453c67e14390.png"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": "https://experchatqa.s3.amazonaws.com/d4904fea39fa3942d3e9c0b3eb23453c67e14390.png",
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQwLCJ0aW1lc3RhbXAiOjE0OTE5MTA1NzAuNzE2MzE3fQ:1cxu5i:C0Dt2m3eh3kEGWpBKW0yXYdC_58",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "",
+"id": 340,
+"country_code": 1,
+"name": "Tester",
+"is_phone_number_verified": false,
+"email": "kishor+expert230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"id": 185,
+"message": "Successfull"
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"id": 186,
+"message": "Successfull"
+}
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+"metadata": {
+"count": 2,
+"next": null,
+"previous": null
+},
+"results": [
+{
+"id": 185,
+"created_timestamp": "2017-04-11T11:36:12.354811Z",
+"modified_timestamp": "2017-04-11T11:36:12.354846Z",
+"feed_type": 4,
+"feed_sub_type": 4,
+"detail": "https://staff.tumblr.com/rss/",
+"display_name": "Tumblr Staff",
+"is_deleted": false,
+"account": 183
+},
+{
+"id": 186,
+"created_timestamp": "2017-04-11T11:36:13.288670Z",
+"modified_timestamp": "2017-04-11T11:36:13.288710Z",
+"feed_type": 4,
+"feed_sub_type": 4,
+"detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+"display_name": "NDTV News  - World-news",
+"is_deleted": false,
+"account": 184
+}
+]
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": "https://experchatqa.s3.amazonaws.com/d4904fea39fa3942d3e9c0b3eb23453c67e14390.png",
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQwLCJ0aW1lc3RhbXAiOjE0OTE5MTA1NzQuNjEwODYzfQ:1cxu5m:yLl4rWv3IfJqA02ZUjqDuZFo07s",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "",
+"id": 340,
+"country_code": 1,
+"name": "Tester",
+"is_phone_number_verified": false,
+"email": "kishor+expert230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "470815"
+}
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "096582"
+}
+}
+API RESPONSES+
+========
+Mobile no verify
+========
+{
+"results": {
+"detail": {
+"metadata": {
+"code": 2073,
+"message": "Your Phone has been Verified."
+}
+}
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1074,
+"message": "This number is not valid mobile number."
+}
+]
+}
+}
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+user229@atlogys.com",
+"verification_code": "a92da3b6-fe2a-4827-8445-cb003f3c8915"
+}
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+"metadata": {
+"code": 2042,
+"message": "We have resent your email verification instructions."
+},
+"results": {
+"email": "kishor+user229@atlogys.com",
+"verification_code": "a92da3b6-fe2a-4827-8445-cb003f3c8915"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQyLCJ0aW1lc3RhbXAiOjE0OTE5MTA1ODIuNDA3OTgyfQ:1cxu5u:YdpReUiPuGy99L5y65KQeomSjV4",
+"is_profile_complete": false,
+"display_name": "",
+"phone_number": "",
+"id": 342,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+user229@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+"metadata": {
+"code": 2021,
+"message": "You have successfully changed your password."
+}
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+"errors": {
+"password": [
+{
+"code": 1000,
+"message": "This password is too short. It must contain at least 8 characters."
+}
+]
+}
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+"metadata": {
+"code": 2032,
+"message": "Your password has been successfully reset."
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQyLCJ0aW1lc3RhbXAiOjE0OTE5MTA1ODcuODE4MzA1fQ:1cxu5z:iThAMKxNDTZlPE1vLZ_7zeySVuE",
+"is_profile_complete": false,
+"display_name": "",
+"phone_number": "",
+"id": 342,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+user229@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "251679"
+}
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "973056"
+}
+}
+API RESPONSES+
+========
+Mobile no verify
+========
+{
+"results": {
+"detail": {
+"metadata": {
+"code": 2073,
+"message": "Your Phone has been Verified."
+}
+}
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1074,
+"message": "This number is not valid mobile number."
+}
+]
+}
+}
+API RESPONSES+
+========
+Upload Media
+========
+{
+"errors": {
+"non_field_errors": [
+{
+"code": 1074,
+"message": "This number is not valid mobile number."
+}
+]
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQxLCJ0aW1lc3RhbXAiOjE0OTE5MTA2NDkuNjAzODAyfQ:1cxu6z:ABVlBySmzYlwXhDJJerdvAKjLTI",
+"is_profile_complete": false,
+"display_name": "",
+"phone_number": "",
+"id": 341,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+user230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": "https://experchatqa.s3.amazonaws.com/d4904fea39fa3942d3e9c0b3eb23453c67e14390.png",
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQwLCJ0aW1lc3RhbXAiOjE0OTE5MTA2NTAuOTI0Mzh9:1cxu70:dx9c0dHQZuhE_rGcJQp0zFSNARc",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "8447053658",
+"id": 340,
+"country_code": 91,
+"name": "Tester",
+"is_phone_number_verified": true,
+"email": "kishor+expert230@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Payment Account
+========
+{
+"results": {
+"id": 83,
+"account_number": "X4784",
+"created_timestamp": "2017-04-11T11:37:31.750071Z",
+"modified_timestamp": "2017-04-11T11:37:31.750115Z",
+"account_name": "PayPal",
+"routing_number": "123456789"
+}
+}
+API RESPONSES+
+========
+Payment Account
+========
+{
+"errors": {
+"account_number": [
+{
+"code": 1061,
+"message": "Account Number should be numeric."
+}
+],
+"routing_number": [
+{
+"code": 1062,
+"message": "Routing Number should be numeric."
+}
+]
+}
+}
+API RESPONSES+
+========
+Payment Account
+========
+{
+"errors": {
+"routing_number": [
+{
+"code": 1063,
+"message": "Routing Number should be of 9 digit."
+}
+]
+}
+}
+API RESPONSES+
+========
+Registration
+========
+{
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+},
+"results": {
+"email": "kishor+expert241@atlogys.com",
+"verification_code": "828fcad6-4c16-4379-ad7a-b578a83b4ae2"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"toc_and_privacy_policy_accepted": false,
+"profile_photo": null,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MzQzLCJ0aW1lc3RhbXAiOjE0OTE5MTA2NTYuMTg1MTc3fQ:1cxu76:IQBbDDpnowi523b7OJH0nPXgumk",
+"is_profile_complete": false,
+"display_name": null,
+"phone_number": "",
+"id": 343,
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"email": "kishor+expert241@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+"errors": {
+"detail": "JSON parse error - Expecting property name enclosed in double quotes: line 1 column 50 (char 49)"
+}
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+"results": {
+"image_url": "https://experchatqa.s3.amazonaws.com/2b9aef50b0ba0213ff74ef9b704f4b2676c0ba84.png"
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"id": 187,
+"message": "Successfull"
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "172048"
+}
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "280175"
+}
+}
+API RESPONSES+
+========
+Mobile no verify
+========
+{
+"results": {
+"detail": {
+"metadata": {
+"code": 2073,
+"message": "Your Phone has been Verified."
+}
+}
+}
+}

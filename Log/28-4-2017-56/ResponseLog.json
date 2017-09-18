@@ -1,0 +1,312 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+30expert@atlogys.com",
+        "verification_code": "cc3618e8-0842-4e8e-ad61-e54906792599"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+30expert@atlogys.com",
+        "verification_code": "cc3618e8-0842-4e8e-ad61-e54906792599"
+    },
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+30expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjoyNywidGltZXN0YW1wIjoxNDkzMzc2MzA0LjAyNTc3MywiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43Oa:raRFF8MMDaRriBTNRO7K0HWB6Jk",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 27,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "message": "You have successfully changed your password.",
+        "code": 2021
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "message": "Your password has been successfully reset.",
+        "code": 2032
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+30user@atlogys.com",
+        "verification_code": "1efe9d5b-f174-48e6-b357-fdf97c46f782"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+30expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjoyNywidGltZXN0YW1wIjoxNDkzMzc2MzEwLjAxOTMwMywiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43Og:_zAgiuH79akRihMF2yfcZLOKUa0",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 27,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "results": {
+        "id": 27,
+        "name": "",
+        "email": "kishor+30expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": null,
+        "expert_uid": null,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+    "errors": {
+        "display_name": [
+            {
+                "message": "Display name already taken.",
+                "code": 1096
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+    "results": {
+        "image_url": "http://api.ci.experchat.com/media/65cc34b88aa6733a74c552fa110b7402374089ac.png"
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 20,
+        "tags": [
+            2,
+            3,
+            1,
+            4
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 27,
+            "display_name": null,
+            "profile_photo": "http://api.ci.experchat.com/media/65cc34b88aa6733a74c552fa110b7402374089ac.png",
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 20,
+        "tags": [
+            2,
+            3,
+            1,
+            4
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 27,
+            "display_name": null,
+            "profile_photo": "http://api.ci.experchat.com/media/65cc34b88aa6733a74c552fa110b7402374089ac.png",
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 6,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 6,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 6,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 6,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}

@@ -1,0 +1,105 @@
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 3,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_3",
+                "device_ch_3"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:30:22.278162Z",
+        "modified_timestamp": "2017-05-16T12:30:22.278199Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 4,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_4"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:30:24.153391Z",
+        "modified_timestamp": "2017-05-16T12:30:24.153432Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "errors": {
+        "detail": "JSON parse error - Expecting value: line 1 column 1 (char 0)"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 11,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_3",
+                "device_ch_11"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:40:24.326630Z",
+        "modified_timestamp": "2017-05-16T12:40:24.326678Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 12,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_12"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:40:25.885130Z",
+        "modified_timestamp": "2017-05-16T12:40:25.885166Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

@@ -1,0 +1,64 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+24expert@atlogys.com",
+        "verification_code": "7cfdd1c5-8252-4863-9673-b6b5ba14471f"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "This email address is currently not registered.",
+                "code": 1032
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}

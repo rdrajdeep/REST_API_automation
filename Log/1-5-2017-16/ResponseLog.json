@@ -1,0 +1,50 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "code": 1001,
+                "message": "This email address is already tied to an existing account."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}

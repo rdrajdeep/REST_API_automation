@@ -1,0 +1,126 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_phone_number_verified": false,
+        "id": 51,
+        "email": "kishor+expert26@atlogys.com",
+        "name": "",
+        "is_profile_complete": false,
+        "country_code": 1,
+        "display_name": null,
+        "token": "eyJpcF9hZGRyZXNzIjoiMTIyLjE3Ny4xMTMuMjUzIiwidGltZXN0YW1wIjoxNDkyMDI3NjUwLjE3OTYzNywidXNlcl9pZCI6NTF9:1cyOY6:wmqrDvSnHkIaH-0kRLrCXga1ZXs",
+        "phone_number": "",
+        "is_superuser": false
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 32,
+        "tags": [
+            4,
+            1,
+            3,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 51,
+            "display_name": null,
+            "profile_photo": null,
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 17,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}

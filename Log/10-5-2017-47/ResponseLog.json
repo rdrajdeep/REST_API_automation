@@ -1,0 +1,14 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "message": "This email address is already tied to an existing account.",
+                "code": 1001
+            }
+        ]
+    }
+}

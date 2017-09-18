@@ -1,0 +1,1479 @@
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 5,
+        "title": "Experchatesting",
+        "start_time": "08:00:00",
+        "end_time": "11:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "metadata": {
+        "expert_id": "4"
+    },
+    "results": [
+        {
+            "10": {
+                "2017-05-18": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-29": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-28": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-19": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-25": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-22": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-26": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-17": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-21": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-27": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-24": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ],
+                "2017-05-20": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "02:50"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:10"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "03:50"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:10"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "04:50"
+                    },
+                    {
+                        "start_time": "05:00"
+                    },
+                    {
+                        "start_time": "05:10"
+                    },
+                    {
+                        "start_time": "05:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-18": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-29": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-28": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-19": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-25": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-22": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-26": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-17": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-21": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-27": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-24": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-20": [
+                    {
+                        "start_time": "02:40"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:20"
+                    },
+                    {
+                        "start_time": "03:40"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:20"
+                    },
+                    {
+                        "start_time": "04:40"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-18": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-29": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-28": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-19": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-25": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-22": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-26": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-17": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-21": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-27": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-24": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ],
+                "2017-05-20": [
+                    {
+                        "start_time": "02:30"
+                    },
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "03:30"
+                    },
+                    {
+                        "start_time": "04:00"
+                    },
+                    {
+                        "start_time": "04:30"
+                    },
+                    {
+                        "start_time": "05:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-18": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-23": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-29": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-28": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-19": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-25": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-22": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-26": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-17": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-21": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-27": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-24": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ],
+                "2017-05-20": [
+                    {
+                        "start_time": "03:00"
+                    },
+                    {
+                        "start_time": "04:00"
+                    }
+                ]
+            }
+        }
+    ]
+}

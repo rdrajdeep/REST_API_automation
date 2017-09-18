@@ -1,0 +1,76 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+49expert@atlogys.com",
+        "verification_code": "2bb4a9fd-6813-4b0a-9868-8369d25b2809"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "code": 1032,
+                "message": "This email address is currently not registered."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 10,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "user_ch_4",
+                "device_ch_10"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T11:37:18.800362Z",
+        "modified_timestamp": "2017-05-10T11:37:18.800418Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 11,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "expert_ch_3",
+                "device_ch_11"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T11:37:20.823630Z",
+        "modified_timestamp": "2017-05-10T11:37:20.823676Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

@@ -1,0 +1,70 @@
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 4,
+        "title": "Experchatesting",
+        "start_time": "08:00:00",
+        "end_time": "11:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 21,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "user_ch_3",
+                "device_ch_21"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:47:16.914250Z",
+        "modified_timestamp": "2017-05-16T12:47:16.914286Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 22,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "****",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_22"
+            ]
+        },
+        "created_timestamp": "2017-05-16T12:47:17.965814Z",
+        "modified_timestamp": "2017-05-16T12:47:17.965850Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

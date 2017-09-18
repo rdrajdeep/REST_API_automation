@@ -1,0 +1,170 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+48expert@atlogys.com",
+        "verification_code": "9c5a6cc8-f7e4-4c90-b3c0-7d7c9a5bbd4f"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+48expert@atlogys.com",
+        "verification_code": "9c5a6cc8-f7e4-4c90-b3c0-7d7c9a5bbd4f"
+    },
+    "metadata": {
+        "code": 2042,
+        "message": "We have resent your email verification instructions."
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 20,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoyMCwidGltZXN0YW1wIjoxNDk0NDExNTEyLjkwMzU5MSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d8OhU:0bBAQvJ4IETne-xspfs0s0JygZ0",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+48expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "code": 2021,
+        "message": "You have successfully changed your password."
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "code": 2032,
+        "message": "Your password has been successfully reset."
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+48user@atlogys.com",
+        "verification_code": "1bf60ec1-5be7-43a5-a251-dc3e58dc66a9"
+    },
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 20,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoyMCwidGltZXN0YW1wIjoxNDk0NDExNTE4LjUwMzI0LCJpcF9hZGRyZXNzIjoiMTIyLjE2MC4yNTMuMjEifQ:1d8Oha:SztYMqRodoDmm-IOkcbbAxNkg6g",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+48expert@atlogys.com",
+        "country_code": 1,
+        "display_name": null,
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 21,
+        "profile_photo": null,
+        "phone_number": "",
+        "token": "eyJ1c2VyX2lkIjoyMSwidGltZXN0YW1wIjoxNDk0NDExNTE5LjQ5ODg0NiwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d8Ohb:D4_IsP1iOc_7jqmtBAjNsAechoU",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "is_superuser": false,
+        "email": "kishor+48user@atlogys.com",
+        "country_code": 1,
+        "display_name": "",
+        "is_phone_number_verified": false,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 5,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "user_ch_21",
+                "device_ch_5"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T10:18:40.819342Z",
+        "modified_timestamp": "2017-05-10T10:18:40.819397Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 6,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "expert_ch_20",
+                "device_ch_6"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T10:18:41.691026Z",
+        "modified_timestamp": "2017-05-10T10:18:41.691060Z",
+        "device_name": "Expert device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

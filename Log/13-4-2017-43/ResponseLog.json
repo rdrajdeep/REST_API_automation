@@ -1,0 +1,34 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+expert66@atlogys.com",
+        "verification_code": "96787822-9d94-46cf-b182-e0588507e8f8"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 76,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false,
+        "phone_number": "",
+        "name": "",
+        "display_name": null,
+        "is_superuser": false,
+        "country_code": 1,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidGltZXN0YW1wIjoxNDkyMDg0NDI5LjYxMTYyMywidXNlcl9pZCI6NzZ9:1cydJt:RBGXcbvKVAAAR7KVI9xUQ0xKDb4",
+        "email": "kishor+expert66@atlogys.com",
+        "profile_photo": null,
+        "is_phone_number_verified": false
+    }
+}

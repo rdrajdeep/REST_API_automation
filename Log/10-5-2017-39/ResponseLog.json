@@ -1,0 +1,24 @@
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 3,
+        "device_type": "ios",
+        "publisher": {
+            "channels": [
+                "user_ch_4",
+                "device_ch_3"
+            ],
+            "subscribe_key": "****"
+        },
+        "created_timestamp": "2017-05-10T11:24:42.506010Z",
+        "modified_timestamp": "2017-05-10T11:24:42.506046Z",
+        "device_name": "USer device",
+        "device_sub_type": "sas",
+        "device_id": "sas",
+        "device_token": "sas",
+        "device_os": "sas"
+    }
+}

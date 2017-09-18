@@ -1,0 +1,140 @@
+API RESPONSES+
+========
+Registration
+========
+{
+"results": {
+"email": "kishor+expert121@atlogys.com",
+"verification_code": "61200f75-09a8-4900-81a8-96158d398ace"
+},
+"metadata": {
+"code": 2001,
+"message": "You have successfully registered!"
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"is_superuser": false,
+"token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6MjIxLCJ0aW1lc3RhbXAiOjE0OTA4ODI3ODQuMzA2MTYxfQ:1ctaiW:iUXBUx7OdZsXq2pv9ZzebOt_7_o",
+"is_profile_complete": false,
+"toc_and_privacy_policy_accepted": false,
+"is_phone_number_verified": false,
+"profile_photo": null,
+"phone_number": "",
+"email": "kishor+expert121@atlogys.com",
+"country_code": 1,
+"display_name": null,
+"id": 221,
+"name": ""
+}
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+"results": {
+"name": "Sarma Kishor",
+"email": "kishor+expert121@atlogys.com",
+"country_code": 1,
+"phone_number": "",
+"is_phone_number_verified": false,
+"profile_photo": null,
+"display_name": "Sarma K",
+"expert_uid": "SKJ2K",
+"toc_and_privacy_policy_accepted": true
+}
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+"results": {
+"image_url": "https://experchatqa.s3.amazonaws.com/c77a571bc2b293b5af925e77b2edc6dbd9f7df59.png"
+}
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+"results": {
+"id": 172,
+"tags": [
+1,
+2,
+3,
+4
+],
+"medias": [
+],
+"expert": {
+"id": 136,
+"display_name": "Sarma K",
+"profile_photo": "https://experchatqa.s3.amazonaws.com/c77a571bc2b293b5af925e77b2edc6dbd9f7df59.png",
+"expert_uid": "SKJ2K",
+"avg_rating": "0.00",
+"num_rating": 0
+},
+"headline": "Java-8 Lambda",
+"summary": "Java Expert",
+"my_experience": "In test automation",
+"year_of_experience": 3,
+"educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"id": 156,
+"message": "Successfull"
+}
+}
+API RESPONSES+
+========
+Phone code sent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "896502"
+}
+}
+API RESPONSES+
+========
+Phone code resent
+========
+{
+"results": {
+"metadata": {
+"code": 2072,
+"message": "OTP has been sent again for Phone Verification."
+},
+"verification_code": "792148"
+}
+}
+API RESPONSES+
+========
+Mobile no verify
+========
+{
+"results": {
+"detail": {
+"metadata": {
+"code": 2073,
+"message": "Your Phone has been Verified."
+}
+}
+}
+}

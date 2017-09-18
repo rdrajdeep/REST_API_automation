@@ -1,0 +1,553 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "metadata": {
+        "code": 2001,
+        "message": "You have successfully registered!"
+    },
+    "results": {
+        "email": "kishor+user31@atlogys.com",
+        "verification_code": "bc1953a8-d7ee-40b8-a610-001bf3e313c9"
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "id": 42,
+        "phone_number": "",
+        "profile_photo": null,
+        "country_code": 1,
+        "email": "kishor+user31@atlogys.com",
+        "is_profile_complete": false,
+        "toc_and_privacy_policy_accepted": false,
+        "display_name": "",
+        "name": "",
+        "is_superuser": false,
+        "token": "eyJ1c2VyX2lkIjo0MiwidGltZXN0YW1wIjoxNDkxOTk1MTAwLjk3NzY2OCwiaXBfYWRkcmVzcyI6IjYxLjI0Ni40Ny45MyJ9:1cyG56:_hzk55mAMj0jHsMiLwhbHSOPBuo",
+        "is_phone_number_verified": false
+    }
+}
+API RESPONSES+
+========
+Search by FreeText
+========
+<html>
+  <head>
+    <title>404 Not Found</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="//img3.wsimg.com/dps/css/uxcore.css" rel="stylesheet"/>
+    <link href="//img3.wsimg.com/dps/css/customer-comp.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="error-img">
+      <img src="//img3.wsimg.com/dps/images/404_background.jpg"/>
+    </div>
+    <div class="container text-center" id="error">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-icon text-warning">
+            <span class="uxicon uxicon-alert"/>
+          </div>
+          <h1>File not found (404 error)</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-push-3">
+          <p class="lead">If you think what you're looking for should be here, please contact the site owner.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+API RESPONSES+
+========
+Search by TagId
+========
+<html>
+  <head>
+    <title>404 Not Found</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="//img3.wsimg.com/dps/css/uxcore.css" rel="stylesheet"/>
+    <link href="//img3.wsimg.com/dps/css/customer-comp.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="error-img">
+      <img src="//img3.wsimg.com/dps/images/404_background.jpg"/>
+    </div>
+    <div class="container text-center" id="error">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-icon text-warning">
+            <span class="uxicon uxicon-alert"/>
+          </div>
+          <h1>File not found (404 error)</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-push-3">
+          <p class="lead">If you think what you're looking for should be here, please contact the site owner.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+API RESPONSES+
+========
+Search by ExpertId
+========
+<html>
+  <head>
+    <title>404 Not Found</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="//img3.wsimg.com/dps/css/uxcore.css" rel="stylesheet"/>
+    <link href="//img3.wsimg.com/dps/css/customer-comp.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="error-img">
+      <img src="//img3.wsimg.com/dps/images/404_background.jpg"/>
+    </div>
+    <div class="container text-center" id="error">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-icon text-warning">
+            <span class="uxicon uxicon-alert"/>
+          </div>
+          <h1>File not found (404 error)</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-push-3">
+          <p class="lead">If you think what you're looking for should be here, please contact the site owner.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "code": 1012,
+                "message": "Incorrect email or password provided.  Please check your information and try again."
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Create a super admin content
+========
+{
+    "errors": {
+        "detail": "Only superusers are allowed."
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Upload Media
+========
+{
+    "metadata": {
+        "count": 26,
+        "next": "http://api.qa.experchat.com/v1/user/expertprofiles/?page=2",
+        "previous": null
+    },
+    "results": [
+        {
+            "id": 1,
+            "expert": {
+                "id": 1,
+                "display_name": "ॐ   ॐ   ॐ",
+                "profile_photo": "https://experchatqa.s3.amazonaws.com/6296e2996a93c5ec8455dba7110d4f40ffefea65.png",
+                "expert_uid": "AM7VI",
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "Hair Stylist",
+            "calendars": [
+                "2017-04-12T11:30:00",
+                "2017-04-12T12:00:00",
+                "2017-04-12T12:30:00",
+                "2017-04-12T13:00:00",
+                "2017-04-13T02:30:00",
+                "2017-04-13T03:00:00",
+                "2017-04-13T03:30:00",
+                "2017-04-13T04:00:00",
+                "2017-04-13T04:30:00",
+                "2017-04-13T05:00:00",
+                "2017-04-13T06:30:00",
+                "2017-04-13T07:00:00",
+                "2017-04-13T07:30:00",
+                "2017-04-13T08:00:00",
+                "2017-04-13T11:30:00",
+                "2017-04-13T12:00:00",
+                "2017-04-13T12:30:00",
+                "2017-04-13T13:00:00",
+                "2017-04-13T13:30:00",
+                "2017-04-13T14:00:00"
+            ]
+        },
+        {
+            "id": 2,
+            "expert": {
+                "id": 4,
+                "display_name": null,
+                "profile_photo": "https://experchatqa.s3.amazonaws.com/bf135b0f8f0afe954495b2c5e6ecf41aec9812ba.png",
+                "expert_uid": null,
+                "avg_rating": "3.54",
+                "num_rating": 15
+            },
+            "headline": "Kishor",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 3,
+            "expert": {
+                "id": 8,
+                "display_name": null,
+                "profile_photo": "https://experchatqa.s3.amazonaws.com/e603d2fb9549d564ec51add1fc8222ce86b53b13.png",
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 4,
+            "expert": {
+                "id": 9,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 5,
+            "expert": {
+                "id": 12,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 6,
+            "expert": {
+                "id": 14,
+                "display_name": "akshat.sharma",
+                "profile_photo": "https://experchatqa.s3.amazonaws.com/a62cfdd01942b16f49c0cf83f8ba2ff1cd4654a6.png",
+                "expert_uid": "AS7VI",
+                "avg_rating": "3.67",
+                "num_rating": 3
+            },
+            "headline": "Fashionistaaaaaaa",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 7,
+            "expert": {
+                "id": 15,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 8,
+            "expert": {
+                "id": 16,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 9,
+            "expert": {
+                "id": 17,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 10,
+            "expert": {
+                "id": 18,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                "2017-04-12T10:00:00",
+                "2017-04-12T10:30:00",
+                "2017-04-12T11:00:00"
+            ]
+        },
+        {
+            "id": 11,
+            "expert": {
+                "id": 20,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 12,
+            "expert": {
+                "id": 21,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 13,
+            "expert": {
+                "id": 22,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 14,
+            "expert": {
+                "id": 23,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 15,
+            "expert": {
+                "id": 24,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 16,
+            "expert": {
+                "id": 25,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 17,
+            "expert": {
+                "id": 26,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 18,
+            "expert": {
+                "id": 27,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 19,
+            "expert": {
+                "id": 28,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        },
+        {
+            "id": 20,
+            "expert": {
+                "id": 29,
+                "display_name": null,
+                "profile_photo": null,
+                "expert_uid": null,
+                "avg_rating": "0.00",
+                "num_rating": 0
+            },
+            "headline": "",
+            "calendars": [
+                
+            ]
+        }
+    ]
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Only Experts are allowed."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Only Experts are allowed."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Only Experts are allowed."
+    }
+}

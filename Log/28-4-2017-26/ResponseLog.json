@@ -1,0 +1,679 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+25expert@atlogys.com",
+        "verification_code": "dd105696-b81a-4226-b394-207c62d35f2c"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+25expert@atlogys.com",
+        "verification_code": "dd105696-b81a-4226-b394-207c62d35f2c"
+    },
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+28expert@atlogys.com",
+        "verification_code": "1a30b787-700f-4aa6-896f-ea70c8405949"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Resend Email Verification
+========
+{
+    "results": {
+        "email": "kishor+28expert@atlogys.com",
+        "verification_code": "1a30b787-700f-4aa6-896f-ea70c8405949"
+    },
+    "metadata": {
+        "message": "We have resent your email verification instructions.",
+        "code": 2042
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+28expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjoyMywidGltZXN0YW1wIjoxNDkzMzc1ODU0LjE1MjkxOSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43HK:ldzqU8_7VazTj79ff8XHmse7bbU",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 23,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+Change Password
+========
+{
+    "metadata": {
+        "message": "You have successfully changed your password.",
+        "code": 2021
+    }
+}
+API RESPONSES+
+========
+Reset Password
+========
+{
+    "metadata": {
+        "message": "Your password has been successfully reset.",
+        "code": 2032
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Incorrect email or password provided.  Please check your information and try again.",
+                "code": 1012
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Registration
+========
+{
+    "results": {
+        "email": "kishor+28user@atlogys.com",
+        "verification_code": "ba72c783-9322-48a3-ac4d-094b6694d238"
+    },
+    "metadata": {
+        "message": "You have successfully registered!",
+        "code": 2001
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "country_code": 1,
+        "phone_number": "",
+        "display_name": null,
+        "is_profile_complete": false,
+        "email": "kishor+28expert@atlogys.com",
+        "token": "eyJ1c2VyX2lkIjoyMywidGltZXN0YW1wIjoxNDkzMzc1ODYwLjQxMzY5MSwiaXBfYWRkcmVzcyI6IjEyMi4xNjAuMjUzLjIxIn0:1d43HQ:JdVDOhUFShIo6w1Tc-DudcYChwg",
+        "is_phone_number_verified": false,
+        "toc_and_privacy_policy_accepted": false,
+        "profile_photo": null,
+        "is_superuser": false,
+        "id": 23,
+        "name": ""
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "results": {
+        "id": 23,
+        "name": "",
+        "email": "kishor+28expert@atlogys.com",
+        "country_code": 1,
+        "phone_number": "",
+        "is_phone_number_verified": false,
+        "profile_photo": null,
+        "display_name": null,
+        "expert_uid": null,
+        "toc_and_privacy_policy_accepted": false,
+        "is_profile_complete": false
+    }
+}
+API RESPONSES+
+========
+Add name to basic info
+========
+{
+    "errors": {
+        "display_name": [
+            {
+                "message": "Display name already taken.",
+                "code": 1096
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Me-Photo
+========
+{
+    "results": {
+        "image_url": "http://api.ci.experchat.com/media/35eff1c58793cf6655eb2a03b52472ba40c4205b.png"
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Expert profile
+========
+{
+    "errors": {
+        "non_field_errors": [
+            {
+                "message": "Maximum allowed profiles has already been created.",
+                "code": 1093
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 18,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 23,
+            "display_name": null,
+            "profile_photo": "http://api.ci.experchat.com/media/35eff1c58793cf6655eb2a03b52472ba40c4205b.png",
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Update Expert Profile
+========
+{
+    "results": {
+        "id": 18,
+        "tags": [
+            3,
+            1,
+            4,
+            2
+        ],
+        "medias": [
+            
+        ],
+        "expert": {
+            "id": 23,
+            "display_name": null,
+            "profile_photo": "http://api.ci.experchat.com/media/35eff1c58793cf6655eb2a03b52472ba40c4205b.png",
+            "expert_uid": null,
+            "avg_rating": "0.00",
+            "num_rating": 0
+        },
+        "headline": "Java-8 Lambda",
+        "summary": "Java Expert",
+        "my_experience": "In test automation",
+        "year_of_experience": 3,
+        "educational_background": "Bachelor of Technology (Computer Science and Information Engineering)"
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 4,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 4,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            3
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 4,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+Get CAlender
+========
+{
+    "results": {
+        "id": 4,
+        "title": "a test",
+        "start_time": "02:00:00",
+        "end_time": "04:00:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            2
+        ]
+    }
+}
+API RESPONSES+
+========
+GET Avilable slots
+========
+{
+    "results": [
+        {
+            "10": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "20:50"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:10"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "21:50"
+                    },
+                    {
+                        "start_time": "22:00"
+                    },
+                    {
+                        "start_time": "22:10"
+                    },
+                    {
+                        "start_time": "22:20"
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:40"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:20"
+                    },
+                    {
+                        "start_time": "21:40"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "2017-05-08": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "20:30"
+                    },
+                    {
+                        "start_time": "21:00"
+                    },
+                    {
+                        "start_time": "21:30"
+                    },
+                    {
+                        "start_time": "22:00"
+                    }
+                ]
+            }
+        },
+        {
+            "60": {
+                "2017-05-08": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ],
+                "2017-05-01": [
+                    {
+                        "start_time": "21:00"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "expert_id": "23"
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 8
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+    "results": {
+        "message": "Successfull",
+        "id": 9
+    }
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+    "metadata": {
+        "count": 2,
+        "next": null,
+        "previous": null
+    },
+    "results": [
+        {
+            "id": 8,
+            "created_timestamp": "2017-04-28T10:37:53.066741Z",
+            "modified_timestamp": "2017-04-28T10:37:53.066785Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "https://staff.tumblr.com/rss/",
+            "display_name": "Tumblr Staff",
+            "is_deleted": false,
+            "account": 8
+        },
+        {
+            "id": 9,
+            "created_timestamp": "2017-04-28T10:37:53.999369Z",
+            "modified_timestamp": "2017-04-28T10:37:53.999403Z",
+            "feed_type": 4,
+            "feed_sub_type": 4,
+            "detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+            "display_name": "NDTV News  - World-news",
+            "is_deleted": false,
+            "account": 9
+        }
+    ]
+}
+API RESPONSES+
+========
+My Info Load
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Get Social Link
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>

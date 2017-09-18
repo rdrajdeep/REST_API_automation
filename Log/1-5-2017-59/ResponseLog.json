@@ -1,0 +1,71 @@
+API RESPONSES+
+========
+Registration
+========
+{
+    "errors": {
+        "email": [
+            {
+                "message": "This email address is already tied to an existing account.",
+                "code": 1001
+            }
+        ]
+    }
+}
+API RESPONSES+
+========
+My Info Load
+========
+{
+    "errors": {
+        "detail": "Invalid token."
+    }
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Add RSS feed
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>
+API RESPONSES+
+========
+Get Social Link
+========
+<html>
+  <head>
+    <title>502 Bad Gateway</title>
+  </head>
+  <body bgcolor="white">
+    <center>
+      <h1>502 Bad Gateway</h1>
+    </center>
+    <hr/>
+    <center>nginx/1.10.0 (Ubuntu)</center>
+  </body>
+</html>

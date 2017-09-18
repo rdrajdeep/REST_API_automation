@@ -1,0 +1,89 @@
+API RESPONSES+
+========
+Registration
+========
+{
+"results": {
+"email": "kishor+expert257@atlogys.com",
+"verification_code": "024ac8d0-858e-4a07-8081-4c6571e5654c"
+},
+"metadata": {
+"message": "You have successfully registered!",
+"code": 2001
+}
+}
+API RESPONSES+
+========
+Login API
+========
+{
+"results": {
+"display_name": null,
+"phone_number": "",
+"toc_and_privacy_policy_accepted": false,
+"id": 348,
+"profile_photo": null,
+"is_superuser": false,
+"token": "eyJ1c2VyX2lkIjozNDgsImlwX2FkZHJlc3MiOiI2MS4yNDYuNDcuOTMiLCJ0aW1lc3RhbXAiOjE0OTE5MTc3MjQuMDkwNDA3fQ:1cxvx6:Z8ACZYClFhlc-zEu47EnseGHXnI",
+"country_code": 1,
+"name": "",
+"is_phone_number_verified": false,
+"is_profile_complete": false,
+"email": "kishor+expert257@atlogys.com"
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"message": "Successfull",
+"id": 192
+}
+}
+API RESPONSES+
+========
+Add RSS feed
+========
+{
+"results": {
+"message": "Successfull",
+"id": 193
+}
+}
+API RESPONSES+
+========
+Get Social Link
+========
+{
+"metadata": {
+"count": 2,
+"next": null,
+"previous": null
+},
+"results": [
+{
+"id": 192,
+"created_timestamp": "2017-04-11T13:35:25.845214Z",
+"modified_timestamp": "2017-04-11T13:35:25.845249Z",
+"feed_type": 4,
+"feed_sub_type": 4,
+"detail": "https://staff.tumblr.com/rss/",
+"display_name": "Tumblr Staff",
+"is_deleted": false,
+"account": 190
+},
+{
+"id": 193,
+"created_timestamp": "2017-04-11T13:35:26.829883Z",
+"modified_timestamp": "2017-04-11T13:35:26.829917Z",
+"feed_type": 4,
+"feed_sub_type": 4,
+"detail": "http://feeds.feedburner.com/ndtvnews-world-news",
+"display_name": "NDTV News  - World-news",
+"is_deleted": false,
+"account": 191
+}
+]
+}
