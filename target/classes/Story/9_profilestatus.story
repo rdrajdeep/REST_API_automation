@@ -8,7 +8,9 @@ So that I can achieve a business goal
 Scenario: scenario description
 
 Given a complete profile status check flow
+
 Given an expert
+
 When register with {"email":"kishor+expert53@atlogys.com","password":"testing123"} as expert2
 
 Then Verify Email
@@ -19,11 +21,12 @@ Then check profile completness
 
 Then add name as {"name": "Sarma Kishor"}
 
-Then add profile photo as C:\Users\Kishor\Desktop\4.jpg
+Then add profile photo as testData/4.jpg
 
 Then check profile completness
 
-Then Create a new Profile as
+
+Then update information on expert profile as
 {
     "tags": [
        1,2,3,4
@@ -39,6 +42,15 @@ Then Create a new Profile as
 Then check profile completness
 
 Then add {"url": "http://feeds.feedburner.com/ndtvnews-world-news"} as RSS Feed
+
+Then check profile completness
+
+Then create a payment account as {
+                                    "account_number": "54784",
+                                    "routing_number": "123456789",
+                                    "account_name": "PayPal"
+                                  }
+
 
 Then check profile completness
 

@@ -91,6 +91,34 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
         }
         response.printResponse ( );
     }
+/*
+* Overloaded method for superuser /expert /user login
+* * */
+
+    public void doLogIn ( String json, String userType ){
+
+        if ( userType.equals("superUser") ) {
+
+            response.setResponse ( this.post ( json, ExpertChatEndPoints.SUPER_ADMIN_LOGIN ) );//Send super user endpoint
+
+            SessionManagement.session ( ).setExpertToken (
+                    jsonParser.getJsonData ( "results.token", ResponseDataType.STRING )
+            );
+
+            baseID = jsonParser.getJsonData ( "results.id", ResponseDataType.INT );
+            getMap ( ).put ( "expert_baseId", baseID);
+
+        }else{
+            System.out.println("Unable to login with the user");
+        }
+
+        if ( response.statusCode ( ) == HTTPCode.HTTP_BAD ) {
+
+            LOGIN_ERROR = true;
+            return;
+        }
+        response.printResponse ( );
+    }
 
     public String getBaseID ( ) {
 

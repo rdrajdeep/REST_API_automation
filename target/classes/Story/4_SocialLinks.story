@@ -39,8 +39,14 @@ Then get all contents
 
 Then get a particular content
 
-Then delete that content
+Given an user
+Then like the content published
+Then dislike the content published
+Then favorite the content published
+Then remove bookmark from the content published
 
+Given an expert
+Then delete that content
 Then ignore a content
 
 Then Ignore the same content again

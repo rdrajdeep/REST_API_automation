@@ -7,6 +7,8 @@ So that I can achieve a business goal
 
 Scenario: scenario description
 
+Given an expert
+
 Given a complete phone no verify flow
 
 When we provide phone number as {

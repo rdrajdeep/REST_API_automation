@@ -82,6 +82,7 @@ public interface ExpertChatEndPoints {
     /*SUPER ADMIN ENDPOINTS*/
 
     String SUPER_ADMIN_CONTENTS = "user/super-admin-contents/";
+    String SUPER_ADMIN_LOGIN = "api-auth/login/";
 
     /*Expert Payment Account*/
     String EXPERT_ACCOUNT = "expert/expert-accounts/";

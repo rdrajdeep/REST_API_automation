@@ -1,6 +1,16 @@
 #org.jbehave.core.embedder.StoryManager
-#Wed May 17 11:27:51 IST 2017
-Story/5_calling.story=5000
+#Mon Sep 18 18:57:03 IST 2017
+Story/3_ExpertProfile.story=0
+Story/5_calling.story=0
+Story/0_BasicFlow.story=0
+Story/6_PhoneVerification.story=0
+Story/2_BasicProfileLoad.story=0
+Story/8_paymentInfo.story=0
+Story/7_UserMedia.story=0
+total=51000
+Story/10_actiononcontent.story=0
+threadAverage=51000
+Story/4_SocialLinks.story=0
 threads=1
-total=5000
-threadAverage=5000
+Story/11_CreatePromoCode.story=51000
+Story/9_profilestatus.story=0

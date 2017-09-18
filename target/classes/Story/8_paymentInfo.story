@@ -6,14 +6,17 @@ I want to perform an action
 So that I can achieve a business goal
 
 Scenario: scenario description
+
 Given an expert
+
 Then create a payment account as {
                                     "account_number": "54784",
                                     "routing_number": "123456789",
                                     "account_name": "PayPal"
                                   }
 
-Given a negative scenario
+
+Given negative scenario
 
 When create a payment account as {
                                      "account_number": "retrtrt",
@@ -24,7 +27,7 @@ When create a payment account as {
 Then check error code 1061
 
 
-Given a negative scenario
+Given negative scenario
 
 When create a payment account as {
                                      "account_number": "6788",
