@@ -4,6 +4,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import expertchat.apioperation.AbstractApiFactory;
 import expertchat.apioperation.apiresponse.ApiResponse;
 import expertchat.apioperation.session.SessionManagement;
+import expertchat.bussinesslogic.Calling;
 import expertchat.bussinesslogic.CreatePromoCode;
 import expertchat.bussinesslogic.ExpertChatApi;
 import expertchat.params.Credentials;
@@ -27,26 +28,36 @@ public class CreatePromoTC extends AbstractSteps {
     ExpertChatApi expertChatApi = new ExpertChatApi();
     Credentials credentials = Credentials.getCredentials();
     SessionManagement session;
-    private ApiResponse response = ApiResponse.getObject ( );
+    private ApiResponse response = ApiResponse.getObject ();
+    private Calling call= new Calling();
 
     @When("login with super user $json")
     public void superUserlogin(@Named("json") String json){
 
         expertChatApi.doLogIn(json,false);
-
         credentials.setuserCredential(json);
-        this.checkAndWriteToReport(response.statusCode(), "Logged in to super user by expert--" + json, parameter.isNegative ());
-
+        this.checkAndWriteToReport(response.statusCode(), "Logged in as Super User" + json, parameter.isNegative ());
 
     }
 
     /*
-    * @param = promocode in Json
+    * @param = All details of promocode as Json
     * */
     @Then("create promocode $promoCode")
     public void PromoCode(@Named("promoCode") String promoCode){
-        System.out.println("Check11");
 
         pcode.createPromoCode(promoCode);
+        this.checkAndWriteToReport(response.statusCode(), "New Promo code " + promoCode +"Created", parameter.isNegative ());
+
+    }
+
+    /*
+    * @Param promo code
+    * */
+    @Then("schedule a call with expert $expertId using promocode $promoCode")
+    public void scheduleCall(@Named("promoCode") String promoCode,
+                             @Named("expertId") int expertId){
+            call.scheduleSession();
+
     }
 }
