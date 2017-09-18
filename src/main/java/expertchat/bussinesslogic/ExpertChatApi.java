@@ -23,6 +23,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
     private ParseResponse jsonParser = new ParseResponse ( response );
     private String baseID;
 
+
     /**
      * @param json
      */
@@ -59,7 +60,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
 
     public void doLogIn ( String json, boolean isExpert ) {
 
-        System.out.println ( "SUPER USER" );
+        System.out.println ( "LOGIN" );
 
         if ( isExpert ) {
 
@@ -74,6 +75,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
 
         } else {
 
+            System.out.println("SUPER USER");
             response.setResponse ( this.post ( json, ExpertChatEndPoints.LOGIN_USER ) );
 
             SessionManagement.session ( ).setUserToken (
@@ -82,6 +84,8 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
 
             baseID = jsonParser.getJsonData ( "results.id", ResponseDataType.INT );
             getMap ( ).put ( "user_baseId", baseID);
+
+
         }
 
         if ( response.statusCode ( ) == HTTPCode.HTTP_BAD ) {
@@ -90,6 +94,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
             return;
         }
         response.printResponse ( );
+        return;
     }
 /*
 * Overloaded method for superuser /expert /user login

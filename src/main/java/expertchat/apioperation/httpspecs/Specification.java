@@ -17,7 +17,7 @@ public class Specification {
     public static RequestSpecification setupRequestSpecBuilder ( ) {
 
         builder = new RequestSpecBuilder ( );
-        builder.setBaseUri ( getValue ( "qawithport" ) );
+        builder.setBaseUri ( getValue ( "qa" ) );
         builder.setContentType ( ContentType.JSON );
         requestSpec = builder.build ( );
         return requestSpec;

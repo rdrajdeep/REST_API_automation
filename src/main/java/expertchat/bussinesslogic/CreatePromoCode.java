@@ -11,15 +11,15 @@ public class CreatePromoCode extends AbstractApiFactory implements ExpertChatEnd
 
     private ExpertChatApi expertChatApi= new ExpertChatApi();
     private ExpertProfile expertProfile = new ExpertProfile();
-    ApiResponse response;
+    private ApiResponse response = ApiResponse.getObject();
     SessionManagement session;
 
     public void createPromoCode(String json){
+         response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE, SessionManagement.session ( ).getUserToken(),true));
+         response.printResponse();
 
-        response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE));
-        if(response.statusCode()==204|| response.statusCode()==200){
+        if(response.statusCode()==204|| response.statusCode()==200)
             System.out.println("Promocode created");
-        }
 
 
     }
