@@ -144,24 +144,42 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
         return getStatusOfCall ( "results.status" ).equals ( CallStatus.DELAYED );
     }
 
+    private boolean isOK(){
+
+        if(response.statusCode()==HTTP_OK || response.statusCode()== HTTP_ACCEPTED){
+
+            return  true;
+        }
+        return false;
+    }
     /**
      *
      * @param json
      * @param isExpert
      */
+
     public void registerDevice ( String json, boolean isExpert ) {
 
-        if ( isExpert ) {
+        if (isExpert) {
 
-            response.setResponse (this.post ( json, REGISTER_DEVICE, session.getExpertToken ( ), true ) );
+            response.setResponse(this.post(json, REGISTER_DEVICE, session.getExpertToken(), true));
 
-            getMap ( ).put ( "ExpertDevice", parseResponse.getJsonData ( "results.id", ResponseDataType.INT ) );
+            if (isOK()) {
 
+                response.printResponse();
+
+                getMap().put("ExpertDevice", parseResponse.getJsonData("results.id", ResponseDataType.INT));
+            }
         } else {
 
-            response.setResponse (this.post ( json, REGISTER_DEVICE, session.getUserToken ( ), true ) );
+            response.setResponse(this.post(json, REGISTER_DEVICE, session.getUserToken(), true));
 
-            getMap ().put ( "UserDevice", parseResponse.getJsonData ("results.id", ResponseDataType.INT));
+            if (isOK()) {
+
+                response.printResponse();
+
+                getMap().put("UserDevice", parseResponse.getJsonData("results.id", ResponseDataType.INT));
+            }
         }
     }
 
@@ -204,20 +222,20 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
     /**
      * @param
      */
-    public void scheduleSession(){
+    public void scheduleSession( String timeSlot, String promo, int duration){
 
         String url=SESSION+"schedule/";
 
         String json="{\n" +
                 "  \"title\": \"a test call\",\n" +
                 "  \"details\": \"test\",\n" +
-                "  \"scheduled_datetime\":\"2017-05-30T02:40:00Z\",\n" +
+                "  \"scheduled_datetime\":\""+timeSlot+"\",\n" +
                 "  \"expert_profile\":"+getMap ().get ( "expertProfileId" )+",\n" +
                 "  \"expert\":"+getMap ().get ( "expertId" )+",\n" +
                 "  \"user_device\":"+getMap ().get ("UserDevice")+",\n" +
-                "  \"scheduled_duration\": 20,\n" +
+                "  \"scheduled_duration\":"+duration+",\n" +
                 "  \"card\":"+getMap ().get( "user_card_id")+",\n" +
-                "  \"promo_code\": \"\"\n" +
+                "  \"promo_code\":\""+promo+"\"\n" +
                 "  }";
 
         System.out.println ( "Schedule--->"+json );
@@ -378,5 +396,37 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
         response.printResponse ();
 
         return response.getResponse ().toString ();
+    }
+
+    public void getSessionDetails(String sessionId, boolean isExpert) {
+
+        if(isExpert) {
+
+            response.setResponse(this.get(SESSION+sessionId+"/", session.getExpertToken(), true));
+
+            if (isOK()) {
+
+                response.printResponse();
+
+                getMap().put("user_revenue", parseResponse.getJsonData("results.revenue", ResponseDataType.FLOAT));
+
+                getMap().put("expert_revenue", parseResponse.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
+            }
+        }else {
+
+            System.out.println(SESSION+sessionId);
+
+            response.setResponse(this.get(SESSION+sessionId+"/", session.getUserToken(), true));
+
+            if (isOK()) {
+
+                response.printResponse();
+
+                getMap().put("user_revenue", parseResponse.getJsonData("results.revenue", ResponseDataType.FLOAT));
+
+                getMap().put("expert_revenue", parseResponse.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
+
+            }
+        }
     }
 }

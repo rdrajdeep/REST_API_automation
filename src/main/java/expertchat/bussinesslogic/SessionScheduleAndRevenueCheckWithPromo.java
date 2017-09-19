@@ -7,17 +7,17 @@ import expertchat.apioperation.apiresponse.HTTPCode;
 import expertchat.apioperation.apiresponse.ParseResponse;
 import expertchat.apioperation.apiresponse.ResponseDataType;
 import expertchat.apioperation.session.SessionManagement;
+import static expertchat.usermap.TestUserMap.getMap;
 
 
-import javax.xml.ws.Response;
+public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
+        implements HTTPCode, ExpertChatEndPoints {
 
-public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, ExpertChatEndPoints {
-
-    private ExpertChatApi expertChatApi= new ExpertChatApi();
-    private ExpertProfile expertProfile = new ExpertProfile();
     private ApiResponse response = ApiResponse.getObject();
+
     private ParseResponse jsonParser = new ParseResponse ( response );
-    SessionManagement session;
+
+    SessionManagement session=SessionManagement.session();
 
     String expertSlots ;
 
@@ -33,11 +33,13 @@ public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, Exp
 
     }
 
-    public void searchExperts(String expertId, String datetime){
 
-        String url= "user/available-slots/"+expertId+"/";
+    public String getaSlot(){
 
-        response.setResponse(this.get(url, SessionManagement.session().getUserToken())); //,false, "Search Api"));
+        String url= SEARCH_BY_EXPERT_ID+ getMap().get("expertProfileId");
+        String slot=null;
+
+        response.setResponse(this.get(url, session.getUserToken())); //,false, "Search Api"));
 
         response.printResponse();
 
@@ -45,25 +47,13 @@ public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, Exp
 
         if (response.statusCode()==HTTP_ACCEPTED || response.statusCode()==HTTP_OK){
 
-            System.out.println("Printing search result");
-
-            expertSlots=jsonParser.getJsonData("results", ResponseDataType.STRING);
-            System.out.println(expertSlots);
+            slot=jsonParser.getJsonData("results.calendars[0]", ResponseDataType.STRING);
 
         }
-        if(expertSlots.contains(datetime)){
 
-            System.out.println("slots are available for call schedule");
-        }
-       // response.printResponse();
+     return slot;
 
     }
 
-    public void checkSlots(String reqSlot, String availableSlot){
-        String url="http://api.qa.experchat.com/v1/expert/available-slots/1/";
-        if (reqSlot==availableSlot){
-            //Schedule call in--> "http://connect.qa.experchat.com/v1/sessions/schedule/"
-        }
 
-    }
 }

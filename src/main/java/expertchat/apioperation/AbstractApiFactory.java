@@ -92,7 +92,7 @@ public class AbstractApiFactory implements ApiFactories {
                     .request ( )
                     .header ( header )
                     .spec ( Specification.setupRequestSpecBuilderWithPort ( ) )
-                    .put ( url );
+                    .get ( url );
         } else {
             throw new ExpertChatException ( "Please Use proper URL" );
         }

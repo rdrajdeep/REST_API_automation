@@ -167,10 +167,10 @@ public class CallingTC extends AbstractSteps{
 
         if(parameter.isNegative ()){
 
-            call.scheduleSession ( );
+          //  call.scheduleSession ( );
         }else {
 
-            call.scheduleSession ();
+           // call.scheduleSession ();
         }
 
         this.checkAndWriteToReport ( response.statusCode (), "Session scheduled", parameter.isNegative ());

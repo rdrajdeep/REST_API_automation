@@ -1,0 +1,86 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "display_name": null,
+        "phone_number": "8447053658",
+        "is_profile_complete": true,
+        "id": 4,
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/3f11e966e11291d8218f4587b05eb0e9790802b5.png",
+        "is_superuser": false,
+        "is_phone_number_verified": true,
+        "name": "sarma",
+        "review_status": 3,
+        "toc_and_privacy_policy_accepted": true,
+        "token": "eyJ1c2VyX2lkIjo0LCJ0aW1lc3RhbXAiOjE1MDU4NDM4MDUuNjY3NjYzLCJpcF9hZGRyZXNzIjoiMTIyLjE3Ny40My4xMjMifQ:1duMlJ:fZqF48RugtbrXZcGMOiY5i9JNwE",
+        "email": "kishor+expert@atlogys.com",
+        "country_code": 91
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "display_name": null,
+        "phone_number": "8447053658",
+        "is_profile_complete": true,
+        "id": 4,
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/3f11e966e11291d8218f4587b05eb0e9790802b5.png",
+        "is_superuser": false,
+        "is_phone_number_verified": true,
+        "name": "sarma",
+        "review_status": 3,
+        "toc_and_privacy_policy_accepted": true,
+        "token": "eyJ1c2VyX2lkIjo0LCJ0aW1lc3RhbXAiOjE1MDU4NDM4MDYuMTc3ODk1LCJpcF9hZGRyZXNzIjoiMTIyLjE3Ny40My4xMjMifQ:1duMlK:yEThWAwYDELq-keNhdJsKlyOm9Q",
+        "email": "kishor+expert@atlogys.com",
+        "country_code": 91
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 224,
+        "title": "dsfsadf",
+        "start_time": "08:00:00",
+        "end_time": "23:45:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+}
+API RESPONSES+
+========
+Calender API
+========
+{
+    "results": {
+        "id": 225,
+        "title": "dsfsadf",
+        "start_time": "08:00:00",
+        "end_time": "23:45:00",
+        "timezone": "Asia/Kolkata",
+        "week_days": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ]
+    }
+}
