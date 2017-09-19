@@ -34,4 +34,14 @@ public class Specification {
 
     }
 
+    public static RequestSpecification setupRequestSpecBuilderSearchBase ( ) {
+
+        builder = new RequestSpecBuilder ( );
+        builder.setBaseUri ( getValue ( "search_base" ) );
+        builder.setContentType ( ContentType.JSON );
+        requestSpec = builder.build ( );
+        return requestSpec;
+
+    }
+
 }

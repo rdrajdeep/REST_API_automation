@@ -99,6 +99,23 @@ public class AbstractApiFactory implements ApiFactories {
         return r;
     }
 
+    /* Added by Rajdeep*/
+    @Override
+    public Response get ( String url, String token, boolean port, String isSearch ) {
+        Response r;
+        if ( !port && isSearch.equals("Search Api")) {
+
+            Header header = new Header ( "authorization", "token " + token );
+            r = given ( )
+                    .request ( )
+                    .header ( header )
+                    .spec ( Specification.setupRequestSpecBuilderSearchBase ( ) )
+                    .get ( url );
+        } else {
+            throw new ExpertChatException ( "Please Use proper URL" );
+        }
+        return r;
+    }
 
     @Override
     public Response put ( String json, String url, String token ) {

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ExpertChat.iml" filepath="$PROJECT_DIR$/ExpertChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ExpertChat.iml" filepath="$PROJECT_DIR$/ExpertChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/Expertchat_Test_Automation.iml" filepath="$PROJECT_DIR$/Expertchat_Test_Automation.iml" />
     </modules>
   </component>

@@ -19,6 +19,9 @@ public interface ApiFactories {
 
     Response get ( String url, String token, boolean port );
 
+    /*Added by Rajdeep */
+    Response get ( String url, String token, boolean port, String search );
+
     Response put ( String json, String url, String token );
 
     Response put ( String json, String url, String token, boolean port );

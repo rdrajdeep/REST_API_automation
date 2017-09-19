@@ -63,7 +63,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
         System.out.println ( "LOGIN" );
 
         if ( isExpert ) {
-
+            System.out.println("EXPERT LOGIN");
             response.setResponse ( this.post ( json, ExpertChatEndPoints.LOGIN ) );
 
             SessionManagement.session ( ).setExpertToken (
@@ -75,7 +75,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
 
         } else {
 
-            System.out.println("SUPER USER");
+            System.out.println("USER LOGIN");
             response.setResponse ( this.post ( json, ExpertChatEndPoints.LOGIN_USER ) );
 
             SessionManagement.session ( ).setUserToken (
@@ -94,7 +94,7 @@ public class ExpertChatApi extends AbstractApiFactory implements ExpertChatEndPo
             return;
         }
         response.printResponse ( );
-        return;
+
     }
 /*
 * Overloaded method for superuser /expert /user login

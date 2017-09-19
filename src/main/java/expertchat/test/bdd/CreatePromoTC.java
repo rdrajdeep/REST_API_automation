@@ -31,8 +31,14 @@ public class CreatePromoTC extends AbstractSteps {
     private ApiResponse response = ApiResponse.getObject ();
     private Calling call= new Calling();
 
-    @When("login with super user $json")
-    public void superUserlogin(@Named("json") String json){
+    @When("I am rajdeep")
+    public void check(){
+        System.out.println("My name is rajdeep");
+    }
+
+    @When("login as super user $json")
+    @Then("login as user $json")
+        public void superUserlogin(@Named("json") String json){
 
         expertChatApi.doLogIn(json,false);
         credentials.setuserCredential(json);
@@ -46,18 +52,26 @@ public class CreatePromoTC extends AbstractSteps {
     @Then("create promocode $promoCode")
     public void PromoCode(@Named("promoCode") String promoCode){
 
-        pcode.createPromoCode(promoCode);
-        this.checkAndWriteToReport(response.statusCode(), "New Promo code " + promoCode +"Created", parameter.isNegative ());
-
+        //pcode.createPromoCode(promoCode);
+        //this.checkAndWriteToReport(response.statusCode(), "New Promo code " + promoCode +"Created", parameter.isNegative ());
+        return;
     }
 
+    @Then ("Search an expert with id $expertId and its slots $datetime")
+    public void searchExpert(@Named("expertId") String expertId,
+                             @Named("datetime") String datetime){
+
+        System.out.println("Search expert initiated");
+        pcode.searchExperts(expertId,datetime);
+
+    }
     /*
     * @Param promo code
     * */
     @Then("schedule a call with expert $expertId using promocode $promoCode")
     public void scheduleCall(@Named("promoCode") String promoCode,
                              @Named("expertId") int expertId){
-            call.scheduleSession();
+           // call.scheduleSession();
 
     }
 }
