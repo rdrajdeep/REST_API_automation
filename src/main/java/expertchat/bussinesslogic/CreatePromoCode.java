@@ -35,22 +35,24 @@ public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, Exp
 
     public void searchExperts(String expertId, String datetime){
 
-        String url= "expert/available-slots/"+expertId+"/";
+        String url= "user/available-slots/"+expertId+"/";
 
-        response.setResponse(this.get(url, SessionManagement.session().getUserToken()));//,false, "Search Api"));
-        System.out.println("Printing response**");
+        response.setResponse(this.get(url, SessionManagement.session().getUserToken())); //,false, "Search Api"));
+
         response.printResponse();
+
         System.out.println("Status code=== "+response.statusCode());
 
         if (response.statusCode()==HTTP_ACCEPTED || response.statusCode()==HTTP_OK){
 
             System.out.println("Printing search result");
 
-            expertSlots=jsonParser.getJsonData("results.calendars", ResponseDataType.STRING);
+            expertSlots=jsonParser.getJsonData("results", ResponseDataType.STRING);
             System.out.println(expertSlots);
 
         }
         if(expertSlots.contains(datetime)){
+
             System.out.println("slots are available for call schedule");
         }
        // response.printResponse();
