@@ -8,6 +8,7 @@ import expertchat.apioperation.apiresponse.ParseResponse;
 import expertchat.apioperation.apiresponse.ResponseDataType;
 import expertchat.apioperation.session.SessionManagement;
 
+
 import javax.xml.ws.Response;
 
 public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, ExpertChatEndPoints {
@@ -17,7 +18,8 @@ public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, Exp
     private ApiResponse response = ApiResponse.getObject();
     private ParseResponse jsonParser = new ParseResponse ( response );
     SessionManagement session;
-    String expertSlots;
+
+    String expertSlots ;
 
     public void createPromoCode(String json){
          response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE, SessionManagement.session ( ).getUserToken(),true));
@@ -33,22 +35,33 @@ public class CreatePromoCode extends AbstractApiFactory implements HTTPCode, Exp
 
     public void searchExperts(String expertId, String datetime){
 
-        String url= "experts/"+expertId+"/";
+        String url= "expert/available-slots/"+expertId+"/";
 
-        response.setResponse(this.get(url, SessionManagement.session().getUserToken(),false, "Search Api"));
+        response.setResponse(this.get(url, SessionManagement.session().getUserToken()));//,false, "Search Api"));
         System.out.println("Printing response**");
-        //response.printResponse();
+        response.printResponse();
         System.out.println("Status code=== "+response.statusCode());
 
         if (response.statusCode()==HTTP_ACCEPTED || response.statusCode()==HTTP_OK){
 
             System.out.println("Printing search result");
 
-            expertSlots=jsonParser.getJsonData("results", ResponseDataType.STRING);
+            expertSlots=jsonParser.getJsonData("results.calendars", ResponseDataType.STRING);
             System.out.println(expertSlots);
 
         }
+        if(expertSlots.contains(datetime)){
+            System.out.println("slots are available for call schedule");
+        }
        // response.printResponse();
+
+    }
+
+    public void checkSlots(String reqSlot, String availableSlot){
+        String url="http://api.qa.experchat.com/v1/expert/available-slots/1/";
+        if (reqSlot==availableSlot){
+            //Schedule call in--> "http://connect.qa.experchat.com/v1/sessions/schedule/"
+        }
 
     }
 }
