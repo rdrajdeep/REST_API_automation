@@ -220,7 +220,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
     }
 
     /**
-     * @param
+     * @param promo, timeSlot and duration
      */
     public void scheduleSession( String timeSlot, String promo, int duration){
 

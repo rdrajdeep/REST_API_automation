@@ -11,6 +11,12 @@ import org.jbehave.core.annotations.*;
 
 import static expertchat.usermap.TestUserMap.getMap;
 
+/*@
+ * This serve the purpose of creating PROMO CODE,
+ * Scheduling a session with that PROMO CODE
+ * Validate the esitimated Revenue calculation
+ * ** Author: Rajdeep**
+ */
 
 public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
@@ -57,7 +63,9 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         pcode.createPromoCode(promoCode);
 
-        this.checkAndWriteToReport(response.statusCode(), "New Promo code " + promoCode +"Created", parameter.isNegative ());
+        String coupon=jsonParser.getJsonData("results.coupon_code",ResponseDataType.STRING);
+
+        this.checkAndWriteToReport(response.statusCode(), "New Promo code " +"\""+ coupon +"\""+" created successfully", parameter.isNegative ());
 
         return;
     }
@@ -92,6 +100,11 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     }
 
 
+    /*@
+     * Scheduling a session using that PROMO CODE and duration provided**
+     * @Param - PROMO CODE and Call Duration
+     */
+
     @Then("schedule a session using promo code $code and duration $duration")
     @When("schedule a session using promo code $code and duration $duration")
     @Given("schedule a session using promo code $code and duration $duration")
@@ -107,6 +120,9 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         this.checkAndWriteToReport(response.statusCode(), "Session with id--"+getMap().get("scheduled_session_id")+ " created", parameter.isNegative());
 
     }
+    /*@
+     Login with User, Param--> JSON
+     */
 
     @When("login with $user")
     @Then("login with $user")
@@ -123,7 +139,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
             credentials.setExpertCredential(user);
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert--" + user, parameter.isNegative ());
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert " + jsonParser.getJsonData("results.email",ResponseDataType.STRING), parameter.isNegative ());
 
         } else if (user.contains("{") && parameter.isExpert () == false) {
 
@@ -153,6 +169,10 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         }
 
     }
+
+    /*@
+     *Getting the expert profile.
+     */
 
     @Then("get profile")
     @When("get profile")
@@ -188,6 +208,9 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
                     "Expert profile loaded by expert--" + credentials.getExpertCredential()[0], parameter.isNegative ());
         }
     }
+    /*@
+     *Creating a calender
+     */
 
     @Then("create a calender as $json")
     @Alias("i am creating a calender as $json")
@@ -205,6 +228,11 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         this.checkAndWriteToReport(response.statusCode(),"Calender Created", parameter.isNegative ());
 
     }
+
+    /*@
+    * Registering a device with the given JSON data from story
+    *
+     */
 
     @When("register a device as $json")
     @Then("register a device as $json")
@@ -245,7 +273,11 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
     }
 
+    /**@
+     *   Get Session Details
+     */
     @When("I get the session details")
+    @Alias("I pass on session id in session details API")
     public void getSessionDetails(){
 
         info("Session Details of "+sessionId);
@@ -255,12 +287,15 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         this.checkAndWriteToReport(response.statusCode(),"Details with id--"+sessionId+" extracted", parameter.isNegative());
     }
 
+    /**@
+     *   User revenue calculation validation
+     */
     @When("user revenue should be $value since 100% promo is applied")
     @Then("user revenue should be $value since 100% promo is applied")
 
     public void validateUserRevenue(@Named("value")float value){
 
-        info("User revenu validation");
+        info("User revenue validation");
 
         boolean isValidate=false;
 
@@ -268,7 +303,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
             isValidate=true;
 
-            this.AssertAndWriteToReport(isValidate, "User revenue is "+ value +" since 100% promomis applied");
+            this.AssertAndWriteToReport(isValidate, "User revenue is "+ value +" since 100% promo is applied");
 
         }else {
 
@@ -277,11 +312,11 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     }
 
     /**
-     *
+     * Validating Expert Estimated revenue for the schedule call
      */
 
-    @Then("expert revenue should be $value since payment type is experchat")
-    @When("expert revenue should be $value since payment type is experchat")
+    @Then("expert estimated revenue should be $value since payment type is experchat")
+    @When("expert estimated revenue should be $value since payment type is experchat")
     public void validateExpertRevenue(@Named("value")float value){
 
         info("Expert revenue validation");
@@ -292,7 +327,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
             isValidate=true;
 
-            this.AssertAndWriteToReport(isValidate, "Expert estimated revenue is "+ value +" since 100% promomis applied");
+            this.AssertAndWriteToReport(isValidate, "Expert estimated revenue is "+ value +" after deducting 27.95% ExperChat commision");
 
         }else {
 
@@ -300,6 +335,9 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         }
     }
 
+    /*@
+    * Validating the session status after scheduling a call
+     */
     @Then("session status should be $status")
     public void validateStatus(@Named("status")String expected){
 
@@ -321,7 +359,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     }
 
     @Pending
-    @Then("validate that session can not be intiated before time")
+    @Then("validate that session cannot be initiated before scheduled time")
     public void validateCall(){
 
     }

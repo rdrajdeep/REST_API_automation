@@ -99,7 +99,11 @@ public class AbstractApiFactory implements ApiFactories {
         return r;
     }
 
-    /* Added by Rajdeep*/
+    /*@
+     * For getting the Search api url
+     * Added by Rajdeep
+     */
+
     @Override
     public Response get ( String url, String token, boolean port, String isSearch ) {
         Response r;

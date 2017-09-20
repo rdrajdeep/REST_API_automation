@@ -38,6 +38,9 @@ public abstract class AbstractSteps extends Report {
         System.out.println ( "I am user now" );
         parameter.setExpert ( false );
     }
+    /*@
+    * Working as an Exper
+     */
 
     @Given("an expert")
     @Then("an expert")

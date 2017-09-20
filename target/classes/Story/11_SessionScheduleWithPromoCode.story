@@ -1,11 +1,14 @@
 Meta:
 
 Narrative:
+As a super user
+I want to create a PROMO code
+As a Expert
+I want to create a chating slots
 As a user
-I want to perform an action
-So that I can achieve a business goal
+I want to register a device
+So that I can schedule a session with the expert
 
-Scenario: scenario description
 
 When login as super user {"email":"kishor+super@atlogys.com","password":"testing123"}
 
@@ -17,7 +20,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "FU1002",
+                        "coupon_code": "EC104",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit": 1,
@@ -45,31 +48,30 @@ Then i am creating a calender as {
 
 Then get a slot
 
-
 Given an user
 When i login with {"email":"kishor+user@atlogys.com","password":"testing123"}
 
 Then i register a device as {
                               "device_type":"ios",
-                              "device_name": "test",
-                              "device_sub_type": "ewe",
-                              "device_id": "323",
-                              "device_token": "323",
+                              "device_name": "iPhone 6",
+                              "device_sub_type": "iPhone 6",
+                              "device_id": "12345",
+                              "device_token": "12345",
                               "device_os": "ios"
-                          }
+                            }
 
-When schedule a session using promo code FU1002 and duration 20
+When schedule a session using promo code EC104 and duration 20
 
 Then it should return session id
 
-When I get the session details
+When I pass on session id in session details API
 
 Then user revenue should be 0.00 since 100% promo is applied
 
-And expert revenue should be 21.62 since payment type is experchat
+And expert estimated revenue should be 21.62 since payment type is experchat
 
 And session status should be future-session
 
 When i initiate the session
 
-Then  validate that session can not be intiated before time
+Then  validate that session cannot be initiated before scheduled time

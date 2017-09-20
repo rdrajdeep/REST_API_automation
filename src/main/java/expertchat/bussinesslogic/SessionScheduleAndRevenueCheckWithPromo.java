@@ -9,7 +9,6 @@ import expertchat.apioperation.apiresponse.ResponseDataType;
 import expertchat.apioperation.session.SessionManagement;
 import static expertchat.usermap.TestUserMap.getMap;
 
-
 public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
         implements HTTPCode, ExpertChatEndPoints {
 
@@ -22,10 +21,13 @@ public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
     String expertSlots ;
 
     public void createPromoCode(String json){
+
          response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE, SessionManagement.session ( ).getUserToken(),true));
+
          response.printResponse();
 
         if(response.statusCode()==HTTP_OK|| response.statusCode()==HTTP_ACCEPTED)
+
             System.out.println("Promo code created Success fully");
         
         else
@@ -37,13 +39,13 @@ public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
     public String getaSlot(){
 
         String url= SEARCH_BY_EXPERT_ID+ getMap().get("expertProfileId");
+
         String slot=null;
 
-        response.setResponse(this.get(url, session.getUserToken())); //,false, "Search Api"));
+        response.setResponse(this.get(url, session.getUserToken()));
 
         response.printResponse();
 
-        System.out.println("Status code=== "+response.statusCode());
 
         if (response.statusCode()==HTTP_ACCEPTED || response.statusCode()==HTTP_OK){
 
