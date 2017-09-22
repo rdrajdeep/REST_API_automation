@@ -42,6 +42,12 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
     private String sessionId=null;
 
+    private String userDeviceId = null;
+
+    private String scheduleDate = null;
+
+
+
     @When("login as super user $json")
         public void superUserlogin(@Named("json") String json){
 
@@ -118,6 +124,11 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         response.printResponse();
 
         this.checkAndWriteToReport(response.statusCode(), "Session with id--"+getMap().get("scheduled_session_id")+ " created", parameter.isNegative());
+
+        userDeviceId=jsonParser.getJsonData("results.user_device",ResponseDataType.STRING);
+
+        getMap().put(jsonParser.getJsonData("results.id",ResponseDataType.STRING),"slot+\"Z\"")   ;
+
 
     }
     /*@
@@ -248,6 +259,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
             call.registerDevice(json, parameter.isExpert ());
 
             this.checkAndWriteToReport(response.statusCode(), "Device not Registered--Negative Test case", true);
+
         } else {
 
             call.registerDevice(json, parameter.isExpert ());
@@ -352,9 +364,18 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
             this.AssertAndWriteToReport(false, "Session final status is " + actual);
         }
     }
-    @Pending
+
+
     @When("i initiate the session")
     public void validateSessionInitiation(){
+
+        info("Intiating a Call/Session");
+
+        System.out.println("initiating call");
+
+        call.intiate(sessionId,userDeviceId);
+
+        this.checkAndWriteToReport(response.statusCode(),"Call is successfully initiated",parameter.isNegative());
 
     }
 

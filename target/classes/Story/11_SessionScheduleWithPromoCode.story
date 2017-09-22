@@ -20,7 +20,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "EC104",
+                        "coupon_code": "EC1012",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit": 1,
@@ -60,7 +60,7 @@ Then i register a device as {
                               "device_os": "ios"
                             }
 
-When schedule a session using promo code EC104 and duration 20
+When schedule a session using promo code EC1012 and duration 20
 
 Then it should return session id
 
@@ -74,4 +74,4 @@ And session status should be future-session
 
 When i initiate the session
 
-Then  validate that session cannot be initiated before scheduled time
+Then validate that session cannot be initiated before scheduled time

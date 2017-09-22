@@ -81,10 +81,10 @@ public class CallingTC extends AbstractSteps{
 
          if(parameter.isNegative ()){
 
-             call.intiate ("1");
+             call.intiate ("1","123");
          }else {
 
-             call.intiate ("1");
+             call.intiate ("1","123");
          }
 
          this.checkAndWriteToReport ( response.statusCode (), "Call Initiated" , parameter.isNegative ());

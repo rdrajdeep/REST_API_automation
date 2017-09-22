@@ -360,10 +360,22 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
         }
     }
 
-    public void intiate ( String s ) {
+    public void intiate ( String sessionId, String deviceId ) {
 
-        response.setResponse(this.put ("{}", SESSION+s+"initialize/", session.getUserToken (), true));
-        response.printResponse ();
+        String json="{"+"\n"+"\"user_device"+"\""+":"+"\""+deviceId+"\""+"\n"+"}";
+
+        response.setResponse(this.put (json, SESSION+sessionId+"initialize/", session.getUserToken (), true));
+
+        if(response.statusCode()==HTTP_OK||response.statusCode()==HTTP_ACCEPTED){
+
+            response.printResponse ();
+
+        }else {
+
+
+            response.printResponse ();
+        }
+
     }
 
 
@@ -414,7 +426,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
             }
         }else {
 
-            System.out.println(SESSION+sessionId);
+            System.out.println("---Getting Session details for session Id: "+sessionId+"---");
 
             response.setResponse(this.get(SESSION+sessionId+"/", session.getUserToken(), true));
 
