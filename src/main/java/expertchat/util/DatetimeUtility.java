@@ -1,19 +1,20 @@
+/*@
+ // Author of the code Rajdeep D
+ */
+
 package expertchat.util;
 
-import org.jbehave.core.annotations.Alias;
-
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class utcToIstConverter {
+
+public class DatetimeUtility {
 
     private static Date utcDate;
     private static DateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-
 
     /*@
         * Convert date IST to UTC in "yyyy-MM-dd'T'HH:mm:ss'Z'" format
@@ -38,7 +39,6 @@ public class utcToIstConverter {
 
         return formatDate.format(utcDate);
     }
-
 
     /*@
         * Convert date IST to UTC in "yyyy-MM-dd'T'HH:mm:ss'Z'" format
