@@ -16,6 +16,9 @@ public class DatetimeUtility {
     private static Date utcDate;
     private static DateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
+
+
+
     /*@
         * Convert date IST to UTC in "yyyy-MM-dd'T'HH:mm:ss'Z'" format
      */
@@ -54,7 +57,7 @@ public class DatetimeUtility {
             istDate = formatDate.parse(date);
             //System.out.println(TimeZone.getDefault().getID());
 
-            formatDate.setTimeZone(TimeZone.getTimeZone("UTC"));
+             formatDate.setTimeZone(TimeZone.getTimeZone("UTC"));
             // System.out.println(formatDate.format(istDate));
 
 
@@ -70,7 +73,7 @@ public class DatetimeUtility {
     /*@
     * Get current date in "yyyy-MM-dd'T'HH:mm:ss'Z'" format
      */
-    public String currentDate() throws ParseException {
+    public String currentDate() {
 
         String dateTime=null;
 
@@ -93,7 +96,7 @@ public class DatetimeUtility {
 
             unixTime = (long) newdate.getTime() / 1000;
 
-            System.out.println(unixTime);
+            //System.out.println(unixTime);
             return unixTime;
 
         }catch (ParseException e){
@@ -101,6 +104,37 @@ public class DatetimeUtility {
             e.printStackTrace();
         }
         return unixTime;
+    }
+
+    public String convertUnixToOriginDate(long unixTime){
+
+        Date date = new Date(unixTime*1000L);
+
+        String utcDate=formatDate.format(date);
+
+        return utcDate;
+
+    }
+
+    public static  void main(String[] args){
+
+        DatetimeUtility dt=new DatetimeUtility();
+        long unix=1506117600;//unix of below ist time
+        String istDt="2017-09-23T03:30:00Z";
+        String utcDt="2017-09-23T09:30:00Z";
+
+        System.out.println("UTC "+utcDt+" Converted to IST  ---  "+dt.UTCtoIST(utcDt));
+      //  System.out.println("IST "+istDt+" Converted to UTC  ---  "+dt.ISTtoUTC(istDt));
+        //System.out.println("UTC "+utcDt+" Converted to UNIX ---  "+ dt.convertToUnixTimestamp(utcDt));
+        //System.out.println("unix to original-- "+dt.convertUnixToOriginDate(unix));
+        //System.out.println("IST to UTC "+dt.ISTtoUTC(dt.convertUnixToOriginDate(unix)));
+        //System.o ut.println("UNIX "+dt.convertToUnixTimestamp(istDt)+" Converted to UTC ---  "+
+            //    dt.convertUnixToOriginDate(dt.convertToUnixTimestamp(istDt)));
+        //System.out.println(dt.UTCtoIST(dt.convertUnixToOriginDate(dt.convertToUnixTimestamp(istDt))));
+
+        //System.out.println("utc++"+dt.ISTtoUTC(dt.convertUnixToOriginDate(dt.convertToUnixTimestamp(istDt))));
+
+
     }
 
 }

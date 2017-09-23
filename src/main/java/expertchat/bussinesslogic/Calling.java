@@ -362,9 +362,9 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
     public void intiate ( String sessionId, String deviceId ) {
 
-        String json="{"+"\n"+"\"user_device"+"\""+":"+"\""+deviceId+"\""+"\n"+"}";
+        String json="{ \"user_device\": "+deviceId+"}";
 
-        response.setResponse(this.put (json, SESSION+sessionId+"initialize/", session.getUserToken (), true));
+        response.setResponse(this.put (json, SESSION+sessionId+"/initialize/", session.getUserToken (), true));
 
         if(response.statusCode()==HTTP_OK||response.statusCode()==HTTP_ACCEPTED){
 

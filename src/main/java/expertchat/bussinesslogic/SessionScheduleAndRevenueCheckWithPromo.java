@@ -7,12 +7,19 @@ import expertchat.apioperation.apiresponse.HTTPCode;
 import expertchat.apioperation.apiresponse.ParseResponse;
 import expertchat.apioperation.apiresponse.ResponseDataType;
 import expertchat.apioperation.session.SessionManagement;
+import expertchat.util.DatetimeUtility;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static expertchat.usermap.TestUserMap.getMap;
 
 public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
         implements HTTPCode, ExpertChatEndPoints {
 
     private ApiResponse response = ApiResponse.getObject();
+
+    DatetimeUtility dateUtil=new DatetimeUtility();
 
     private ParseResponse jsonParser = new ParseResponse ( response );
 
@@ -24,7 +31,7 @@ public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
 
          response.setResponse(this.post(json,ExpertChatEndPoints.PROMO_CODE, SessionManagement.session ( ).getUserToken(),true));
 
-         response.printResponse();
+         //response.printResponse();
 
         if(response.statusCode()==HTTP_OK|| response.statusCode()==HTTP_ACCEPTED)
 
@@ -36,24 +43,31 @@ public class SessionScheduleAndRevenueCheckWithPromo extends AbstractApiFactory
     }
 
 
-    public String getaSlot(){
+    public List<Long> getaSlot(){
 
         String url= SEARCH_BY_EXPERT_ID+ getMap().get("expertProfileId");
-
-        String slot=null;
-
+        String temp=null;
+        String calenderDate=null;
+        List<String> calender=new ArrayList<>();
+        List<Long> calenderInUnix=new ArrayList<>();
         response.setResponse(this.get(url, session.getUserToken()));
 
-        response.printResponse();
+        //response.printResponse();
+        System.out.println("***This are available slots in UTC time****"+response.getResponse().jsonPath().getList("results.calendars"));
 
 
         if (response.statusCode()==HTTP_ACCEPTED || response.statusCode()==HTTP_OK){
 
-            slot=jsonParser.getJsonData("results.calendars[0]", ResponseDataType.STRING);
+            calender=response.getResponse().jsonPath().getList("results.calendars");
 
         }
+        for (String item:calender){
+            temp=item;
+            calenderDate=temp+"Z";
+            calenderInUnix.add(dateUtil.convertToUnixTimestamp(calenderDate));
+        }
 
-     return slot;
+     return calenderInUnix; // Returning list of long date time
 
     }
 

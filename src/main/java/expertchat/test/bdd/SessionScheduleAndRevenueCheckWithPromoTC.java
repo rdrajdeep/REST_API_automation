@@ -7,7 +7,12 @@ import expertchat.bussinesslogic.*;
 import expertchat.params.Credentials;
 import expertchat.params.parameter;
 import expertchat.usermap.TestUserMap;
+import expertchat.util.DatetimeUtility;
+import org.apache.commons.collections.FastArrayList;
 import org.jbehave.core.annotations.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static expertchat.usermap.TestUserMap.getMap;
 
@@ -30,32 +35,33 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
     Credentials credentials = Credentials.getCredentials();
 
-    private ApiResponse response = ApiResponse.getObject ();
+    private ApiResponse response = ApiResponse.getObject();
 
-    private Calling call= new Calling();
+    private Calling call = new Calling();
 
-    private ExpertProfile expertProfile=new ExpertProfile();
+    private ExpertProfile expertProfile = new ExpertProfile();
 
-    private Calender calender=new Calender ();
+    private Calender calender = new Calender();
 
-    private String slot=null;
+    private List<Long> slots = new ArrayList<>();
 
-    private String sessionId=null;
+    private String sessionId = null;
 
     private String userDeviceId = null;
 
     private String scheduleDate = null;
 
+    DatetimeUtility dateUtil=new DatetimeUtility();
 
 
     @When("login as super user $json")
-        public void superUserlogin(@Named("json") String json){
+    public void superUserlogin(@Named("json") String json) {
 
-        expertChatApi.doLogIn(json,false);
+        expertChatApi.doLogIn(json, false);
 
         credentials.setuserCredential(json);
 
-        this.checkAndWriteToReport(response.statusCode(), "Logged in as Super User" + json, parameter.isNegative ());
+        this.checkAndWriteToReport(response.statusCode(), "Logged in as Super User" + json, parameter.isNegative());
 
     }
 
@@ -63,15 +69,15 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     * @param = All details of promocode as Json
     * */
     @Then("create promocode $promoCode")
-    public void PromoCode(@Named("promoCode") String promoCode){
+    public void PromoCode(@Named("promoCode") String promoCode) {
 
         System.out.println("-- Creatin a promo code--");
 
         pcode.createPromoCode(promoCode);
 
-        String coupon=jsonParser.getJsonData("results.coupon_code",ResponseDataType.STRING);
+        String coupon = jsonParser.getJsonData("results.coupon_code", ResponseDataType.STRING);
 
-        this.checkAndWriteToReport(response.statusCode(), "New Promo code " +"\""+ coupon +"\""+" created successfully", parameter.isNegative ());
+        this.checkAndWriteToReport(response.statusCode(), "New Promo code " + "\"" + coupon + "\"" + " created successfully", parameter.isNegative());
 
         return;
     }
@@ -83,26 +89,29 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     @Pending
     @Then("schedule a call with expert $expertId using promocode $promoCode")
     public void scheduleCall(@Named("promoCode") String promoCode,
-                             @Named("expertId") int expertId){
-          // call.scheduleSession();
+                             @Named("expertId") int expertId) {
+        // call.scheduleSession();
 
     }
 
-    /**@
-     * Getting a slot from that expert
+    /**
+     * @ Getting a slot from that expert
      */
 
     @Then("get a slot")
-    public void getSlot(){
+    public void getSlot() {
+
 
         System.out.println("--- GETTING A SLOT NOW---");
 
-        slot=pcode.getaSlot();
+       // for(String caleder: pcode)
+        slots=pcode.getaSlot();
 
-        System.out.println(slot);
+        if (!slots.isEmpty()) {
 
-        this.checkAndWriteToReport(response.statusCode(),"Slot extracted", parameter.isNegative());
+            this.checkAndWriteToReport(response.statusCode(), "Slot extracted", parameter.isNegative());
 
+        }
     }
 
 
@@ -114,20 +123,46 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     @Then("schedule a session using promo code $code and duration $duration")
     @When("schedule a session using promo code $code and duration $duration")
     @Given("schedule a session using promo code $code and duration $duration")
-    public void scheduleSession(@Named("code")String code,
-                                @Named("duration") int duration){
+    public void scheduleSession(@Named("code") String code,
+                                @Named("duration") int duration) {
 
         System.out.println("-- Scheduling a session  --");
 
-        call.scheduleSession(slot+"Z",code, duration);
+
+
+        List<Long> unixDateTimeList=new FastArrayList();
+
+        long currentTime=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
+        long slotInUnix=0;
+
+       /* for(long datetime:slots){
+
+            unixDateTimeList.add(datetime);
+
+        }*/
+        for (long unixDate: slots){
+            if(unixDate>currentTime){
+                slotInUnix=unixDate;
+                System.out.println("Slot time in utcUnix date from API "+ unixDate);
+                break;
+            }else continue;
+        }
+        System.out.println("Slot time in utcUnix date from API "+ currentTime);
+        System.out.println("Slot time in Unix "+ slotInUnix);
+
+        String slotInUTC = dateUtil.convertUnixToOriginDate(slotInUnix);
+
+        System.out.println("UTC date after convert from unix "+slotInUTC);
+
+        call.scheduleSession(slotInUTC , code, duration);
 
         response.printResponse();
 
-        this.checkAndWriteToReport(response.statusCode(), "Session with id--"+getMap().get("scheduled_session_id")+ " created", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "Session with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
 
-        userDeviceId=jsonParser.getJsonData("results.user_device",ResponseDataType.STRING);
+        userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
 
-        getMap().put(jsonParser.getJsonData("results.id",ResponseDataType.STRING),"slot+\"Z\"")   ;
+        getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
 
 
     }
@@ -144,21 +179,21 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         System.out.println("-- Login  --");
 
-        if (user.contains("{") && parameter.isExpert ()) {
+        if (user.contains("{") && parameter.isExpert()) {
 
             expertChatApi.doLogIn(user, true);
 
             credentials.setExpertCredential(user);
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert " + jsonParser.getJsonData("results.email",ResponseDataType.STRING), parameter.isNegative ());
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert " + jsonParser.getJsonData("results.email", ResponseDataType.STRING), parameter.isNegative());
 
-        } else if (user.contains("{") && parameter.isExpert () == false) {
+        } else if (user.contains("{") && parameter.isExpert() == false) {
 
             expertChatApi.doLogIn(user, false);
 
             credentials.setuserCredential(user);
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user--" + user, parameter.isNegative ());
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user--" + user, parameter.isNegative());
 
         } else if (user.contains("user")) {
 
@@ -167,7 +202,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
             credentials.setuserCredential(TestUserMap.getUserCredentialsByKey(user));
 
             this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user--" +
-                    TestUserMap.getUserCredentialsByKey(user), parameter.isNegative ());
+                    TestUserMap.getUserCredentialsByKey(user), parameter.isNegative());
 
 
         } else {
@@ -176,7 +211,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
             credentials.setExpertCredential(TestUserMap.getUserCredentialsByKey(user));
 
             this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert--" +
-                    TestUserMap.getUserCredentialsByKey(user), parameter.isNegative ());
+                    TestUserMap.getUserCredentialsByKey(user), parameter.isNegative());
         }
 
     }
@@ -200,23 +235,23 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         //  String expertProfileID = getMap ( ).get ( "expertProfileId" );
 
-        if (parameter.isNegative ()) {
+        if (parameter.isNegative()) {
 
-            expertProfile.getProfileOfExpert("", parameter.isExpert ());
+            expertProfile.getProfileOfExpert("", parameter.isExpert());
 
         } else {
 
-            expertProfile.getProfileOfExpert("", parameter.isExpert ());
+            expertProfile.getProfileOfExpert("", parameter.isExpert());
         }
 
-        if (parameter.isExpert () == false) {
+        if (parameter.isExpert() == false) {
 
             this.checkAndWriteToReport(response.statusCode(),
-                    "Expert profile loaded by a user--" + credentials.getUserCredential()[0], parameter.isNegative ());
+                    "Expert profile loaded by a user--" + credentials.getUserCredential()[0], parameter.isNegative());
         } else {
 
             this.checkAndWriteToReport(response.statusCode(),
-                    "Expert profile loaded by expert--" + credentials.getExpertCredential()[0], parameter.isNegative ());
+                    "Expert profile loaded by expert--" + credentials.getExpertCredential()[0], parameter.isNegative());
         }
     }
     /*@
@@ -231,12 +266,12 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         info("Creating a calender...");
 
-        if (parameter.isNegative ()) {
+        if (parameter.isNegative()) {
             calender.createCalender(json);
         } else {
             calender.createCalender(json);
         }
-        this.checkAndWriteToReport(response.statusCode(),"Calender Created", parameter.isNegative ());
+        this.checkAndWriteToReport(response.statusCode(), "Calender Created", parameter.isNegative());
 
     }
 
@@ -248,76 +283,76 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     @When("register a device as $json")
     @Then("register a device as $json")
     @Alias("i register a device as $json")
-    public void registerDevice(@Named ("json") String json) {
+    public void registerDevice(@Named("json") String json) {
 
 
         System.out.println("--Registering a Device --");
 
 
-        if (parameter.isNegative ()) {
+        if (parameter.isNegative()) {
 
-            call.registerDevice(json, parameter.isExpert ());
+            call.registerDevice(json, parameter.isExpert());
 
             this.checkAndWriteToReport(response.statusCode(), "Device not Registered--Negative Test case", true);
 
         } else {
 
-            call.registerDevice(json, parameter.isExpert ());
+            call.registerDevice(json, parameter.isExpert());
 
-            System.out.println(json+parameter.isExpert());
+            System.out.println(json + parameter.isExpert());
         }
 
         this.checkAndWriteToReport(response.statusCode(), "Device Registered", false);
     }
 
-    /**@
-     *   Get Session ID
+    /**
+     * @ Get Session ID
      */
 
     @Then("it should return session id")
-    public void setSessionId(){
+    public void setSessionId() {
 
         info("Session id print");
 
-        sessionId=getMap().get("scheduled_session_id");
+        sessionId = getMap().get("scheduled_session_id");
 
-        this.checkAndWriteToReport(response.statusCode(),sessionId+"-- Created", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), sessionId + "-- Created", parameter.isNegative());
 
     }
 
-    /**@
-     *   Get Session Details
+    /**
+     * @ Get Session Details
      */
     @When("I get the session details")
     @Alias("I pass on session id in session details API")
-    public void getSessionDetails(){
+    public void getSessionDetails() {
 
-        info("Session Details of "+sessionId);
+        info("Session Details of " + sessionId);
 
         call.getSessionDetails(sessionId, parameter.isExpert());
 
-        this.checkAndWriteToReport(response.statusCode(),"Details with id--"+sessionId+" extracted", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "Details with id--" + sessionId + " extracted", parameter.isNegative());
     }
 
-    /**@
-     *   User revenue calculation validation
+    /**
+     * @ User revenue calculation validation
      */
     @When("user revenue should be $value since 100% promo is applied")
     @Then("user revenue should be $value since 100% promo is applied")
 
-    public void validateUserRevenue(@Named("value")float value){
+    public void validateUserRevenue(@Named("value") float value) {
 
         info("User revenue validation");
 
-        boolean isValidate=false;
+        boolean isValidate = false;
 
-        if(getMap().get("user_revenue").equals(String.valueOf(value))){
+        if (getMap().get("user_revenue").equals(String.valueOf(value))) {
 
-            isValidate=true;
+            isValidate = true;
 
-            this.AssertAndWriteToReport(isValidate, "User revenue is "+ value +" since 100% promo is applied");
+            this.AssertAndWriteToReport(isValidate, "User revenue is " + value + " since 100% promo is applied");
 
-        }else {
+        } else {
 
             this.AssertAndWriteToReport(isValidate, "User revenue calculation is wrong");
         }
@@ -329,19 +364,19 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
     @Then("expert estimated revenue should be $value since payment type is experchat")
     @When("expert estimated revenue should be $value since payment type is experchat")
-    public void validateExpertRevenue(@Named("value")float value){
+    public void validateExpertRevenue(@Named("value") float value) {
 
         info("Expert revenue validation");
 
-        boolean isValidate=false;
+        boolean isValidate = false;
 
-        if(getMap().get("expert_revenue").equals(String.valueOf(value))){
+        if (getMap().get("expert_revenue").equals(String.valueOf(value))) {
 
-            isValidate=true;
+            isValidate = true;
 
-            this.AssertAndWriteToReport(isValidate, "Expert estimated revenue is "+ value +" after deducting 27.95% ExperChat commision");
+            this.AssertAndWriteToReport(isValidate, "Expert estimated revenue is " + value + " after deducting 27.95% ExperChat commision");
 
-        }else {
+        } else {
 
             this.AssertAndWriteToReport(isValidate, "Expert estimated revenue calculation is wrong");
         }
@@ -351,15 +386,15 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     * Validating the session status after scheduling a call
      */
     @Then("session status should be $status")
-    public void validateStatus(@Named("status")String expected){
+    public void validateStatus(@Named("status") String expected) {
 
         info("Verifying session final status");
-        String actual= jsonParser.getJsonData("results.final_status", ResponseDataType.STRING);
+        String actual = jsonParser.getJsonData("results.final_status", ResponseDataType.STRING);
 
-        if(expected.equalsIgnoreCase(actual)){
+        if (expected.equalsIgnoreCase(actual)) {
 
-            this.AssertAndWriteToReport(true, "Session final status is "+ actual);
-        }else {
+            this.AssertAndWriteToReport(true, "Session final status is " + actual);
+        } else {
 
             this.AssertAndWriteToReport(false, "Session final status is " + actual);
         }
@@ -367,21 +402,56 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
 
     @When("i initiate the session")
-    public void validateSessionInitiation(){
+    public void validateSessionInitiation() {
 
         info("Intiating a Call/Session");
 
         System.out.println("initiating call");
 
-        call.intiate(sessionId,userDeviceId);
+       String SlotinUTC= getMap().get("scheduled_datetime");
 
-        this.checkAndWriteToReport(response.statusCode(),"Call is successfully initiated",parameter.isNegative());
+        System.out.println("schedule time in utc: "+SlotinUTC);
+
+        long slotinUnix=dateUtil.convertToUnixTimestamp(SlotinUTC);
+        long currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
+        long diff=slotinUnix-currentTimeUnix;
+        System.out.println("Looping for "+diff+" times");
+        String statusCode = null;
+        for (long i=0;i<=diff;i++){
+
+            call.intiate(sessionId, userDeviceId);
+
+            statusCode=jsonParser.getJsonData("results.status", ResponseDataType.INT);
+
+            if (!statusCode.equals("2")){
+
+                currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
+                diff=slotinUnix-currentTimeUnix;
+                System.out.println("Loop "+i+" ->> Schedule time is still in future date");
+
+                continue;
+
+            }else{
+
+                this.checkAndWriteToReport(response.statusCode(), "Call is successfully initiated", parameter.isNegative());
+                System.out.println("Call is successfully initiated");
+                break;
+            }
+        }
 
     }
 
-    @Pending
+
     @Then("validate that session cannot be initiated before scheduled time")
-    public void validateCall(){
+    public void validateCall() {
+        String statusCode = jsonParser.getJsonData("results.status", ResponseDataType.INT);
+        if (!statusCode.equals("2")) {
+            this.AssertAndWriteToReport(true, "Since scheduled date is in future date, hence unable to initiate call");
+        }
+    }
+
+    @When("I schedule a session 10 min prior to available slot for duration 20 min")
+    public void schedule(){
 
     }
 }
