@@ -1,0 +1,42 @@
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_profile_complete": true,
+        "display_name": null,
+        "toc_and_privacy_policy_accepted": true,
+        "id": 4,
+        "name": "sarma up",
+        "phone_number": "8447053658",
+        "review_status": 3,
+        "is_superuser": false,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6NCwidGltZXN0YW1wIjoxNTA2MzQwNjcxLjk4MTA2OX0:1dwS1H:HRkBhMZq2FZyRyMoDMAQJGzqxGY",
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/4dd85ca174c24392cd6fa29b3e7cbaa6fdeb217d.png",
+        "country_code": 91,
+        "email": "kishor+expert@atlogys.com",
+        "is_phone_number_verified": true
+    }
+}
+API RESPONSES+
+========
+Login API
+========
+{
+    "results": {
+        "is_profile_complete": true,
+        "display_name": null,
+        "toc_and_privacy_policy_accepted": true,
+        "id": 4,
+        "name": "sarma up",
+        "phone_number": "8447053658",
+        "review_status": 3,
+        "is_superuser": false,
+        "token": "eyJpcF9hZGRyZXNzIjoiNjEuMjQ2LjQ3LjkzIiwidXNlcl9pZCI6NCwidGltZXN0YW1wIjoxNTA2MzQwNzk0LjM4OTgzN30:1dwS3G:CdyIIH2MU7oNvhRFVklC3-Inuns",
+        "profile_photo": "https://experchatqa.s3.amazonaws.com/4dd85ca174c24392cd6fa29b3e7cbaa6fdeb217d.png",
+        "country_code": 91,
+        "email": "kishor+expert@atlogys.com",
+        "is_phone_number_verified": true
+    }
+}

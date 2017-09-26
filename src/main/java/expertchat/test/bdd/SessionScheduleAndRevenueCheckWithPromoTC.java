@@ -12,6 +12,8 @@ import org.apache.commons.collections.FastArrayList;
 import org.jbehave.core.annotations.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import static expertchat.usermap.TestUserMap.getMap;
@@ -128,8 +130,6 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         System.out.println("-- Scheduling a session  --");
 
-
-
         List<Long> unixDateTimeList=new FastArrayList();
 
         long currentTime=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
@@ -140,21 +140,27 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
             unixDateTimeList.add(datetime);
 
         }*/
-        for (long unixDate: slots){
-            if(unixDate>currentTime){
-                slotInUnix=unixDate;
-                System.out.println("Slot time in utcUnix date from API "+ unixDate);
+       List<Long> sortedList= new ArrayList<Long>();
+
+     /* Collections.sort(slots);
+        System.out.println("**After sorting--"+slots);
+*/
+        for (long slot: slots){
+            if(slot>currentTime){
+                slotInUnix=slot;
+                System.out.println("Slot time in utcUnix date from API "+ slot);
                 break;
             }else continue;
         }
-        System.out.println("Slot time in utcUnix date from API "+ currentTime);
-        System.out.println("Slot time in Unix "+ slotInUnix);
+
+        System.out.println("Current time in UTC unix "+ currentTime);
+        System.out.println("Selected Slot in UTC Unix "+ slotInUnix);
 
         String slotInUTC = dateUtil.convertUnixToOriginDate(slotInUnix);
 
         System.out.println("UTC date after convert from unix "+slotInUTC);
 
-        call.scheduleSession(slotInUTC , code, duration);
+      /*  call.scheduleSession(slotInUTC , code, duration);
 
         response.printResponse();
 
@@ -163,7 +169,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
 
         getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
-
+*/
 
     }
     /*@

@@ -73,6 +73,9 @@ public class AbstractApiFactory implements ApiFactories {
 
         Response r;
         Header header = new Header ( "authorization", "token " + token );
+
+        System.out.println(header.getValue().toString());
+
         r = given ( )
                 .request ( )
                 .header ( header )

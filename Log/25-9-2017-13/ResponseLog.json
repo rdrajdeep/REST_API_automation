@@ -1,0 +1,35 @@
+API RESPONSES+
+========
+Register Device
+========
+{
+    "results": {
+        "id": 7583,
+        "device_type": "ios",
+        "publisher": {
+            "subscribe_key": "sub-c-ada7962c-ef5b-11e6-9032-0619f8945a4f",
+            "channels": [
+                "expert_ch_4",
+                "device_ch_7583"
+            ],
+            "channel_auth": "RBIKQN1YgGBvKdcjoJxPi4buyLA"
+        },
+        "created_timestamp": "2017-09-25T08:16:24.708993Z",
+        "modified_timestamp": "2017-09-25T08:16:24.709032Z",
+        "device_name": "Expert device",
+        "device_sub_type": "ios",
+        "device_id": "13456",
+        "device_token": "token123",
+        "device_os": "ios"
+    }
+}
+API RESPONSES+
+========
+Accept Call
+========
+{
+    "results": {
+        "status": 6,
+        "data": null
+    }
+}
