@@ -1,4 +1,4 @@
-package expertchat.util;
+package expertchat;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -20,7 +20,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "PR30",
+                        "coupon_code": "PR37",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit": 1,
@@ -36,17 +36,6 @@ When i login with {"email":"rajdeep+expert@atlogys.com","password":"testing123"}
 
 Then get profile of the logged in expert
 
-Then i am creating a calender as {
-                              "title": "dsfsadf",
-                              "start_time": "12:30:00",
-                              "end_time": "12:50:00",
-                              "timezone": "Asia/Kolkata",
-                              "week_days": [
-                                  2
-                              ]
-                          }
-
-
 Given an user
 When i login with {"email":"kishor+user@atlogys.com","password":"testing123"}
 
@@ -61,6 +50,16 @@ Then i register a device as {
 
 Then get a slot
 
-When schedule a session using promo code PR30 and duration 10
+When schedule a session using promo code PR37 and duration 10
+
+Then it should return session id
+
+When I pass on session id in session details API
+
+Then i initiate the session
+
+
+
+
 
 

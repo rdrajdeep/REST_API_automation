@@ -16,6 +16,8 @@ public class DatetimeUtility {
     private static Date utcDate;
     private static DateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
+    private static DateFormat formatDateOnly = new SimpleDateFormat("yyyy-MM-dd");
+
 
 
 
@@ -83,6 +85,21 @@ public class DatetimeUtility {
 
         return formatDate.format(new Date());
     }
+
+    /*@
+    * Get current date in "yyyy-MM-dd" format
+     */
+    public String currentDateOnly() {
+
+        String dateTime=null;
+
+        formatDateOnly.setTimeZone(TimeZone.getTimeZone(TimeZone.getDefault().getID()));
+
+        formatDateOnly.format(new Date());
+
+        return formatDateOnly.format(new Date());
+    }
+
 
     /*@
      * Convert date from  "yyyy-MM-dd'T'HH:mm:ss'Z'" to Unix TimeStamp

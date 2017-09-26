@@ -1,5 +1,7 @@
 package expertchat.util;
 
+import expertchat.Session;
+import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,10 +12,12 @@ public class ResponseParser {
 
     private ArrayList<Session> sessionsPricingList;
     private ArrayList<String> mSlotsLengthList;
+    private ArrayList<String> slotsTime;
+    private String date;
 
     LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> slotLengthLinkedHashMap;
 
-    public void onSuccess(String response){
+    public ArrayList<String> onSuccess(String response){
 
         try {
 
@@ -65,13 +69,36 @@ public class ResponseParser {
                 String key = String.valueOf(entry.getKey());
                 slotLengthLinkedHashMap.put(key, entry.getValue());
             }
+            DatetimeUtility util=new DatetimeUtility();
+            String today=util.currentDateOnly();
 
             ArrayList<String> dataFromHashMap = getValueListFromHashMap("30", "", false);
             if (dataFromHashMap != null && dataFromHashMap.size() > 0) {
 
 //                System.out.println(getValueListFromHashMap("", "", false));
-//                System.out.println(dataFromHashMap);
-                System.out.println((slotLengthLinkedHashMap.get("10")).get(sortedList.get(0)));
+                //System.out.println(dataFromHashMap);
+                //date=dataFromHashMap;
+                DateTime dateTime;
+                DateTime datetime1;
+                for (String date : sortedList) {
+
+                    dateTime = new DateTime(date);
+                    datetime1=new DateTime(today);
+                  //  System.out.println("Today "+dateTime);
+                    if(dateTime.isEqual(datetime1)){
+
+                        //System.out.println((slotLengthLinkedHashMap.get("10")).get(date));
+                        slotsTime=(slotLengthLinkedHashMap.get("10")).get(date);
+                        return slotsTime;
+
+                    }else{
+                        System.out.println("No slots available today");
+                    }
+                   // System.out.println(dateTime.isEqualNow());
+                }
+               // System.out.println((slotLengthLinkedHashMap.get("10")).get(sortedList.get(0)));
+
+               // slotsTime=(slotLengthLinkedHashMap.get("10")).get(sortedList.get(1));
                 /*wheelLeft.setData(getValueListFromHashMap("", "", false));
 
                 wheelCenter.setData(dataFromHashMap);
@@ -88,6 +115,8 @@ public class ResponseParser {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+
+        return slotsTime;
     }
 
     private ArrayList<String> sortedList;

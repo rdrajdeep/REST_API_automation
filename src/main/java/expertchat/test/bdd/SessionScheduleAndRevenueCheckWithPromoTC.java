@@ -10,7 +10,9 @@ import expertchat.usermap.TestUserMap;
 import expertchat.util.DatetimeUtility;
 import org.apache.commons.collections.FastArrayList;
 import org.jbehave.core.annotations.*;
+import org.joda.time.DateTime;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -46,6 +48,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     private Calender calender = new Calender();
 
     private List<Long> slots = new ArrayList<>();
+    private String slot;
 
     private String sessionId = null;
 
@@ -107,7 +110,12 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         System.out.println("--- GETTING A SLOT NOW---");
 
        // for(String caleder: pcode)
-        slots=pcode.getaSlot();
+        slots=pcode.getAllSlots("10");
+        System.out.println("slot checked- getSlot-->"+slots);
+        System.out.println(slots.get(0));
+        //slot=slots.get(0).toString();
+
+        System.out.println("Extracted slot is: "+slots.get(0));
 
         if (!slots.isEmpty()) {
 
@@ -130,48 +138,44 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         System.out.println("-- Scheduling a session  --");
 
-        List<Long> unixDateTimeList=new FastArrayList();
+    /*    List<Long> unixDateTimeList=new FastArrayList();
 
         long currentTime=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
         long slotInUnix=0;
 
-       /* for(long datetime:slots){
 
-            unixDateTimeList.add(datetime);
-
-        }*/
-       List<Long> sortedList= new ArrayList<Long>();
-
-     /* Collections.sort(slots);
-        System.out.println("**After sorting--"+slots);
-*/
         for (long slot: slots){
             if(slot>currentTime){
                 slotInUnix=slot;
                 System.out.println("Slot time in utcUnix date from API "+ slot);
                 break;
             }else continue;
-        }
+        }*/
 
-        System.out.println("Current time in UTC unix "+ currentTime);
-        System.out.println("Selected Slot in UTC Unix "+ slotInUnix);
+/*        System.out.println("Current time in UTC unix "+ currentTime);
+        System.out.println("Selected Slot in UTC Unix "+ slotInUnix);*/
 
-        String slotInUTC = dateUtil.convertUnixToOriginDate(slotInUnix);
 
-        System.out.println("UTC date after convert from unix "+slotInUTC);
+        String todayUTC=dateUtil.ISTtoUTC(dateUtil.currentDate());
 
-      /*  call.scheduleSession(slotInUTC , code, duration);
+        //String finalSlot=todayUTC+"T"+slot+":00"+"Z";
+        System.out.println("Print final booking slot "+todayUTC);
+
+        call.scheduleSession(todayUTC , code, duration);
 
         response.printResponse();
 
         this.checkAndWriteToReport(response.statusCode(), "Session with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
 
         userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
+        getMap().put("scheduled_datetime","results.scheduled_datetime");
 
-        getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
-*/
+       // getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
+
 
     }
+
+
     /*@
      Login with User, Param--> JSON
      */
@@ -264,6 +268,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
      *Creating a calender
      */
 
+    @Pending
     @Then("create a calender as $json")
     @Alias("i am creating a calender as $json")
     public void calender(@Named("json") String json) {
@@ -408,6 +413,7 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
 
     @When("i initiate the session")
+    @Then("i initiate the session")
     public void validateSessionInitiation() {
 
         info("Intiating a Call/Session");
@@ -421,30 +427,37 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         long slotinUnix=dateUtil.convertToUnixTimestamp(SlotinUTC);
         long currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
         long diff=slotinUnix-currentTimeUnix;
+
         System.out.println("Looping for "+diff+" times");
+
         String statusCode = null;
-        for (long i=0;i<=diff;i++){
-
-            call.intiate(sessionId, userDeviceId);
-
-            statusCode=jsonParser.getJsonData("results.status", ResponseDataType.INT);
-
-            if (!statusCode.equals("2")){
-
-                currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
+       if(diff>0){
+           //Sleep the thread for diff millisecond
+           try {
+                Thread.sleep(diff);
                 diff=slotinUnix-currentTimeUnix;
-                System.out.println("Loop "+i+" ->> Schedule time is still in future date");
 
-                continue;
+           }catch (InterruptedException e) {
+               e.printStackTrace();
+           }
 
-            }else{
+       }
+        diff=slotinUnix-currentTimeUnix;
 
-                this.checkAndWriteToReport(response.statusCode(), "Call is successfully initiated", parameter.isNegative());
-                System.out.println("Call is successfully initiated");
-                break;
+        if(diff>0){
+            //Sleep the thread for diff millisecond
+            try {
+                Thread.sleep(diff);
+              }catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
+       else{
+           call.intiate(sessionId, userDeviceId);
+           response.printResponse();
 
+        }
+        this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
     }
 
 
