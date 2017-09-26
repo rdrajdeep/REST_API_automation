@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="11_SessionScheduleWithPromoCode.story" pinned="false" current-in-tab="false">
+      <file leaf-file-name="11_SessionScheduleWithPromoCode.story" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Story/11_SessionScheduleWithPromoCode.story">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+            <state relative-caret-position="345">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,8 +42,8 @@
       <file leaf-file-name="DatetimeUtility.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/util/DatetimeUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="736">
+              <caret line="107" column="50" lean-forward="false" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -52,11 +52,21 @@
       <file leaf-file-name="SessionScheduleAndRevenueCheckWithPromo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/SessionScheduleAndRevenueCheckWithPromo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+            <state relative-caret-position="428">
+              <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
               <folding>
                 <element signature="e#1153#1161#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionScheduleAndRevenueCheckWithPromoTC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/test/bdd/SessionScheduleAndRevenueCheckWithPromoTC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="449" column="18" lean-forward="true" selection-start-line="449" selection-start-column="18" selection-end-line="449" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +84,8 @@
       <file leaf-file-name="ResponseParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+            <state relative-caret-position="168">
+              <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,23 +96,10 @@
       <file leaf-file-name="Calling.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/Calling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="412" column="16" lean-forward="false" selection-start-line="412" selection-start-column="16" selection-end-line="412" selection-end-column="16" />
+            <state relative-caret-position="322">
+              <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
               <folding>
                 <marker date="1506402464307" expanded="true" signature="10742:11057" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionScheduleAndRevenueCheckWithPromoTC.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/test/bdd/SessionScheduleAndRevenueCheckWithPromoTC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4716">
-              <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-              <folding>
-                <element signature="e#1054#1055#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>negativeCases()</find>
       <find>juni</find>
       <find>negativeCases</find>
       <find>User</find>
@@ -149,8 +145,9 @@
       <find>slotsTime</find>
       <find>slot</find>
       <find>slots</find>
-      <find>scheduled_datetime</find>
       <find>sessionId</find>
+      <find>scheduled_datetime</find>
+      <find>sortedList</find>
     </findStrings>
     <replaceStrings>
       <replace>30</replace>
@@ -218,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/main/java/expertchat/util/DatetimeUtility.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/expertchat/util/Email.java" />
-        <option value="$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/SessionScheduleAndRevenueCheckWithPromo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/expertchat/test/bdd/SessionScheduleAndRevenueCheckWithPromoTC.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Story/11_SessionScheduleWithPromoCode.story" />
       </list>
@@ -841,27 +838,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestStoryConfig - 2017.09.26 at 12h 02m 19s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 12h 08m 40s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 12h 11m 40s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 19h 13m 41s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 19h 24m 34s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 19h 31m 59s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestStoryConfig - 2017.09.26 at 19h 34m 05s.xml">
-      <configuration name="TestStoryConfig" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestStoryConfig - 2017.09.26 at 19h 37m 44s.xml">
       <configuration name="TestStoryConfig" configurationId="JUnit" />
     </history-entry>
@@ -869,6 +845,27 @@
       <configuration name="TestStoryConfig" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestStoryConfig - 2017.09.26 at 19h 46m 26s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 04m 15s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 05m 55s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 12m 22s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 15m 08s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 25m 39s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 32m 43s.xml">
+      <configuration name="TestStoryConfig" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStoryConfig - 2017.09.26 at 20h 37m 55s.xml">
       <configuration name="TestStoryConfig" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -883,6 +880,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="27" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.4969697" order="10" side_tool="false" content_ui="tabs" />
@@ -890,7 +888,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58942455" sideWeight="0.5151515" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9116279" sideWeight="0.4848485" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.99379843" sideWeight="0.4848485" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4775194" sideWeight="0.4969743" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.93798447" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -993,27 +991,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java</url>
-          <line>82</line>
+          <line>78</line>
           <properties />
-          <option name="timeStamp" value="130" />
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java</url>
-          <line>87</line>
+          <line>75</line>
           <properties />
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="132" />
+          <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="133" />
+      <option name="time" value="135" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1279,16 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/test/bdd/AbstractSteps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1297,20 +1279,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/SessionScheduleAndRevenueCheckWithPromo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-          <folding>
-            <element signature="e#1153#1161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/Calling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="412" column="16" lean-forward="false" selection-start-line="412" selection-start-column="16" selection-end-line="412" selection-end-column="16" />
+        <state relative-caret-position="322">
+          <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
           <folding>
             <marker date="1506402464307" expanded="true" signature="10742:11057" ph="{...}" />
           </folding>
@@ -1325,30 +1297,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/util/ResponseParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="74" column="74" lean-forward="false" selection-start-line="74" selection-start-column="74" selection-end-line="74" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/bussinesslogic/SessionScheduleAndRevenueCheckWithPromo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="111" column="5" lean-forward="true" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding>
+            <element signature="e#1153#1161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/test/bdd/SessionScheduleAndRevenueCheckWithPromoTC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="449" column="18" lean-forward="true" selection-start-line="449" selection-start-column="18" selection-end-line="449" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/util/DatetimeUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="736">
+          <caret line="107" column="50" lean-forward="false" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Story/11_SessionScheduleWithPromoCode.story">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="345">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/expertchat/test/bdd/SessionScheduleAndRevenueCheckWithPromoTC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4716">
-          <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-          <folding>
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

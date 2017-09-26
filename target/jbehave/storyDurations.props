@@ -1,6 +1,6 @@
 #org.jbehave.core.embedder.StoryManager
-#Tue Sep 26 19:46:26 IST 2017
+#Tue Sep 26 20:37:55 IST 2017
 threads=1
-total=9000
-threadAverage=9000
-Story/11_SessionScheduleWithPromoCode.story=9000
+total=11000
+threadAverage=11000
+Story/11_SessionScheduleWithPromoCode.story=11000

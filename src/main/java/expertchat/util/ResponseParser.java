@@ -72,11 +72,11 @@ public class ResponseParser {
             DatetimeUtility util=new DatetimeUtility();
             String today=util.currentDateOnly();
 
-            ArrayList<String> dataFromHashMap = getValueListFromHashMap("30", "", false);
+            ArrayList<String> dataFromHashMap = getValueListFromHashMap("10", "", false);
             if (dataFromHashMap != null && dataFromHashMap.size() > 0) {
 
 //                System.out.println(getValueListFromHashMap("", "", false));
-                //System.out.println(dataFromHashMap);
+                System.out.println(dataFromHashMap);
                 //date=dataFromHashMap;
                 DateTime dateTime;
                 DateTime datetime1;
@@ -87,7 +87,7 @@ public class ResponseParser {
                   //  System.out.println("Today "+dateTime);
                     if(dateTime.isEqual(datetime1)){
 
-                        //System.out.println((slotLengthLinkedHashMap.get("10")).get(date));
+                        System.out.println((slotLengthLinkedHashMap.get("10")).get(date));
                         slotsTime=(slotLengthLinkedHashMap.get("10")).get(date);
                         return slotsTime;
 

@@ -13,10 +13,7 @@ import org.jbehave.core.annotations.*;
 import org.joda.time.DateTime;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static expertchat.usermap.TestUserMap.getMap;
 
@@ -156,19 +153,19 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         System.out.println("Selected Slot in UTC Unix "+ slotInUnix);*/
 
 
-        String todayUTC=dateUtil.ISTtoUTC(dateUtil.currentDate());
+        String today=dateUtil.currentDateOnly();
 
-        //String finalSlot=todayUTC+"T"+slot+":00"+"Z";
-        System.out.println("Print final booking slot "+todayUTC);
+        String finalSlot=today+"T"+slots.get(0)+":00"+"Z";
+        System.out.println("Print final booking slot "+finalSlot);
 
-        call.scheduleSession(todayUTC , code, duration);
+        call.scheduleSession(finalSlot , code, duration);
 
         response.printResponse();
 
         this.checkAndWriteToReport(response.statusCode(), "Session with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
 
         userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
-        getMap().put("scheduled_datetime","results.scheduled_datetime");
+
 
        // getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
 
@@ -420,17 +417,36 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         System.out.println("initiating call");
 
-       String SlotinUTC= getMap().get("scheduled_datetime");
+        String SlotinUTC= getMap().get("scheduled_datetime");
+
 
         System.out.println("schedule time in utc: "+SlotinUTC);
 
         long slotinUnix=dateUtil.convertToUnixTimestamp(SlotinUTC);
+
+        System.out.println("Schedule time "+slotinUnix+" in UTC "+SlotinUTC);
+        String currentTime= dateUtil.ISTtoUTC(dateUtil.currentDate());
+
         long currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
-        long diff=slotinUnix-currentTimeUnix;
+
+        System.out.println("Current time "+currentTimeUnix +" in UTC "+dateUtil.ISTtoUTC(dateUtil.currentDate()));
+
+        long diff=slotinUnix - currentTimeUnix;
 
         System.out.println("Looping for "+diff+" times");
 
-        String statusCode = null;
+        DateTime currentDate = new DateTime(currentTime);
+        DateTime scheduleDate = new DateTime(SlotinUTC);
+
+        while(!currentDate.isEqual(scheduleDate)){
+
+            System.out.println("");
+        }
+
+
+
+
+       /* String statusCode = null;
        if(diff>0){
            //Sleep the thread for diff millisecond
            try {
@@ -444,20 +460,15 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
        }
         diff=slotinUnix-currentTimeUnix;
 
-        if(diff>0){
+        if(diff<0){
             //Sleep the thread for diff millisecond
-            try {
-                Thread.sleep(diff);
-              }catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Difference is in -ve");
         }
-       else{
+*/
            call.intiate(sessionId, userDeviceId);
            response.printResponse();
 
-        }
-        this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
+           this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
     }
 
 
