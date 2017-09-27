@@ -111,7 +111,7 @@ public class TestStoryConfig extends JUnitStories {
                 new MyStatesTC (getReport (), "Expert Analytics flow"),
                 new SuperAdminTC ( getReport (), "Super Admin flow" ),
                 new GetStreamTC (getReport (), "Get Stream flow"),*/
-               new SessionScheduleAndRevenueCheckWithPromoTC(getReport(),"Promocode test")
+               new SessionTC(getReport(),"Promocode test")
         );
     }
 }

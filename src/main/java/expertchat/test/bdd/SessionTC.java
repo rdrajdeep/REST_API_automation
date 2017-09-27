@@ -8,11 +8,12 @@ import expertchat.params.Credentials;
 import expertchat.params.parameter;
 import expertchat.usermap.TestUserMap;
 import expertchat.util.DatetimeUtility;
-import org.apache.commons.collections.FastArrayList;
 import org.jbehave.core.annotations.*;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-import java.io.IOException;
 import java.util.*;
 
 import static expertchat.usermap.TestUserMap.getMap;
@@ -24,37 +25,29 @@ import static expertchat.usermap.TestUserMap.getMap;
  * ** Author: Rajdeep**
  */
 
-public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
+public class SessionTC extends AbstractSteps {
 
-    public SessionScheduleAndRevenueCheckWithPromoTC(ExtentReports reports, String casName) {
+    public SessionTC(ExtentReports reports, String casName) {
         super(reports, casName);
     }
 
-    expertchat.bussinesslogic.SessionScheduleAndRevenueCheckWithPromo pcode = new expertchat.bussinesslogic.SessionScheduleAndRevenueCheckWithPromo();
+    SessionUtil pcode = new SessionUtil();
 
     ExpertChatApi expertChatApi = new ExpertChatApi();
 
     Credentials credentials = Credentials.getCredentials();
 
     private ApiResponse response = ApiResponse.getObject();
-
     private Calling call = new Calling();
-
     private ExpertProfile expertProfile = new ExpertProfile();
-
     private Calender calender = new Calender();
-
     private List<Long> slots = new ArrayList<>();
-    private String slot;
-
     private String sessionId = null;
-
     private String userDeviceId = null;
-
-    private String scheduleDate = null;
-
-    DatetimeUtility dateUtil=new DatetimeUtility();
-
+    private DatetimeUtility dateUtil=new DatetimeUtility();
+    private boolean isCallArived=false;
+    private boolean ISACTIONTAKEN =false;
+    private boolean isExtensible=false;
 
     @When("login as super user $json")
     public void superUserlogin(@Named("json") String json) {
@@ -135,40 +128,13 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         System.out.println("-- Scheduling a session  --");
 
-    /*    List<Long> unixDateTimeList=new FastArrayList();
-
-        long currentTime=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
-        long slotInUnix=0;
-
-
-        for (long slot: slots){
-            if(slot>currentTime){
-                slotInUnix=slot;
-                System.out.println("Slot time in utcUnix date from API "+ slot);
-                break;
-            }else continue;
-        }*/
-
-/*        System.out.println("Current time in UTC unix "+ currentTime);
-        System.out.println("Selected Slot in UTC Unix "+ slotInUnix);*/
-
-
         String today=dateUtil.currentDateOnly();
-
         String finalSlot=today+"T"+slots.get(0)+":00"+"Z";
         System.out.println("Print final booking slot "+finalSlot);
-
         call.scheduleSession(finalSlot , code, duration);
-
         response.printResponse();
-
-        this.checkAndWriteToReport(response.statusCode(), "Session with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
-
+        this.checkAndWriteToReport(response.statusCode(), "SessionUtil with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
         userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
-
-
-       // getMap().put(jsonParser.getJsonData("results.id", ResponseDataType.STRING), "slot+\"Z\"");
-
 
     }
 
@@ -265,19 +231,22 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
      *Creating a calender
      */
 
-    @Pending
+
     @Then("create a calender as $json")
-    @Alias("i am creating a calender as $json")
-    public void calender(@Named("json") String json) {
+    @Aliases(values = {"i am creating a calender as $json",
+            "i create a calender" , "i create a calender for today"})
+
+    public void calender() throws Exception{
 
         System.out.println("--Creating a calender  --");
 
         info("Creating a calender...");
 
         if (parameter.isNegative()) {
-            calender.createCalender(json);
+
+            calender.createCalender();
         } else {
-            calender.createCalender(json);
+            calender.createCalender();
         }
         this.checkAndWriteToReport(response.statusCode(), "Calender Created", parameter.isNegative());
 
@@ -314,13 +283,13 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     }
 
     /**
-     * @ Get Session ID
+     * @ Get SessionUtil ID
      */
 
     @Then("it should return session id")
     public void setSessionId() {
 
-        info("Session id print");
+        info("SessionUtil id print");
 
         sessionId = getMap().get("scheduled_session_id");
 
@@ -329,13 +298,13 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
     }
 
     /**
-     * @ Get Session Details
+     * @ Get SessionUtil Details
      */
     @When("I get the session details")
     @Alias("I pass on session id in session details API")
     public void getSessionDetails() {
 
-        info("Session Details of " + sessionId);
+        info("SessionUtil Details of " + sessionId);
 
         call.getSessionDetails(sessionId, parameter.isExpert());
 
@@ -401,74 +370,27 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
 
         if (expected.equalsIgnoreCase(actual)) {
 
-            this.AssertAndWriteToReport(true, "Session final status is " + actual);
+            this.AssertAndWriteToReport(true, "SessionUtil final status is " + actual);
         } else {
 
-            this.AssertAndWriteToReport(false, "Session final status is " + actual);
+            this.AssertAndWriteToReport(false, "SessionUtil final status is " + actual);
         }
     }
 
 
     @When("i initiate the session")
     @Then("i initiate the session")
-    public void validateSessionInitiation() {
+    public void validateSessionInitiation() throws  Exception{
 
-        info("Intiating a Call/Session");
+        info("Intiating a Call/SessionUtil");
 
         System.out.println("initiating call");
 
-        String SlotinUTC= getMap().get("scheduled_datetime");
+        pcode.convertDateTime();
+        call.intiate(sessionId, userDeviceId);
+        response.printResponse();
 
-
-        System.out.println("schedule time in utc: "+SlotinUTC);
-
-        long slotinUnix=dateUtil.convertToUnixTimestamp(SlotinUTC);
-
-        System.out.println("Schedule time "+slotinUnix+" in UTC "+SlotinUTC);
-        String currentTime= dateUtil.ISTtoUTC(dateUtil.currentDate());
-
-        long currentTimeUnix=dateUtil.convertToUnixTimestamp(dateUtil.ISTtoUTC(dateUtil.currentDate()));
-
-        System.out.println("Current time "+currentTimeUnix +" in UTC "+dateUtil.ISTtoUTC(dateUtil.currentDate()));
-
-        long diff=slotinUnix - currentTimeUnix;
-
-        System.out.println("Looping for "+diff+" times");
-
-        DateTime currentDate = new DateTime(currentTime);
-        DateTime scheduleDate = new DateTime(SlotinUTC);
-
-        while(!currentDate.isEqual(scheduleDate)){
-
-            System.out.println("");
-        }
-
-
-
-
-       /* String statusCode = null;
-       if(diff>0){
-           //Sleep the thread for diff millisecond
-           try {
-                Thread.sleep(diff);
-                diff=slotinUnix-currentTimeUnix;
-
-           }catch (InterruptedException e) {
-               e.printStackTrace();
-           }
-
-       }
-        diff=slotinUnix-currentTimeUnix;
-
-        if(diff<0){
-            //Sleep the thread for diff millisecond
-            System.out.println("Difference is in -ve");
-        }
-*/
-           call.intiate(sessionId, userDeviceId);
-           response.printResponse();
-
-           this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
     }
 
 
@@ -480,8 +402,144 @@ public class SessionScheduleAndRevenueCheckWithPromoTC extends AbstractSteps {
         }
     }
 
-    @When("I schedule a session 10 min prior to available slot for duration 20 min")
-    public void schedule(){
+    /**
+     * Perform Action on accepted call
+     * @return
+     */
+
+    /**
+     *
+     * @return
+     */
+    @When("I get a call")
+    public boolean isCallArrive(){
+
+        if(getMap().get("call_status").equals(CallStatus.INITIATED)){
+
+            call.isCallArived();
+            isCallArived=true;
+        }
+
+        this.AssertAndWriteToReport(isCallArived, "Call arrived at expert end");
+        return isCallArived;
+    }
+
+    /**
+     *
+     */
+    @Then("I will accept it")
+    public void accept(){
+
+       ISACTIONTAKEN =call.isAcceptCall();
+    }
+
+    /**
+     *
+     * @param status
+     */
+    @Then("Call should be in $status status")
+    @Aliases(values = {"status should be $status"})
+    public void verifyCallStatus(@Named("status")String status){
+
+        boolean isValidate=false;
+
+        String actual=jsonParser.getJsonData("results.status", ResponseDataType.STRING);
+
+        if(status.equalsIgnoreCase(actual)){
+
+            isValidate=true;
+        }
+
+        this.AssertAndWriteToReport(isValidate,"Call status is--"+status);
 
     }
+
+    /**
+     *
+     * @param action
+     */
+    @Then("I will $action the call")
+    @Aliases(values = {"I will $action the same call"})
+    public void performActionOnRecivedCall(@Named("action")String action){
+
+        switch (action.toLowerCase()){
+
+            case "disconect" : ISACTIONTAKEN=call.isDissconnectCall();
+                               break;
+            case "reconnect" : ISACTIONTAKEN=call.reconnect(sessionId);
+                               break;
+            case "decline"   : ISACTIONTAKEN=call.isDecline();
+                               break;
+        }
+
+        this.AssertAndWriteToReport(ISACTIONTAKEN,"Call action is-->"+action);
+        ISACTIONTAKEN=false;
+
+    }
+
+    /**
+     *
+     */
+    @Then("reconect should be successful")
+    public void verifyReconnect(){
+
+    }
+
+    /**
+     *
+     */
+
+    @Then("wait for session extenstion")
+    @When("wait for session extenstion")
+    public void continueSession(){
+
+        int duration=Integer.parseInt(getMap().get("scheduled_duration")); //10 min
+
+        SessionUtil session=new SessionUtil();
+        long scheduleDateTime=session.getScheduleTimeInMillSecond();
+        long durationToMilli=duration*60000;
+        long scheduleEndTimeInMili=scheduleDateTime+durationToMilli;
+        long extensionTimeBeforeEnd=5*60000;
+
+        long extensibleAtInMili=scheduleEndTimeInMili-extensionTimeBeforeEnd;
+        String currentTime=session.getCurrentTime();
+        LocalDateTime serverjodatime = new DateTime(currentTime).toLocalDateTime();
+        DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
+        long currentTimeInMilli=session.getTimeInMillis(serverdtfOut.print(serverjodatime), "MMM dd yyyy, hh:mm a");
+
+        long waitingTime= (extensibleAtInMili-currentTimeInMilli)/60000;
+
+        System.out.println("Waiting "+waitingTime+" minute for extending call");
+        info("Waiting "+waitingTime+" minute for extending call");
+
+        while(!(currentTimeInMilli>=extensibleAtInMili) && !(currentTimeInMilli< scheduleEndTimeInMili)){
+
+            /*Hit extension API*/
+
+            isExtensible = call.checkExtension(sessionId);
+
+        }
+
+
+        this.AssertAndWriteToReport(isExtensible,"SessionUtil can be extended now");
+
+    }
+
+    /**
+     *
+     */
+    @Then("verify if session extension is possible")
+    public void verifySessionExtension(){
+
+        /**
+         * check for avaialble slot
+         */
+
+        if(isExtensible){
+            call.extendSession("10");
+        }
+        this.checkAndWriteToReport(response.statusCode(),"SessionUtil exteded for 10 more minuite",parameter.isNegative());
+    }
+
+
 }

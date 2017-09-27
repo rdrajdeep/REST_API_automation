@@ -11,4 +11,6 @@ public interface CallStatus {
     String COMPLETED = "4";
 
     String DELAYED = "5";
+
+    String RECONNECT = "6";
 }

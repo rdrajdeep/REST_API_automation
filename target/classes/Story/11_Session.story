@@ -20,10 +20,10 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "45",
+                        "coupon_code": "58",
                         "status": 1,
                         "is_deleted": false,
-                        "user_usage_limit": 1,
+                        "user_usage_limit":10,
                         "success_message": null,
                         "error_message": null,
                         "payment_type": 1,
@@ -32,11 +32,15 @@ Then create promocode {
                       }
 
 Given an expert
+
 When i login with {"email":"rajdeep+expert@atlogys.com","password":"testing123"}
 
 Then get profile of the logged in expert
 
+And i create a calender for today
+
 Given an user
+
 When i login with {"email":"kishor+user@atlogys.com","password":"testing123"}
 
 Then i register a device as {
@@ -50,12 +54,59 @@ Then i register a device as {
 
 Then get a slot
 
-When schedule a session using promo code 45 and duration 10
+When schedule a session using promo code 58 and duration 10
+
+Then it should return session id
+
+When I pass on session id in session details API
 
 Then i initiate the session
 
 
+Given an expert
+
+When I get a call
+
+Then I will accept it
+
+And Call should be in in-progress status
+
+Then I will disconnect the call
+
+And Call should be in disconnected status
+
+Given an user
+
+Then I will reconnect the same call
+
+And reconect should be successful
 
 
+Given an expert
+
+Then I will decline the call
+
+And status should be disconected
+
+
+Given an user
+
+Then I will reconnect the same call
+
+And reconect should be successful
+
+
+Given an expert
+
+Then I will accept the call
+
+And status should be in-progress
+
+
+Given an user
+
+Then wait for session extenstion
+
+And verify if session extension is possible
 
 

@@ -19,7 +19,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
     private ApiResponse response = ApiResponse.getObject ( );
 
-    private ParseResponse parseResponse = new ParseResponse ( response );
+    private ParseResponse pr = new ParseResponse ( response );
 
     private SessionManagement session = SessionManagement.session ( );
 
@@ -37,7 +37,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
      */
     public String getStatusOfCall ( String key ) {
 
-        return parseResponse.getJsonData ( key, ResponseDataType.INT );
+        return pr.getJsonData ( key, ResponseDataType.INT );
     }
 
     public void doCall ( String scheduled_duration ) {
@@ -62,7 +62,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         if ( response.statusCode ( ) == HTTP_ACCEPTED || response.statusCode ( ) == HTTP_OK ) {
 
-            id = parseResponse.getJsonData ( "results.id", ResponseDataType.INT );
+            id = pr.getJsonData ( "results.id", ResponseDataType.INT );
 
         } else {
 
@@ -131,6 +131,8 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
         return getStatusOfCall ( "results.status" ).equals ( CallStatus.DECLINED );
     }
 
+
+
     public boolean isDelay ( ) {
 
         String url = SESSION + getId ( ) + "/delay/";
@@ -168,7 +170,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 response.printResponse();
 
-                getMap().put("ExpertDevice", parseResponse.getJsonData("results.id", ResponseDataType.INT));
+                getMap().put("ExpertDevice", pr.getJsonData("results.id", ResponseDataType.INT));
             }
         } else {
 
@@ -178,7 +180,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 response.printResponse();
 
-                getMap().put("UserDevice", parseResponse.getJsonData("results.id", ResponseDataType.INT));
+                getMap().put("UserDevice", pr.getJsonData("results.id", ResponseDataType.INT));
             }
         }
     }
@@ -191,12 +193,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         String url=SESSION+"1"+"extend_session/";
 
-        String json="{\n" +
-                "    \"expert_profile\": "+getMap ().get ( "expertProfileId" )+",\n" +
-                "    \"expert\": "+getMap ().get ( "expertId" )+",\n" +
-                "    \"user_device\": "+getMap ().get ( "UserDevice" )+",\n" +
-                "    \"scheduled_duration\": "+realTime+"\n" +
-                "}";
+        String json="{}";
 
         response.setResponse (this.put(url, json, session.getUserToken (), true));
 
@@ -244,9 +241,9 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         if(response.statusCode ()==HTTP_ACCEPTED || response.statusCode ()==HTTP_OK) {
 
-            getMap ( ).put ( "scheduled_session_id", parseResponse.getJsonData ( "results.id", ResponseDataType.INT ) );
+            getMap ( ).put ( "scheduled_session_id", pr.getJsonData ( "results.id", ResponseDataType.INT ) );
 
-            getMap ( ).put ( "scheduled_datetime", parseResponse.getJsonData ( "results.scheduled_datetime", ResponseDataType.STRING ));
+            getMap ( ).put ( "scheduled_datetime", pr.getJsonData ( "results.scheduled_datetime", ResponseDataType.STRING ));
 
         }else {
 
@@ -280,9 +277,9 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         if(response.statusCode ()==HTTP_ACCEPTED || response.statusCode ()==HTTP_OK) {
 
-            getMap ( ).put ( "scheduled_session_id", parseResponse.getJsonData ( "results.id", ResponseDataType.INT ) );
+            getMap ( ).put ( "scheduled_session_id", pr.getJsonData ( "results.id", ResponseDataType.INT ) );
 
-            getMap ( ).put ( "scheduled_datetime", parseResponse.getJsonData ( "results.scheduled_datetime", ResponseDataType.STRING ));
+            getMap ( ).put ( "scheduled_datetime", pr.getJsonData ( "results.scheduled_datetime", ResponseDataType.STRING ));
 
         }else {
 
@@ -354,19 +351,31 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
         }else {
             response.printResponse ();
 
-            card_id=parseResponse.getJsonData ( "results.id", ResponseDataType.INT );
+            card_id= pr.getJsonData ( "results.id", ResponseDataType.INT );
 
             getMap ().put ( "user_card_id" , card_id);
         }
     }
 
+    /**
+     *
+     * @param sessionId
+     * @param deviceId
+     */
     public void intiate ( String sessionId, String deviceId ) {
+
 
         String json="{ \"user_device\": "+deviceId+"}";
 
         response.setResponse(this.put (json, SESSION+sessionId+"/initialize/", session.getUserToken (), true));
 
         if(response.statusCode()==HTTP_OK||response.statusCode()==HTTP_ACCEPTED){
+
+//            getMap().put("call_status", pr.getJsonData("results.status",ResponseDataType.INT));
+//
+//            getMap().put("call_id", pr.getJsonData("results.result.call_id",ResponseDataType.INT));
+//
+//            getMap().put("scheduled_duration", pr.getJsonData("results.result.scheduled_duration",ResponseDataType.INT));
 
             response.printResponse ();
 
@@ -387,7 +396,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         response.printResponse ();
 
-        return parseResponse.getJsonData ( "results.revenue", ResponseDataType.STRING);
+        return pr.getJsonData ( "results.revenue", ResponseDataType.STRING);
     }
 
     public String sessionStatus ( ) {
@@ -398,7 +407,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         response.printResponse ();
 
-        return parseResponse.getJsonData ( "results.status", ResponseDataType.STRING);
+        return pr.getJsonData ( "results.status", ResponseDataType.STRING);
     }
 
     public String getAllNotifications ( ) {
@@ -420,13 +429,13 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 response.printResponse();
 
-                getMap().put("user_revenue", parseResponse.getJsonData("results.revenue", ResponseDataType.FLOAT));
+                getMap().put("user_revenue", pr.getJsonData("results.revenue", ResponseDataType.FLOAT));
 
-                getMap().put("expert_revenue", parseResponse.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
+                getMap().put("expert_revenue", pr.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
             }
         }else {
 
-            System.out.println("---Getting Session details for session Id: "+sessionId+"---");
+            System.out.println("---Getting SessionUtil details for session Id: "+sessionId+"---");
 
             response.setResponse(this.get(SESSION+sessionId+"/", session.getUserToken(), true));
 
@@ -434,11 +443,69 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 response.printResponse();
 
-                getMap().put("user_revenue", parseResponse.getJsonData("results.revenue", ResponseDataType.FLOAT));
+                getMap().put("user_revenue", pr.getJsonData("results.revenue", ResponseDataType.FLOAT));
 
-                getMap().put("expert_revenue", parseResponse.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
+                getMap().put("expert_revenue", pr.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
 
             }
         }
     }
+
+    /*Check session API from expert end*/
+    public void isCallArived() {
+
+        String url=SESSION+getMap().get("call_id")+"/";
+        response.setResponse(
+                this.get(url, session.getExpertToken())
+        );
+
+        if(isOK()){
+
+            response.printResponse();
+        }else {
+
+
+        }
+
+    }
+
+
+    /**
+     *
+     * @param sessionId to recoonect a call
+     * @return
+     */
+    public boolean reconnect(String sessionId) {
+
+        String url=SESSION+sessionId+"/reconnect/";
+        response.setResponse(
+                this.put("{}", url, session.getUserToken())
+        );
+
+        if(isOK()){
+
+            response.printResponse();
+            return getStatusOfCall ( "results.status" ).equals ( CallStatus.RECONNECT );
+        }
+
+        return false;
+    }
+
+    public boolean checkExtension(String sessionId){
+
+        String url= SESSION+sessionId+"/get_extension_time/";
+        response.setResponse(
+                this.get(url,session.getUserToken())
+        );
+
+        if(isOK()){
+            response.printResponse();
+            return  true;
+        }
+        else {
+            response.printResponse();
+            return false;
+        }
+    }
+
 }

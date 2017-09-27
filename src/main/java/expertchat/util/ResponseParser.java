@@ -1,6 +1,5 @@
 package expertchat.util;
 
-import expertchat.Session;
 import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONException;

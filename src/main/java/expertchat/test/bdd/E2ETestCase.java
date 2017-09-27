@@ -1662,14 +1662,14 @@ public class E2ETestCase extends AbstractSteps implements HTTPCode {
 
             if(count.equals (ActualCount)){
 
-                AssertAndWriteToReport ( true, "Number of Session for\t"+date+"\tis\t"+ActualCount);
+                AssertAndWriteToReport ( true, "Number of SessionUtil for\t"+date+"\tis\t"+ActualCount);
             }else {
 
-                AssertAndWriteToReport ( false, "Number of Session for\t"+date+"\tis\t"+ActualCount);
+                AssertAndWriteToReport ( false, "Number of SessionUtil for\t"+date+"\tis\t"+ActualCount);
             }
         }else {
 
-            AssertAndWriteToReport ( true, "Number of Session for\t"+date+"\tis\t"+size);
+            AssertAndWriteToReport ( true, "Number of SessionUtil for\t"+date+"\tis\t"+size);
         }
     }
 

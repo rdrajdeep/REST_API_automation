@@ -1,8 +1,5 @@
 package expertchat.bussinesslogic;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import expertchat.apioperation.AbstractApiFactory;
 import expertchat.apioperation.ExpertChatEndPoints;
 import expertchat.apioperation.apiresponse.ApiResponse;
@@ -23,9 +20,24 @@ public class Calender extends AbstractApiFactory implements HTTPCode, ExpertChat
 
     /****
      *
-     * @param json
+     * @param
      */
-    public void createCalender(String json){
+    public void createCalender() throws  Exception{
+
+        SessionUtil obj= new SessionUtil();
+
+        String json="{\n" +
+                "    \"title\": \"test3\",\n" +
+                "    \"start_time\": \""+obj.getStrtTimeForCalender()+"\",\n" +
+                "    \"end_time\": \""+obj.getEndTimeForCalender()+"\",\n" +
+                "    \"timezone\": \"Asia/Kolkata\",\n" +
+                "    \"week_days\": [\n" +
+                "        "+obj.today()+" \n" +
+                "    ]\n" +
+                "}";
+
+
+        System.out.println("----->"+json);
 
         response.setResponse(
                 this.post(json, SLOTS, session.getExpertToken ())

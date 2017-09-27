@@ -21,6 +21,8 @@ public class DatetimeUtility {
 
 
 
+
+
     /*@
         * Convert date IST to UTC in "yyyy-MM-dd'T'HH:mm:ss'Z'" format
      */
@@ -136,11 +138,19 @@ public class DatetimeUtility {
     public static  void main(String[] args){
 
         DatetimeUtility dt=new DatetimeUtility();
-        long unix=1506117600;//unix of below ist time
-        String istDt="2017-09-23T03:30:00Z";
-        String utcDt="2017-09-23T09:30:00Z";
+        long currentUnix=dt.convertToUnixTimestamp(dt.ISTtoUTC(dt.currentDate()));//unix of below ist time
+       // String istDt="2017-09-23T03:30:00Z";
+        String utcDt="2017-09-27T07:00:00Z";
+        String cdate="2017-09-27T06:21:47Z";
 
-        System.out.println("UTC "+utcDt+" Converted to IST  ---  "+dt.UTCtoIST(utcDt));
+        String  cDateUTC=dt.ISTtoUTC(cdate);
+
+        long scheduletime=dt.convertToUnixTimestamp(utcDt);
+
+        System.out.println("UTC "+utcDt+" Converted to unixtime  ---  "+scheduletime);
+        System.out.println("Current time in unix "+currentUnix);
+        System.out.println("Now is "+cdate +" Time diff in Sec "+(scheduletime-currentUnix));
+        System.out.println("Current time in UTC "+cDateUTC);
       //  System.out.println("IST "+istDt+" Converted to UTC  ---  "+dt.ISTtoUTC(istDt));
         //System.out.println("UTC "+utcDt+" Converted to UNIX ---  "+ dt.convertToUnixTimestamp(utcDt));
         //System.out.println("unix to original-- "+dt.convertUnixToOriginDate(unix));
