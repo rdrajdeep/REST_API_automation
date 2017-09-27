@@ -138,8 +138,8 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
        this.getCurrentTime();
 
-      // String scheduleTime= getMap().get("scheduled_datetime");
-       String scheduleTime= "2017-09-27T12:00:00Z";
+       String scheduleTime= getMap().get("scheduled_datetime");
+      // String scheduleTime= "2017-09-27T12:00:00Z";
 
        LocalDateTime serverjodatime = new DateTime(this.getCurrentTime()).toLocalDateTime();
 
