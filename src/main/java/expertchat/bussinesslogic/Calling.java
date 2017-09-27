@@ -197,7 +197,11 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         response.setResponse (this.put(url, json, session.getUserToken (), true));
 
-        response.printResponse ();
+        if(isOK()){
+            response.printResponse ();
+        }else {
+            response.printResponse ();
+        }
 
     }
 
@@ -371,11 +375,11 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         if(response.statusCode()==HTTP_OK||response.statusCode()==HTTP_ACCEPTED){
 
-//            getMap().put("call_status", pr.getJsonData("results.status",ResponseDataType.INT));
-//
-//            getMap().put("call_id", pr.getJsonData("results.result.call_id",ResponseDataType.INT));
-//
-//            getMap().put("scheduled_duration", pr.getJsonData("results.result.scheduled_duration",ResponseDataType.INT));
+            getMap().put("call_status", pr.getJsonData("results.status",ResponseDataType.STRING));
+
+            getMap().put("call_id", pr.getJsonData("results.result.call_id",ResponseDataType.STRING));
+
+            getMap().put("scheduled_duration", pr.getJsonData("results.result.scheduled_duration",ResponseDataType.STRING));
 
             response.printResponse ();
 

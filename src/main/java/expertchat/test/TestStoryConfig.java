@@ -67,7 +67,7 @@ public class TestStoryConfig extends JUnitStories {
 
             @Override
             public long asSeconds ( String timeout ) {
-                return 500;
+                return 300000;
             }
         };
 

@@ -139,7 +139,6 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
        this.getCurrentTime();
 
        String scheduleTime= getMap().get("scheduled_datetime");
-      // String scheduleTime= "2017-09-27T12:00:00Z";
 
        LocalDateTime serverjodatime = new DateTime(this.getCurrentTime()).toLocalDateTime();
 
@@ -157,7 +156,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
           long diff=inMiliisSchedule-inmillisLocal;
 
-           System.out.println(diff/60000+"-Mint wait to call");
+           System.out.println(" Waiting "+diff/60000+" minute to initiate the call");
 
            Thread.sleep(diff);
        }

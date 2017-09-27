@@ -52,6 +52,43 @@ public class Calender extends AbstractApiFactory implements HTTPCode, ExpertChat
         }
     }
 
+    /**
+     * Testing purpose only
+     * */
+    public void appendExistingCalender() throws  Exception{
+
+        SessionUtil obj= new SessionUtil();
+
+        String json="{\n" +
+                "    \"results\": {\n" +
+                "        \"id\": 350,\n" +
+                "        \"title\": \"test3\",\n" +
+                "        \"start_time\":\""+obj.getStrtTimeForCalender()+"\",\n" +
+                "        \"end_time\": \""+obj.getEndTimeForCalender()+"\",\n" +
+                "        \"timezone\": \"Asia/Kolkata\",\n" +
+                "        \"week_days\": [\n" +
+                "            "+obj.today()+"\n" +
+                "        ]\n" +
+                "    }\n" +
+                "}";
+
+
+        System.out.println("-----> "+json);
+
+        response.setResponse(
+                this.post(json, SLOTS+"/350/", session.getExpertToken ())
+        );
+
+        response.printResponse();
+
+        System.out.println(response.statusCode());
+        if(response.statusCode()==HTTP_OK || response.statusCode()==HTTP_ACCEPTED ){
+
+            calenderId=pr.getJsonData("results.id", ResponseDataType.INT);
+        }
+    }
+
+
     public void getCalender(String id){
 
         response.setResponse(

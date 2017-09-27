@@ -20,7 +20,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "58",
+                        "coupon_code": "62",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit":10,
@@ -41,7 +41,7 @@ And i create a calender for today
 
 Given an user
 
-When i login with {"email":"kishor+user@atlogys.com","password":"testing123"}
+When i login with {"email":"yassar@atlogys.com","password":"expert12"}
 
 Then i register a device as {
                               "device_type":"ios",
@@ -54,7 +54,7 @@ Then i register a device as {
 
 Then get a slot
 
-When schedule a session using promo code 58 and duration 10
+When schedule a session using promo code 62 and duration 10
 
 Then it should return session id
 
@@ -64,6 +64,15 @@ Then i initiate the session
 
 
 Given an expert
+
+Then i register a expert device as {
+                              "device_type":"ios",
+                              "device_name": "iPhone 6",
+                              "device_sub_type": "iPhone 6",
+                              "device_id": "12345",
+                              "device_token": "12345",
+                              "device_os": "ios"
+                            }
 
 When I get a call
 

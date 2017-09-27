@@ -245,8 +245,10 @@ public class SessionTC extends AbstractSteps {
         if (parameter.isNegative()) {
 
             calender.createCalender();
+            //calender.appendExistingCalender();
         } else {
             calender.createCalender();
+            //calender.appendExistingCalender();
         }
         this.checkAndWriteToReport(response.statusCode(), "Calender Created", parameter.isNegative());
 
@@ -259,7 +261,8 @@ public class SessionTC extends AbstractSteps {
 
     @When("register a device as $json")
     @Then("register a device as $json")
-    @Alias("i register a device as $json")
+    @Aliases(values = {"i register a device as $json",
+            "i register a expert device as $json"})
     public void registerDevice(@Named("json") String json) {
 
 
@@ -491,7 +494,7 @@ public class SessionTC extends AbstractSteps {
 
     @Then("wait for session extenstion")
     @When("wait for session extenstion")
-    public void continueSession(){
+    public void continueSession() throws InterruptedException {
 
         int duration=Integer.parseInt(getMap().get("scheduled_duration")); //10 min
 
@@ -538,7 +541,7 @@ public class SessionTC extends AbstractSteps {
         if(isExtensible){
             call.extendSession("10");
         }
-        this.checkAndWriteToReport(response.statusCode(),"SessionUtil exteded for 10 more minuite",parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minuite",parameter.isNegative());
     }
 
 
