@@ -45,6 +45,7 @@ public class ParseResponse implements HTTPCode {
 
                 case 4:
                     return String.valueOf ( response.getResponse ( ).jsonPath ( ).getChar ( keys ) );
+
                 case 5:
                     return String.valueOf ( response.getResponse ( ).jsonPath ( ).getBoolean ( keys ) );
             }

@@ -90,8 +90,8 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
         String expert_id=getMap().get("expertId");
 
         System.out.println("Exprt base Id "+expert_id);
-        //String api=USER_AVILABLE_SLOTS+expert_id+"/";
-        String api=USER_AVILABLE_SLOTS+"546"+"/";
+        String api=USER_AVILABLE_SLOTS+expert_id+"/";
+        //String api=USER_AVILABLE_SLOTS+"546"+"/";
 
         response.setResponse(
 
@@ -101,7 +101,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
         if(response.statusCode()!=HTTP_BAD || response.statusCode()!=HTTP_UNAVAILABLE) {
 
-            slots= new ResponseParser().onSuccess(response.getResponse().asString());
+            slots= new ResponseParser().onSuccess(response.getResponse().asString(), min);
         }
 
         System.out.println("*****I am in getAllSlots>>>>***"+slots);
@@ -112,7 +112,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
 
 
-    public String getCurrentTime(){
+    public String getCurrentTimefromServer(){
 
         response.setResponse(
                 this.get("http://connect.qa.experchat.com/now/")
@@ -136,11 +136,11 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
    public void convertDateTime() throws Exception{
 
-       this.getCurrentTime();
+       this.getCurrentTimefromServer();
 
        String scheduleTime= getMap().get("scheduled_datetime");
 
-       LocalDateTime serverjodatime = new DateTime(this.getCurrentTime()).toLocalDateTime();
+       LocalDateTime serverjodatime = new DateTime(this.getCurrentTimefromServer()).toLocalDateTime();
 
        DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
 
@@ -206,7 +206,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
        long extensionTimeBeforeEnd=5*60000;
        long extensionTime=endTime-extensionTimeBeforeEnd;
 
-       String currentTime=session.getCurrentTime();
+       String currentTime=session.getCurrentTimefromServer();
 
        LocalDateTime serverjodatime = new DateTime(currentTime).toLocalDateTime();
        DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
@@ -236,7 +236,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
       if(startMint==60){
 
-          startHour++;
+          startHour=startHour+1;
           startMint=0;
       }
 

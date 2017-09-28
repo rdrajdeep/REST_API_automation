@@ -8,6 +8,7 @@ import expertchat.params.Credentials;
 import expertchat.params.parameter;
 import expertchat.usermap.TestUserMap;
 import expertchat.util.DatetimeUtility;
+import expertchat.util.ExpertChatException;
 import org.jbehave.core.annotations.*;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDateTime;
@@ -138,7 +139,6 @@ public class SessionTC extends AbstractSteps {
 
     }
 
-
     /*@
      Login with User, Param--> JSON
      */
@@ -267,7 +267,6 @@ public class SessionTC extends AbstractSteps {
 
 
         System.out.println("--Registering a Device --");
-
 
         if (parameter.isNegative()) {
 
@@ -417,6 +416,7 @@ public class SessionTC extends AbstractSteps {
     @When("I get a call")
     public boolean isCallArrive(){
 
+        info("Checking if call arrived");
         if(getMap().get("call_status").equals(CallStatus.INITIATED)){
 
             call.isCallArived();
@@ -433,7 +433,10 @@ public class SessionTC extends AbstractSteps {
     @Then("I will accept it")
     public void accept(){
 
+        info("Expert accept the call");
        ISACTIONTAKEN =call.isAcceptCall();
+       this.AssertAndWriteToReport(ISACTIONTAKEN,"Expert accepted the call");
+
     }
 
     /**
@@ -444,16 +447,31 @@ public class SessionTC extends AbstractSteps {
     @Aliases(values = {"status should be $status"})
     public void verifyCallStatus(@Named("status")String status){
 
+        info("Verify if call status is  "+status);
+        String actual=jsonParser.getJsonData("results.status", ResponseDataType.INT);
+        String matcher=null;
         boolean isValidate=false;
 
-        String actual=jsonParser.getJsonData("results.status", ResponseDataType.STRING);
+        switch (status){
+            case("accepted"):   matcher=null;   matcher="2"; //CallStatus.ACCEPTED;
+                    break;
+            case("disconnected"):  matcher=null;     matcher="4";  //CallStatus.COMPLETED;
+                break;
+            case("declined"):     matcher=null;          matcher="3"; //CallStatus.DECLINED;
+                break;
+            case("reconnect"): matcher=null;            matcher="6"; //CallStatus.RECONNECT;
+                break;
 
-        if(status.equalsIgnoreCase(actual)){
-
-            isValidate=true;
+            default: new ExpertChatException("Please provide proper action, action is not in the list- reconnect,declined,disconnected, accepted");
+               break;
         }
+        if (matcher.equals(actual)){
+            isValidate=true;
+        }else
+            isValidate=false;
 
-        this.AssertAndWriteToReport(isValidate,"Call status is--"+status);
+        System.out.println("actual status "+actual+" checking status "+status);
+        this.AssertAndWriteToReport(isValidate,"Call is "+"\""+status+"ed\" successfully");
 
     }
 
@@ -465,9 +483,10 @@ public class SessionTC extends AbstractSteps {
     @Aliases(values = {"I will $action the same call"})
     public void performActionOnRecivedCall(@Named("action")String action){
 
+        info(action+" the call");
         switch (action.toLowerCase()){
 
-            case "disconect" : ISACTIONTAKEN=call.isDissconnectCall();
+            case "disconnect" : ISACTIONTAKEN=call.isDissconnectCall();
                                break;
             case "reconnect" : ISACTIONTAKEN=call.reconnect(sessionId);
                                break;
@@ -481,11 +500,18 @@ public class SessionTC extends AbstractSteps {
     }
 
     /**
-     *
+     *Reconnect call once user reconnected the call
      */
-    @Then("reconect should be successful")
+    @Then("reconnect should be successful")
     public void verifyReconnect(){
 
+        info("Verify reconnect");
+
+        if(getMap().get("call_status").equals(CallStatus.RECONNECT)){
+            this.AssertAndWriteToReport(true,"Call is reconnected successfully");
+        }else{
+            this.AssertAndWriteToReport(false,"Reconnection failed");
+        }
     }
 
     /**
@@ -496,36 +522,40 @@ public class SessionTC extends AbstractSteps {
     @When("wait for session extenstion")
     public void continueSession() throws InterruptedException {
 
+        info("Waiting for Session extension");
         int duration=Integer.parseInt(getMap().get("scheduled_duration")); //10 min
 
         SessionUtil session=new SessionUtil();
-        long scheduleDateTime=session.getScheduleTimeInMillSecond();
-        long durationToMilli=duration*60000;
-        long scheduleEndTimeInMili=scheduleDateTime+durationToMilli;
-        long extensionTimeBeforeEnd=5*60000;
+        String scheduleTime= getMap().get("scheduled_datetime");
+        LocalDateTime scheduleTimeJoda = new DateTime(scheduleTime).toLocalDateTime();
+        DateTimeFormatter schedule = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
+        long scheduleDateTime=session.getTimeInMillis(schedule.print(scheduleTimeJoda),"MMM dd yyyy, hh:mm a");
 
-        long extensibleAtInMili=scheduleEndTimeInMili-extensionTimeBeforeEnd;
-        String currentTime=session.getCurrentTime();
+        long durationToMilli=duration*60000;
+        long scheduleEndTimeInMili=(scheduleDateTime+durationToMilli);
+        long extensionTimeBeforeEnd=5*60000;
+        long extensibleAtInMili=(scheduleEndTimeInMili-extensionTimeBeforeEnd);
+
+        String currentTime=session.getCurrentTimefromServer();
         LocalDateTime serverjodatime = new DateTime(currentTime).toLocalDateTime();
         DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
+
         long currentTimeInMilli=session.getTimeInMillis(serverdtfOut.print(serverjodatime), "MMM dd yyyy, hh:mm a");
+        long waitingTime= (extensibleAtInMili-currentTimeInMilli);
 
-        long waitingTime= (extensibleAtInMili-currentTimeInMilli)/60000;
+        info("Waiting time is "+(waitingTime/60000)+" minute for extending call");
+        System.out.println("Waiting time is "+(waitingTime/60000)+" minute for extending call");
 
-        System.out.println("Waiting "+waitingTime+" minute for extending call");
-        info("Waiting "+waitingTime+" minute for extending call");
+        String callStatus=getMap().get("call_status");
 
-        while(!(currentTimeInMilli>=extensibleAtInMili) && !(currentTimeInMilli< scheduleEndTimeInMili)){
-
-            /*Hit extension API*/
-
-            isExtensible = call.checkExtension(sessionId);
-
+        if( (currentTimeInMilli<extensibleAtInMili) && (currentTimeInMilli< scheduleEndTimeInMili)&&(callStatus.equals("2"))) {
+            /*Wait for extension is reached*/
+            Thread.sleep(waitingTime);
+        }else{
+            this.AssertAndWriteToReport(true,"Session cannot be extended as call is not in accepted state");
         }
-
-
-        this.AssertAndWriteToReport(isExtensible,"SessionUtil can be extended now");
-
+        isExtensible = call.checkExtension(sessionId);
+        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");
     }
 
     /**
@@ -534,15 +564,10 @@ public class SessionTC extends AbstractSteps {
     @Then("verify if session extension is possible")
     public void verifySessionExtension(){
 
-        /**
-         * check for avaialble slot
-         */
-
         if(isExtensible){
             call.extendSession("10");
+            this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minuite",parameter.isNegative());
         }
-        this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minuite",parameter.isNegative());
     }
-
 
 }

@@ -11,7 +11,6 @@ So that I can schedule a session with the expert
 
 
 When login as super user {"email":"kishor+super@atlogys.com","password":"testing123"}
-
 Then create promocode {
                         "promo_code_type": "promo",
                         "value_type": "percent%",
@@ -20,7 +19,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "62",
+                        "coupon_code": "71",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit":10,
@@ -32,39 +31,29 @@ Then create promocode {
                       }
 
 Given an expert
-
 When i login with {"email":"rajdeep+expert@atlogys.com","password":"testing123"}
-
 Then get profile of the logged in expert
-
 And i create a calender for today
 
 Given an user
-
 When i login with {"email":"yassar@atlogys.com","password":"expert12"}
-
 Then i register a device as {
                               "device_type":"ios",
                               "device_name": "iPhone 6",
                               "device_sub_type": "iPhone 6",
-                              "device_id": "12345",
-                              "device_token": "12345",
+                              "device_id": "25634",
+                              "device_token": "25634",
                               "device_os": "ios"
                             }
-
 Then get a slot
 
-When schedule a session using promo code 62 and duration 10
-
+When schedule a session using promo code 71 and duration 10
 Then it should return session id
 
 When I pass on session id in session details API
-
 Then i initiate the session
 
-
 Given an expert
-
 Then i register a expert device as {
                               "device_type":"ios",
                               "device_name": "iPhone 6",
@@ -75,47 +64,30 @@ Then i register a expert device as {
                             }
 
 When I get a call
-
 Then I will accept it
-
-And Call should be in in-progress status
-
+And Call should be in accepted status
 Then I will disconnect the call
-
 And Call should be in disconnected status
 
 Given an user
-
 Then I will reconnect the same call
-
-And reconect should be successful
-
+And reconnect should be successful
 
 Given an expert
-
 Then I will decline the call
-
-And status should be disconected
-
+And status should be declined
 
 Given an user
-
 Then I will reconnect the same call
-
-And reconect should be successful
+And reconnect should be successful
 
 
 Given an expert
-
-Then I will accept the call
-
-And status should be in-progress
-
+Then I will accept it
+And status should be accepted
 
 Given an user
-
 Then wait for session extenstion
-
 And verify if session extension is possible
 
 

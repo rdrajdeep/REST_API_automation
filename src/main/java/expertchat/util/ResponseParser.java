@@ -16,7 +16,7 @@ public class ResponseParser {
 
     LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> slotLengthLinkedHashMap;
 
-    public ArrayList<String> onSuccess(String response){
+    public ArrayList<String> onSuccess(String response, String slotDuration){
 
         try {
 
@@ -71,7 +71,7 @@ public class ResponseParser {
             DatetimeUtility util=new DatetimeUtility();
             String today=util.currentDateOnly();
 
-            ArrayList<String> dataFromHashMap = getValueListFromHashMap("10", "", false);
+            ArrayList<String> dataFromHashMap = getValueListFromHashMap(slotDuration, "", false);
             if (dataFromHashMap != null && dataFromHashMap.size() > 0) {
 
 //                System.out.println(getValueListFromHashMap("", "", false));
@@ -86,8 +86,8 @@ public class ResponseParser {
                   //  System.out.println("Today "+dateTime);
                     if(dateTime.isEqual(datetime1)){
 
-                        System.out.println((slotLengthLinkedHashMap.get("10")).get(date));
-                        slotsTime=(slotLengthLinkedHashMap.get("10")).get(date);
+                        System.out.println((slotLengthLinkedHashMap.get(slotDuration)).get(date));
+                        slotsTime=(slotLengthLinkedHashMap.get(slotDuration)).get(date);
                         return slotsTime;
 
                     }else{
