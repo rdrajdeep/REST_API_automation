@@ -82,7 +82,6 @@ Given an user
 Then I will reconnect the same call
 And Call should be reconnected sucessfully
 
-
 Given an expert
 Then I will accept it
 And status should be accepted
@@ -92,3 +91,11 @@ Then wait for session extenstion
 And verify if session extension is possible
 Then If possible, Extend the call for 10 min
 Then Call should be in extended status
+
+Given negative scenario
+When I get the session details
+Then I wait for another session extenstion
+And Retrieve session extension details
+
+When No slot is available for extension
+Then User should not allowed to extend the call

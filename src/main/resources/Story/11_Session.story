@@ -93,8 +93,9 @@ Then If possible, Extend the call for 10 min
 Then Call should be in extended status
 
 Given negative scenario
-When I wait for another session extenstion
-Then Retrieve session extension details
+When I get the session details
+Then I wait for another session extenstion
+And Retrieve session extension details
 
 When No slot is available for extension
 Then User should not allowed to extend the call

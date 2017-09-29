@@ -47,6 +47,7 @@ public class SessionTC extends AbstractSteps {
     private boolean isCallArived=false;
     private boolean ISACTIONTAKEN =false;
     private boolean isExtensible=false;
+    boolean isWaitOver=false;
 
     @When("login as super user $json")
     public void superUserlogin(@Named("json") String json) {
@@ -533,6 +534,7 @@ public void cancel(){
 
     @Then("wait for session extenstion")
     @When("wait for session extenstion")
+    @Aliases(values = {"I wait for another session extenstion"})
     public void continueSession() throws InterruptedException {
 
         info("Call is in-progress and waiting for Session extension");
@@ -570,7 +572,8 @@ public void cancel(){
        /* isExtensible = call.checkExtension(sessionId);
         this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");*/
        if ((currentTimeInMilli>=extensibleAtInMili) ){
-           this.AssertAndWriteToReport(true,"Extension wait time is over, now can be check for extension");
+           isWaitOver=true;
+           this.AssertAndWriteToReport(isWaitOver,"Extension wait time is over, now can be check for extension");
        }
 
     }
@@ -578,15 +581,24 @@ public void cancel(){
     /**
      *
      */
-    @When("I wait for another session extenstion")
-    public void extensionWait(){
-
-    }
-
     @Then("Retrieve session extension details")
     @When("Retrieve session extension details")
     public void extenssionDetail(){
-        //isExtensible = call.checkExtension(getMap().get("scheduled_session_id"));
+
+        if(isWaitOver){
+            isExtensible = call.checkExtension(getMap().get("scheduled_session_id"));
+        }else{
+             System.out.println("Error in waiting time, it comes out without waiting wait time");
+            this.AssertAndWriteToReport(isWaitOver);
+            return;
+        }
+
+        if (isExtensible){
+            String availableExtnTime=getMap().get("available_extension_duration");
+            String extnPrice=getMap().get("extension_price");
+            System.out.println(availableExtnTime+" min is available for $"+extnPrice);
+        }
+        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");
 
     }
 
@@ -594,7 +606,14 @@ public void cancel(){
     @Then("No slot is available for extension")
     public void checkExtensionSlot(){
 
+        if (!isExtensible) {
+            this.AssertAndWriteToReport(parameter.isNegative(), getMap().get("extn_error_message"));
+        }else{
+            this.AssertAndWriteToReport(false,"");
+        }
+
     }
+
     @Then("User should not allowed to extend the call")
     public void isExtensionAllowed(){
 
@@ -631,5 +650,12 @@ public void cancel(){
         this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minute",parameter.isNegative());
 
     }
+
+    public static void main(String[] args){
+
+
+
+    }
+
 
 }

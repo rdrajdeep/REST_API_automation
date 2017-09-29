@@ -540,10 +540,14 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         if(isOK()){
             response.printResponse();
+            getMap().put("available_extension_duration",pr.getJsonData("results.extension_duration",ResponseDataType.INT));
+            getMap().put(" extension_price",pr.getJsonData("results.extension_price",ResponseDataType.INT));
             return  true;
         }
         else {
             response.printResponse();
+            getMap().put("extn_error_code",pr.getJsonData("errors.non_field_errors.code",ResponseDataType.STRING));
+            getMap().put("extn_error_message",pr.getJsonData("errors.non_field_errors.message",ResponseDataType.STRING));
             return false;
         }
     }
