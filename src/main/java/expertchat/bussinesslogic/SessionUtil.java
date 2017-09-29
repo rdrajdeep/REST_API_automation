@@ -234,10 +234,9 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
       startMint =localTime.getMinute();
 
-      if(startMint==60){
-
+      if(startMint==60||startMint==59){
           startHour=startHour+1;
-          startMint=0;
+          startMint=00;
       }
 
       while (startMint % 5 !=0){
@@ -261,7 +260,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
        }else if((startMint +20)==60) {
 
            endHour = startHour +1;
-           endMint =0;
+           endMint =00;
 
        } else {
 

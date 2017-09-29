@@ -210,17 +210,28 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
      */
     public void extendSession ( String realTime ) {
 
+        System.out.println("--Session is extending now--");
+
         String sessionId=getMap().get("scheduled_session_id");
-        String url=SESSION+"\""+sessionId+"\""+"/extend_session/";
+
+        System.out.println("Extending session for call id "+sessionId);
+
+        String url=SESSION+sessionId+"/extend_session/";
 
         String json="{}";
 
-        response.setResponse (this.put(url, json, session.getUserToken (), true));
+        response.setResponse (this.put( json,url, session.getUserToken (), true));
 
         if(isOK()){
+            System.out.println("session is successfully extended for 10 min");
             response.printResponse ();
+            getMap().put("extension_price",pr.getJsonData("results.extension_price",ResponseDataType.STRING));
+            getMap().put("extension_time",pr.getJsonData("results.extension_time",ResponseDataType.STRING));
+
         }else {
-            response.printResponse ();
+           getMap().put("error_message",pr.getJsonData("errors.non_field_errors.message",ResponseDataType.STRING));
+            System.out.println(getMap().get("error_message"));
+           response.printResponse ();
         }
 
     }
@@ -317,13 +328,12 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
         String id= getMap ().get ( "scheduled_session_id");
 
-        String url=SESSION+id+"cancel/";
+        String url=SESSION+id+"/cancel/";
 
         response.setResponse (
-                this.delete ( "", url, session.getUserToken ( ), true ));
+                this.delete ( "{}", url, session.getUserToken ( ), true ));
 
-        if(response.statusCode ()==HTTP_NO_CONTENT){
-
+        if(response.statusCode ()==HTTP_NO_CONTENT||response.statusCode()==HTTP_ACCEPTED||response.statusCode()==HTTP_OK){
             return true;
         }
         return false;

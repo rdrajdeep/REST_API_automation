@@ -8,6 +8,8 @@ public interface CallStatus {
     String COMPLETED = "4";
     String DELAYED = "5";
     String RECONNECT = "1";
+    String EXTEND = "7";
+    String CANCELLED = "1";
 
     String USER_DISCONNECT = "user_disconnect";
     String EXPERT_DISCONNECT = "expert_disconnect";
@@ -15,6 +17,7 @@ public interface CallStatus {
     String USER_DECLINED = "user_declined";
     String EXPERT_DECLINED = "expert_declined";
     String TIMEOUT = "timeout";
+
 
 
 }

@@ -36,7 +36,6 @@ public class Report extends Steps {
         reports.flush ( );
     }
 
-
     public void fail ( String description ) {
 
         test.log ( LogStatus.FAIL, description );
@@ -82,7 +81,6 @@ public class Report extends Steps {
         } else {
             fail ( "Something went wrong. Please check--" +
                     ApiResponse.getObject ( ).getResponse ( ).prettyPrint ( ) );
-
         }
 
     }
@@ -134,7 +132,7 @@ public class Report extends Steps {
             pass ( successMessage[ 0 ] );
         } else {
 
-            fail ( "something went wrong.\t"+ApiResponse.getObject ().getResponse ().prettyPrint ());
+            fail ( "Something went wrong. \t"+ApiResponse.getObject ().getResponse ().prettyPrint ());
         }
     }
 
@@ -146,6 +144,5 @@ public class Report extends Steps {
         reports.endTest ( test );
 
     }
-
 
 }

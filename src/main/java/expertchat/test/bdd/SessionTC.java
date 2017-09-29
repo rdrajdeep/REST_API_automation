@@ -33,9 +33,7 @@ public class SessionTC extends AbstractSteps {
     }
 
     SessionUtil pcode = new SessionUtil();
-
     ExpertChatApi expertChatApi = new ExpertChatApi();
-
     Credentials credentials = Credentials.getCredentials();
 
     private ApiResponse response = ApiResponse.getObject();
@@ -43,7 +41,7 @@ public class SessionTC extends AbstractSteps {
     private ExpertProfile expertProfile = new ExpertProfile();
     private Calender calender = new Calender();
     private List<Long> slots = new ArrayList<>();
-    private String sessionId = null;
+    //private String sessionId = null;
     private String userDeviceId = null;
     private DatetimeUtility dateUtil=new DatetimeUtility();
     private boolean isCallArived=false;
@@ -54,9 +52,7 @@ public class SessionTC extends AbstractSteps {
     public void superUserlogin(@Named("json") String json) {
 
         expertChatApi.doLogIn(json, false);
-
         credentials.setuserCredential(json);
-
         this.checkAndWriteToReport(response.statusCode(), "Logged in as Super User" + json, parameter.isNegative());
 
     }
@@ -68,11 +64,8 @@ public class SessionTC extends AbstractSteps {
     public void PromoCode(@Named("promoCode") String promoCode) {
 
         System.out.println("-- Creatin a promo code--");
-
         pcode.createPromoCode(promoCode);
-
         String coupon = jsonParser.getJsonData("results.coupon_code", ResponseDataType.STRING);
-
         this.checkAndWriteToReport(response.statusCode(), "New Promo code " + "\"" + coupon + "\"" + " created successfully", parameter.isNegative());
 
         return;
@@ -95,22 +88,16 @@ public class SessionTC extends AbstractSteps {
      */
 
     @Then("get a slot")
+    @When("get a slot")
+    @Aliases(values = {"I get a slot"})
     public void getSlot() {
 
-
         System.out.println("--- GETTING A SLOT NOW---");
-
-       // for(String caleder: pcode)
         slots=pcode.getAllSlots("10");
-        System.out.println("slot checked- getSlot-->"+slots);
-        System.out.println(slots.get(0));
-        //slot=slots.get(0).toString();
-
         System.out.println("Extracted slot is: "+slots.get(0));
 
         if (!slots.isEmpty()) {
-
-            this.checkAndWriteToReport(response.statusCode(), "Slot extracted", parameter.isNegative());
+            this.checkAndWriteToReport(response.statusCode(), "Most recent available slot of today is extracted for scheduling a session. Your slot is "+slots.get(0)+":00 UTC", parameter.isNegative());
 
         }
     }
@@ -124,6 +111,7 @@ public class SessionTC extends AbstractSteps {
     @Then("schedule a session using promo code $code and duration $duration")
     @When("schedule a session using promo code $code and duration $duration")
     @Given("schedule a session using promo code $code and duration $duration")
+
     public void scheduleSession(@Named("code") String code,
                                 @Named("duration") int duration) {
 
@@ -134,7 +122,7 @@ public class SessionTC extends AbstractSteps {
         System.out.println("Print final booking slot "+finalSlot);
         call.scheduleSession(finalSlot , code, duration);
         response.printResponse();
-        this.checkAndWriteToReport(response.statusCode(), "SessionUtil with id--" + getMap().get("scheduled_session_id") + " created", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "A session is scheduled today at  "+slots.get(0)+":00", parameter.isNegative());
         userDeviceId = jsonParser.getJsonData("results.user_device", ResponseDataType.STRING);
 
     }
@@ -166,7 +154,7 @@ public class SessionTC extends AbstractSteps {
 
             credentials.setuserCredential(user);
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user--" + user, parameter.isNegative());
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user " + jsonParser.getJsonData("results.email", ResponseDataType.STRING), parameter.isNegative());
 
         } else if (user.contains("user")) {
 
@@ -174,7 +162,7 @@ public class SessionTC extends AbstractSteps {
 
             credentials.setuserCredential(TestUserMap.getUserCredentialsByKey(user));
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user--" +
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by user " +
                     TestUserMap.getUserCredentialsByKey(user), parameter.isNegative());
 
 
@@ -183,7 +171,7 @@ public class SessionTC extends AbstractSteps {
 
             credentials.setExpertCredential(TestUserMap.getUserCredentialsByKey(user));
 
-            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert--" +
+            this.checkAndWriteToReport(response.statusCode(), "Logged in to experChat by expert " +
                     TestUserMap.getUserCredentialsByKey(user), parameter.isNegative());
         }
 
@@ -202,7 +190,7 @@ public class SessionTC extends AbstractSteps {
 
     public void getProfile() {
 
-        this.info("GET Expert Profile");
+        this.info("Get Expert Profile");
 
         System.out.println("-- Geting expert profile --");
 
@@ -220,11 +208,11 @@ public class SessionTC extends AbstractSteps {
         if (parameter.isExpert() == false) {
 
             this.checkAndWriteToReport(response.statusCode(),
-                    "Expert profile loaded by a user--" + credentials.getUserCredential()[0], parameter.isNegative());
+                    "Expert profile loaded for user:- " + credentials.getUserCredential()[0], parameter.isNegative());
         } else {
 
             this.checkAndWriteToReport(response.statusCode(),
-                    "Expert profile loaded by expert--" + credentials.getExpertCredential()[0], parameter.isNegative());
+                    "Expert profile loaded for expert:- " + credentials.getExpertCredential()[0], parameter.isNegative());
         }
     }
     /*@
@@ -250,7 +238,7 @@ public class SessionTC extends AbstractSteps {
             calender.createCalender();
             //calender.appendExistingCalender();
         }
-        this.checkAndWriteToReport(response.statusCode(), "Calender Created", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "A calender  is created successfully ", parameter.isNegative());
 
     }
 
@@ -267,21 +255,25 @@ public class SessionTC extends AbstractSteps {
 
 
         System.out.println("--Registering a Device --");
-
+        String deviceId=null;
         if (parameter.isNegative()) {
 
             call.registerDevice(json, parameter.isExpert());
 
-            this.checkAndWriteToReport(response.statusCode(), "Device not Registered--Negative Test case", true);
+            this.checkAndWriteToReport(response.statusCode(), "Device not Registered-- Negative Test case", true);
 
         } else {
 
             call.registerDevice(json, parameter.isExpert());
 
-            System.out.println(json + parameter.isExpert());
         }
 
-        this.checkAndWriteToReport(response.statusCode(), "Device Registered", false);
+        if (parameter.isExpert()){
+             deviceId=getMap().get("ExpertDevice");
+        }else {
+            deviceId = getMap().get("UserDevice");
+        }
+        this.checkAndWriteToReport(response.statusCode(), "A Device with id "+deviceId+" is Registered.", false);
     }
 
     /**
@@ -290,12 +282,11 @@ public class SessionTC extends AbstractSteps {
 
     @Then("it should return session id")
     public void setSessionId() {
+        info("Getting session Id from scheduled session");
 
-        info("SessionUtil id print");
+        String sessionId = getMap().get("scheduled_session_id");
 
-        sessionId = getMap().get("scheduled_session_id");
-
-        this.checkAndWriteToReport(response.statusCode(), sessionId + "-- Created", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "Session Id "+sessionId + " is created for this session.", parameter.isNegative());
 
     }
 
@@ -303,14 +294,15 @@ public class SessionTC extends AbstractSteps {
      * @ Get SessionUtil Details
      */
     @When("I get the session details")
-    @Alias("I pass on session id in session details API")
+    @Aliases(values = {"I pass on session id in session details API",
+    "I pass on session id in session details API show me estimated revenue of user and expert"})
     public void getSessionDetails() {
 
-        info("SessionUtil Details of " + sessionId);
+        info("Session Details of " + getMap().get("scheduled_session_id"));
+        //String sessionID= getMap().get("scheduled_session_id");
+        call.getSessionDetails(getMap().get("scheduled_session_id"), parameter.isExpert());
 
-        call.getSessionDetails(sessionId, parameter.isExpert());
-
-        this.checkAndWriteToReport(response.statusCode(), "Details with id--" + sessionId + " extracted", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "Details with id-- " + getMap().get("scheduled_session_id") + " extracted", parameter.isNegative());
     }
 
     /**
@@ -380,19 +372,20 @@ public class SessionTC extends AbstractSteps {
     }
 
 
-    @When("i initiate the session")
-    @Then("i initiate the session")
-    public void validateSessionInitiation() throws  Exception{
+    @When("I initiate the session")
+    @Then("I initiate the session")
+       public void validateSessionInitiation() throws  Exception{
 
-        info("Intiating a Call/SessionUtil");
+        info("Intiating a Session with expert");
 
         System.out.println("initiating call");
 
         pcode.convertDateTime();
-        call.intiate(sessionId, userDeviceId);
+        call.intiate(getMap().get("scheduled_session_id"), userDeviceId);
         response.printResponse();
 
         this.checkAndWriteToReport(response.statusCode(),"Successfully call initiated",parameter.isNegative());
+
     }
 
 
@@ -414,6 +407,7 @@ public class SessionTC extends AbstractSteps {
      * @return
      */
     @When("I get a call")
+    @Aliases(values = {"I get a call from user"})
     public boolean isCallArrive(){
 
         info("Checking if call arrived");
@@ -421,16 +415,27 @@ public class SessionTC extends AbstractSteps {
 
             call.isCallArived();
             isCallArived=true;
+
         }
 
         this.AssertAndWriteToReport(isCallArived, "Call arrived at expert end");
         return isCallArived;
     }
+/**
+ * Cancel the call after initiating--
+ */
+/*@Then("Cancel the session")
+public void cancel(){
+    info("Cancelling the session");
+    ISACTIONTAKEN=call.isCancelSession();
+    this.AssertAndWriteToReport(ISACTIONTAKEN,"Session is cancelled successfully");
+}*/
 
     /**
      *
      */
     @Then("I will accept it")
+    @Aliases(values = {"I will accept the call"})
     public void accept(){
 
         info("Expert accept the call");
@@ -461,17 +466,22 @@ public class SessionTC extends AbstractSteps {
                 break;
             case("reconnect"): matcher=null;            matcher="6"; //CallStatus.RECONNECT;
                 break;
+            case("extended"): matcher=null;             matcher=CallStatus.EXTEND;
+                break;
+            case ("cancelled"): matcher=null;           matcher=CallStatus.CANCELLED;
+                break;
 
             default: new ExpertChatException("Please provide proper action, action is not in the list- reconnect,declined,disconnected, accepted");
                break;
         }
         if (matcher.equals(actual)){
             isValidate=true;
-        }else
+        }else{
             isValidate=false;
+        }
 
         System.out.println("actual status "+actual+" checking status "+status);
-        this.AssertAndWriteToReport(isValidate,"Call is "+"\""+status+"ed\" successfully");
+        this.AssertAndWriteToReport(isValidate,"Call is "+"\""+status+"\" successfully");
 
     }
 
@@ -488,9 +498,11 @@ public class SessionTC extends AbstractSteps {
 
             case "disconnect" : ISACTIONTAKEN=call.isDissconnectCall();
                                break;
-            case "reconnect" : ISACTIONTAKEN=call.reconnect(sessionId);
+            case "reconnect" : ISACTIONTAKEN=call.reconnect(getMap().get("scheduled_session_id"));
                                break;
             case "decline"   : ISACTIONTAKEN=call.isDecline();
+                               break;
+            case "cancel"   : ISACTIONTAKEN=call.isCancelSession();
                                break;
         }
 
@@ -503,6 +515,7 @@ public class SessionTC extends AbstractSteps {
      *Reconnect call once user reconnected the call
      */
     @Then("reconnect should be successful")
+    @Aliases(values = {"Call should be reconnected sucessfully"})
     public void verifyReconnect(){
 
         info("Verify reconnect");
@@ -515,14 +528,14 @@ public class SessionTC extends AbstractSteps {
     }
 
     /**
-     *
+     * Waiting till extension time is reached, Extensible at 5 min prior to scheduled end time.
      */
 
     @Then("wait for session extenstion")
     @When("wait for session extenstion")
     public void continueSession() throws InterruptedException {
 
-        info("Waiting for Session extension");
+        info("Call is in-progress and waiting for Session extension");
         int duration=Integer.parseInt(getMap().get("scheduled_duration")); //10 min
 
         SessionUtil session=new SessionUtil();
@@ -554,20 +567,69 @@ public class SessionTC extends AbstractSteps {
         }else{
             this.AssertAndWriteToReport(true,"Session cannot be extended as call is not in accepted state");
         }
-        isExtensible = call.checkExtension(sessionId);
-        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");
+       /* isExtensible = call.checkExtension(sessionId);
+        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");*/
+       if ((currentTimeInMilli>=extensibleAtInMili) ){
+           this.AssertAndWriteToReport(true,"Extension wait time is over, now can be check for extension");
+       }
+
     }
 
     /**
      *
      */
+    @When("I wait for another session extenstion")
+    public void extensionWait(){
+
+    }
+
+    @Then("Retrieve session extension details")
+    @When("Retrieve session extension details")
+    public void extenssionDetail(){
+        //isExtensible = call.checkExtension(getMap().get("scheduled_session_id"));
+
+    }
+
+    @When("No slot is available for extension")
+    @Then("No slot is available for extension")
+    public void checkExtensionSlot(){
+
+    }
+    @Then("User should not allowed to extend the call")
+    public void isExtensionAllowed(){
+
+    }
+
+
+    /**
+     * Checking if extension is possible
+     */
     @Then("verify if session extension is possible")
     public void verifySessionExtension(){
 
-        if(isExtensible){
-            call.extendSession("10");
-            this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minuite",parameter.isNegative());
+        isExtensible = call.checkExtension(getMap().get("scheduled_session_id"));
+        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");
+
+    }
+
+    /**
+     * If extension is possible than extend the session for desired duration. By default 10.
+     * @param duration
+     */
+    @Then("If possible, Extend the call for $duration min")
+    public void extendCall(@Named("duration") String duration){
+
+        info("Extending session--");
+        if(isExtensible) {
+            call.extendSession(duration);
+            // this.AssertAndWriteToReport(true,getMap().get("error_message"));
+            String extnPrice = getMap().get("extension_price");
+            String extnDuration = getMap().get("extension_time");
+            System.out.println("Extn Duration " + extnDuration + " and price " + extnPrice);
+
         }
+        this.checkAndWriteToReport(response.statusCode(),"Session exteded for 10 more minute",parameter.isNegative());
+
     }
 
 }

@@ -19,7 +19,7 @@ Then create promocode {
                         "expiry_datetime": "2017-10-30T02:25:00Z",
                         "usage_limit": 10,
                         "description": "100 % Discount on every user",
-                        "coupon_code": "71",
+                        "coupon_code": "75",
                         "status": 1,
                         "is_deleted": false,
                         "user_usage_limit":10,
@@ -47,11 +47,11 @@ Then i register a device as {
                             }
 Then get a slot
 
-When schedule a session using promo code 71 and duration 10
+When schedule a session using promo code 75 and duration 10
 Then it should return session id
 
 When I pass on session id in session details API
-Then i initiate the session
+Then I initiate the session
 
 Given an expert
 Then i register a expert device as {
@@ -63,15 +63,16 @@ Then i register a expert device as {
                               "device_os": "ios"
                             }
 
-When I get a call
+When I get a call from user
 Then I will accept it
 And Call should be in accepted status
+
 Then I will disconnect the call
 And Call should be in disconnected status
 
 Given an user
 Then I will reconnect the same call
-And reconnect should be successful
+And Call should be reconnected sucessfully
 
 Given an expert
 Then I will decline the call
@@ -79,8 +80,7 @@ And status should be declined
 
 Given an user
 Then I will reconnect the same call
-And reconnect should be successful
-
+And Call should be reconnected sucessfully
 
 Given an expert
 Then I will accept it
@@ -89,5 +89,12 @@ And status should be accepted
 Given an user
 Then wait for session extenstion
 And verify if session extension is possible
+Then If possible, Extend the call for 10 min
+Then Call should be in extended status
 
+Given negative scenario
+When I wait for another session extenstion
+Then Retrieve session extension details
 
+When No slot is available for extension
+Then User should not allowed to extend the call
