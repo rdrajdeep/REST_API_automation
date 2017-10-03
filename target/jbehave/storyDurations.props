@@ -1,7 +1,6 @@
 #org.jbehave.core.embedder.StoryManager
-#Fri Sep 29 18:35:27 IST 2017
-Story/11_Session.story=441000
-Story/12_CancelCall.story=0
+#Tue Oct 03 16:25:45 IST 2017
+Story/11_Session.story=986000
 threads=1
-total=441000
-threadAverage=441000
+total=986000
+threadAverage=986000

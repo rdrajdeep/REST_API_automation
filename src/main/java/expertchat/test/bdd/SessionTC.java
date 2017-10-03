@@ -222,10 +222,9 @@ public class SessionTC extends AbstractSteps {
 
 
     @Then("create a calender as $json")
-    @Aliases(values = {"i am creating a calender as $json",
-            "i create a calender" , "i create a calender for today"})
+    @Aliases(values = {"i create a calender of $minute min for today"})
 
-    public void calender() throws Exception{
+    public void calender(@Named("minute") int minute) throws Exception{
 
         System.out.println("--Creating a calender  --");
 
@@ -233,10 +232,10 @@ public class SessionTC extends AbstractSteps {
 
         if (parameter.isNegative()) {
 
-            calender.createCalender();
+            calender.createCalender(minute);
             //calender.appendExistingCalender();
         } else {
-            calender.createCalender();
+            calender.createCalender(minute);
             //calender.appendExistingCalender();
         }
         this.checkAndWriteToReport(response.statusCode(), "A calender  is created successfully ", parameter.isNegative());
@@ -291,6 +290,24 @@ public class SessionTC extends AbstractSteps {
 
     }
 
+    @Then("I cancel my scheduled session")
+    public void cancelSession(){
+        info("Cancelling the call");
+
+        boolean isCancel=call.isCancelSession ();
+
+        if(isCancel){
+
+            AssertAndWriteToReport ( isCancel, "Session cancelled");
+
+        }else if(parameter.isNegative () && isCancel==false) {
+
+            AssertAndWriteToReport ( isCancel, "Negative Test--Session could not be canceled");
+
+        }else {
+            AssertAndWriteToReport ( false, "" );
+        }
+    }
     /**
      * @ Get SessionUtil Details
      */
@@ -299,11 +316,11 @@ public class SessionTC extends AbstractSteps {
     "I pass on session id in session details API show me estimated revenue of user and expert"})
     public void getSessionDetails() {
 
-        info("Session Details of " + getMap().get("scheduled_session_id"));
+        info("Getting sesion details");
         //String sessionID= getMap().get("scheduled_session_id");
         call.getSessionDetails(getMap().get("scheduled_session_id"), parameter.isExpert());
 
-        this.checkAndWriteToReport(response.statusCode(), "Details with id-- " + getMap().get("scheduled_session_id") + " extracted", parameter.isNegative());
+        this.checkAndWriteToReport(response.statusCode(), "Session Id is  " + getMap().get("scheduled_session_id") + " Scheduled duration is "+getMap().get("scheduled_duration"), parameter.isNegative());
     }
 
     /**
@@ -425,12 +442,12 @@ public class SessionTC extends AbstractSteps {
 /**
  * Cancel the call after initiating--
  */
-/*@Then("Cancel the session")
+@Then("Cancel the session")
 public void cancel(){
     info("Cancelling the session");
     ISACTIONTAKEN=call.isCancelSession();
     this.AssertAndWriteToReport(ISACTIONTAKEN,"Session is cancelled successfully");
-}*/
+}
 
     /**
      *
@@ -541,6 +558,7 @@ public void cancel(){
         int duration=Integer.parseInt(getMap().get("scheduled_duration")); //10 min
 
         SessionUtil session=new SessionUtil();
+
         String scheduleTime= getMap().get("scheduled_datetime");
         LocalDateTime scheduleTimeJoda = new DateTime(scheduleTime).toLocalDateTime();
         DateTimeFormatter schedule = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
@@ -551,12 +569,13 @@ public void cancel(){
         long extensionTimeBeforeEnd=5*60000;
         long extensibleAtInMili=(scheduleEndTimeInMili-extensionTimeBeforeEnd);
 
-        String currentTime=session.getCurrentTimefromServer();
+        /*String currentTime=session.getCurrentTimefromServer();
         LocalDateTime serverjodatime = new DateTime(currentTime).toLocalDateTime();
         DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
-
         long currentTimeInMilli=session.getTimeInMillis(serverdtfOut.print(serverjodatime), "MMM dd yyyy, hh:mm a");
-        long waitingTime= (extensibleAtInMili-currentTimeInMilli);
+        */
+        long currentTimeInMilli = session.getCurrentTimeInMilis();
+        long waitingTime = (extensibleAtInMili-currentTimeInMilli);
 
         info("Waiting time is "+(waitingTime/60000)+" minute for extending call");
         System.out.println("Waiting time is "+(waitingTime/60000)+" minute for extending call");
@@ -564,13 +583,15 @@ public void cancel(){
         String callStatus=getMap().get("call_status");
 
         if( (currentTimeInMilli<extensibleAtInMili) && (currentTimeInMilli< scheduleEndTimeInMili)&&(callStatus.equals("2"))) {
-            /*Wait for extension is reached*/
+
             Thread.sleep(waitingTime);
+            currentTimeInMilli=0;
+
         }else{
             this.AssertAndWriteToReport(true,"Session cannot be extended as call is not in accepted state");
         }
-       /* isExtensible = call.checkExtension(sessionId);
-        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");*/
+       // For extracting current time , a function has to be make..
+        currentTimeInMilli=session.getCurrentTimeInMilis();
        if ((currentTimeInMilli>=extensibleAtInMili) ){
            isWaitOver=true;
            this.AssertAndWriteToReport(isWaitOver,"Extension wait time is over, now can be check for extension");
@@ -581,12 +602,14 @@ public void cancel(){
     /**
      *
      */
-    @Then("Retrieve session extension details")
-    @When("Retrieve session extension details")
+    @Then("Retrieve first session extension details")
+    @When("Retrieve first session extension details")
     public void extenssionDetail(){
 
+        info("First extension details");
         if(isWaitOver){
             isExtensible = call.checkExtension(getMap().get("scheduled_session_id"));
+
         }else{
              System.out.println("Error in waiting time, it comes out without waiting wait time");
             this.AssertAndWriteToReport(isWaitOver);
@@ -595,10 +618,14 @@ public void cancel(){
 
         if (isExtensible){
             String availableExtnTime=getMap().get("available_extension_duration");
+            System.out.println("Available extn duration "+availableExtnTime);
             String extnPrice=getMap().get("extension_price");
             System.out.println(availableExtnTime+" min is available for $"+extnPrice);
+        }else{
+           this.AssertAndWriteToReport(parameter.isNegative(),getMap().get("extn_error_code")+":- "+getMap().get("extn_error_message"));
         }
-        this.AssertAndWriteToReport(isExtensible,"Session  can be extended now");
+
+        this.checkAndWriteToReport(response.statusCode(),"Extn Duration "+getMap().get("available_extension_duration"),parameter.isNegative());
 
     }
 
@@ -606,12 +633,11 @@ public void cancel(){
     @Then("No slot is available for extension")
     public void checkExtensionSlot(){
 
-        if (!isExtensible) {
+        if (!isExtensible&&(getMap().get("extn_error_code").equals(5014))) {
             this.AssertAndWriteToReport(parameter.isNegative(), getMap().get("extn_error_message"));
         }else{
-            this.AssertAndWriteToReport(false,"");
+            this.AssertAndWriteToReport(parameter.isNegative(),"Session cannot be extended due to some other reason "+getMap().get("extn_error_message"));
         }
-
     }
 
     @Then("User should not allowed to extend the call")

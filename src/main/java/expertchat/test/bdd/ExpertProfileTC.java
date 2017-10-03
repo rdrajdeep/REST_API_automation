@@ -223,9 +223,9 @@ public class ExpertProfileTC extends AbstractSteps{
 
         info("Creating a calender...");
         if (parameter.isNegative ()) {
-            calender.createCalender();
+            calender.createCalender(20);
         } else {
-            calender.createCalender();
+            calender.createCalender(20);
         }
         checkAndWriteToReport(response.statusCode(),"Calender Created", parameter.isNegative ());
         responseLogger.writeResponseAsLog("Calender API");

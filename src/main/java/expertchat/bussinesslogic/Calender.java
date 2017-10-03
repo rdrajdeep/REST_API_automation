@@ -22,14 +22,14 @@ public class Calender extends AbstractApiFactory implements HTTPCode, ExpertChat
      *
      * @param
      */
-    public void createCalender() throws  Exception{
+    public void createCalender(int duration) throws  Exception{
 
         SessionUtil obj= new SessionUtil();
 
         String json="{\n" +
                 "    \"title\": \"test3\",\n" +
                 "    \"start_time\": \""+obj.getStrtTimeForCalender()+"\",\n" +
-                "    \"end_time\": \""+obj.getEndTimeForCalender()+"\",\n" +
+                "    \"end_time\": \""+obj.getEndTimeForCalender(duration)+"\",\n" +
                 "    \"timezone\": \"Asia/Kolkata\",\n" +
                 "    \"week_days\": [\n" +
                 "        "+obj.today()+" \n" +
@@ -64,7 +64,7 @@ public class Calender extends AbstractApiFactory implements HTTPCode, ExpertChat
                 "        \"id\": 350,\n" +
                 "        \"title\": \"test3\",\n" +
                 "        \"start_time\":\""+obj.getStrtTimeForCalender()+"\",\n" +
-                "        \"end_time\": \""+obj.getEndTimeForCalender()+"\",\n" +
+                "        \"end_time\": \""+obj.getEndTimeForCalender(20)+"\",\n" +
                 "        \"timezone\": \"Asia/Kolkata\",\n" +
                 "        \"week_days\": [\n" +
                 "            "+obj.today()+"\n" +

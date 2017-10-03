@@ -192,16 +192,17 @@ public class CallingTC extends AbstractSteps{
 
     @Then("cancel the session")
     public void cancelSession(){
+    info("Cancelling the call");
 
         boolean isCancel=call.isCancelSession ();
 
         if(isCancel){
 
-            AssertAndWriteToReport ( isCancel, "SessionUtil canceled");
+            AssertAndWriteToReport ( isCancel, "Session canceled");
 
         }else if(parameter.isNegative () && isCancel==false) {
 
-            AssertAndWriteToReport ( isCancel, "Negative Test--SessionUtil could not be canceled");
+            AssertAndWriteToReport ( isCancel, "Negative Test--Session could not be canceled");
 
         }else {
             AssertAndWriteToReport ( false, "" );

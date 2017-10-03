@@ -326,16 +326,18 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
     public boolean isCancelSession(){
 
-        String id= getMap ().get ( "scheduled_session_id");
+       String id= getMap ().get ( "scheduled_session_id");
 
         String url=SESSION+id+"/cancel/";
 
         response.setResponse (
-                this.delete ( "{}", url, session.getUserToken ( ), true ));
+                this.delete ( "", url, session.getUserToken ( ), true ));
 
         if(response.statusCode ()==HTTP_NO_CONTENT||response.statusCode()==HTTP_ACCEPTED||response.statusCode()==HTTP_OK){
+            System.out.println("Session cancelled");
             return true;
         }
+
         return false;
     }
 
@@ -467,6 +469,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 getMap().put("expert_revenue", pr.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
                 //getMap().put("call_status",pr.getJsonData("results.status",ResponseDataType.STRING));
+                getMap().put("scheduled_duration",pr.getJsonData("results.scheduled_duration",ResponseDataType.INT));
             }
         }else {
 
@@ -482,6 +485,7 @@ public class Calling extends AbstractApiFactory implements HTTPCode, ExpertChatE
 
                 getMap().put("expert_revenue", pr.getJsonData("results.expert_estimated_revenue", ResponseDataType.FLOAT));
                 //getMap().put("call_status",pr.getJsonData("results.status",ResponseDataType.STRING));
+                getMap().put("scheduled_duration",pr.getJsonData("results.scheduled_duration",ResponseDataType.INT));
 
             }
         }

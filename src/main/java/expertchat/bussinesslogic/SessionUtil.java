@@ -95,8 +95,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
         response.setResponse(
 
-                //this.get(api, token)
-                this.get(api, session.getUserToken())
+               this.get(api, session.getUserToken())
         );
 
         if(response.statusCode()!=HTTP_BAD || response.statusCode()!=HTTP_UNAVAILABLE) {
@@ -105,7 +104,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
         }
 
         System.out.println("*****I am in getAllSlots>>>>***"+slots);
-        //Getting first first time slot
+
 
         return slots;
     }
@@ -119,6 +118,16 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
         );
 
         return response.getResponse().jsonPath().getString("results.datetime");
+
+    }
+
+    public long getCurrentTimeInMilis(){
+
+        String currentTime=this.getCurrentTimefromServer();
+        LocalDateTime serverjodatime = new DateTime(currentTime).toLocalDateTime();
+        DateTimeFormatter serverdtfOut = DateTimeFormat.forPattern("MMM dd yyyy, hh:mm a");
+        long currentTimeInMilli=this.getTimeInMillis(serverdtfOut.print(serverjodatime), "MMM dd yyyy, hh:mm a");
+        return currentTimeInMilli;
 
     }
 
@@ -234,15 +243,16 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
 
       startMint =localTime.getMinute();
 
-      if(startMint==60||startMint==59){
-          startHour=startHour+1;
-          startMint=00;
-      }
 
       while (startMint % 5 !=0){
 
           startMint=startMint+1;
       }
+
+       if(startMint==60||startMint==59){
+           startHour=startHour+1;
+           startMint=00;
+       }
 
 
     return new String(String.valueOf(startHour)+":"+String.valueOf(startMint)+":00");
@@ -250,14 +260,14 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
    }
 
 
-    public String getEndTimeForCalender(){
+    public String getEndTimeForCalender(int duration){
 
-       if((startMint +20)>60){
+       if((startMint +duration)>60){
 
            endHour = startHour +1;
-           endMint =(startMint +20)- startMint;
+           endMint =(startMint +duration)- startMint;
 
-       }else if((startMint +20)==60) {
+       }else if((startMint +duration)==60) {
 
            endHour = startHour +1;
            endMint =00;
@@ -265,7 +275,7 @@ public class SessionUtil extends AbstractApiFactory implements HTTPCode, ExpertC
        } else {
 
                endHour=startHour;
-               endMint=startMint +20;
+               endMint=startMint +duration;
 
            }
 
