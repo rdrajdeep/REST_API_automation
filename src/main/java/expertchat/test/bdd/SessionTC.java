@@ -633,7 +633,7 @@ public void cancel(){
     @Then("No slot is available for extension")
     public void checkExtensionSlot(){
 
-        if (!isExtensible&&(getMap().get("extn_error_code").equals(5014))) {
+        if (!isExtensible&&(getMap().get("extn_error_code").equals(ErrorCodes.NO_SLOT))) {
             this.AssertAndWriteToReport(parameter.isNegative(), getMap().get("extn_error_message"));
         }else{
             this.AssertAndWriteToReport(parameter.isNegative(),"Session cannot be extended due to some other reason "+getMap().get("extn_error_message"));
